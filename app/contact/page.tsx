@@ -3,6 +3,8 @@ import { Container, Section } from '@/components/ui/Container';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { CallbackForm } from '@/components/forms/CallbackForm';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 
@@ -17,6 +19,14 @@ export default function ContactPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: 'Contact', path: '/contact' }]} />
+      <JsonLd
+        data={webPageSchema({
+          path: '/contact',
+          name: 'Contact UAE Quick',
+          description: 'Contact UAE Quick for same-day home services in Dubai — call, WhatsApp or message.',
+          type: 'ContactPage',
+        })}
+      />
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">

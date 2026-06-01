@@ -6,8 +6,9 @@ import { AreasGrid } from '@/components/sections/AreasGrid';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { Faq } from '@/components/sections/Faq';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { faqSchema } from '@/lib/seo/schema';
+import { faqSchema, itemListSchema, webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
+import { services } from '@/lib/data/services';
 import type { FAQ } from '@/lib/data/types';
 
 export const metadata: Metadata = buildMetadata({
@@ -50,7 +51,21 @@ export default function ServicesPage() {
       </section>
 
       <Faq faqs={faqs} title="Services in Dubai — FAQs" />
-      <JsonLd data={faqSchema(faqs)} />
+      <JsonLd
+        data={[
+          webPageSchema({
+            path: '/services',
+            name: 'Home Maintenance Services in Dubai',
+            description: 'All UAE Quick home services in Dubai — same-day, fixed pricing.',
+            type: 'CollectionPage',
+          }),
+          itemListSchema(
+            'Home Maintenance Services in Dubai',
+            services.map((s) => ({ name: s.title, path: `/services/${s.slug}` }))
+          ),
+          faqSchema(faqs),
+        ]}
+      />
       <CtaBand />
     </>
   );

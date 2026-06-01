@@ -53,8 +53,9 @@ export const company = {
     facebook: 'https://www.facebook.com/uaequick',
     instagram: 'https://www.instagram.com/uaequick',
   },
-  logo: `${SITE_URL}/logo.png`,
-  ogImage: `${SITE_URL}/og-default.jpg`,
+  logo: `${SITE_URL}/logo.svg`,
+  // Default social image is generated dynamically by app/opengraph-image.tsx.
+  ogImage: `${SITE_URL}/opengraph-image`,
 } as const;
 
 /** Primary navigation — kept small and intent-led for SXO. */

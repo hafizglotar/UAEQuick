@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Container, Section, SectionHead } from '@/components/ui/Container';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { CtaBand } from '@/components/sections/CtaBand';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { itemListSchema, webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { areas } from '@/lib/data/areas';
 
@@ -42,6 +44,20 @@ export default function AreasPage() {
           </div>
         </Container>
       </Section>
+      <JsonLd
+        data={[
+          webPageSchema({
+            path: '/areas',
+            name: 'Areas We Serve in Dubai',
+            description: 'UAE Quick covers every Dubai community with same-day local home services.',
+            type: 'CollectionPage',
+          }),
+          itemListSchema(
+            'Dubai Areas We Serve',
+            areas.map((a) => ({ name: a.name.split(' (')[0], path: `/areas/${a.slug}` }))
+          ),
+        ]}
+      />
       <CtaBand />
     </>
   );

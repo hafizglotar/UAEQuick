@@ -3,6 +3,8 @@ import { Container, Section, SectionHead } from '@/components/ui/Container';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { WhyChooseUs } from '@/components/sections/Features';
 import { CtaBand } from '@/components/sections/CtaBand';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { company } from '@/lib/data/site';
 
@@ -17,6 +19,15 @@ export default function AboutPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: 'About', path: '/about' }]} />
+      <JsonLd
+        data={webPageSchema({
+          path: '/about',
+          name: 'About UAE Quick',
+          description:
+            'UAE Quick is a Dubai-based home maintenance company serving 10,000+ homes and offices since 2018.',
+          type: 'AboutPage',
+        })}
+      />
       <Section>
         <Container>
           <div className="prose-local mx-auto max-w-3xl">

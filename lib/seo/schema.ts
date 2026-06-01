@@ -1,6 +1,7 @@
 import { SITE_URL, company } from '@/lib/data/site';
 import type { Service, Area, BlogPost, FAQ } from '@/lib/data/types';
 import { reviews } from '@/lib/data/reviews';
+import { services } from '@/lib/data/services';
 
 /** Stable @id anchors so entities reference each other (entity-based SEO). */
 export const ORG_ID = `${SITE_URL}/#organization`;
@@ -8,6 +9,35 @@ export const BUSINESS_ID = `${SITE_URL}/#localbusiness`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
 type Json = Record<string, unknown>;
+
+/** Topics the business is an authority on — strengthens entity understanding
+ *  for AI/generative engines (GEO/AIO). */
+const KNOWS_ABOUT = [
+  'Home maintenance',
+  'Air conditioning repair',
+  'Plumbing',
+  'Handyman services',
+  'Electrical services',
+  'Deep cleaning',
+  'Movers and packers',
+  'Painting and partitions',
+  'Interior design',
+  'Garden maintenance',
+  'Swimming pool maintenance',
+  'Vehicle recovery',
+];
+
+const LANGUAGES = ['English', 'Arabic', 'Hindi', 'Urdu'];
+
+function contactPoint(): Json {
+  return {
+    '@type': 'ContactPoint',
+    telephone: company.phoneE164,
+    contactType: 'customer service',
+    areaServed: 'AE',
+    availableLanguage: LANGUAGES,
+  };
+}
 
 export function organizationSchema(): Json {
   return {
@@ -17,16 +47,27 @@ export function organizationSchema(): Json {
     name: company.name,
     legalName: company.legalName,
     url: `${SITE_URL}/`,
-    logo: company.logo,
+    logo: {
+      '@type': 'ImageObject',
+      url: company.logo,
+      width: '320',
+      height: '80',
+    },
+    image: company.logo,
     description: company.description,
+    slogan: company.tagline,
     email: company.email,
     telephone: company.phoneE164,
     foundingDate: String(company.foundingYear),
+    knowsAbout: KNOWS_ABOUT,
+    areaServed: { '@type': 'City', name: 'Dubai', '@id': 'https://www.wikidata.org/wiki/Q612' },
+    contactPoint: contactPoint(),
     address: {
       '@type': 'PostalAddress',
       streetAddress: company.address.street,
       addressLocality: company.address.locality,
       addressRegion: company.address.region,
+      postalCode: company.address.postalCode,
       addressCountry: company.address.country,
     },
     sameAs: [company.social.facebook, company.social.instagram],
@@ -40,16 +81,9 @@ export function websiteSchema(): Json {
     '@id': WEBSITE_ID,
     url: `${SITE_URL}/`,
     name: company.name,
+    description: company.description,
     publisher: { '@id': ORG_ID },
     inLanguage: 'en-AE',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 
@@ -59,11 +93,20 @@ export function localBusinessSchema(): Json {
     '@type': 'HomeAndConstructionBusiness',
     '@id': BUSINESS_ID,
     name: company.name,
-    image: company.logo,
+    image: [company.logo, company.ogImage],
+    logo: company.logo,
     url: `${SITE_URL}/`,
     telephone: company.phoneE164,
     email: company.email,
+    description: company.description,
+    slogan: company.tagline,
     priceRange: company.priceRange,
+    currenciesAccepted: 'AED',
+    paymentAccepted: 'Cash, Credit Card, Debit Card, Bank Transfer',
+    availableLanguage: LANGUAGES,
+    knowsAbout: KNOWS_ABOUT,
+    contactPoint: contactPoint(),
+    sameAs: [company.social.facebook, company.social.instagram],
     parentOrganization: { '@id': ORG_ID },
     address: {
       '@type': 'PostalAddress',
@@ -103,6 +146,18 @@ export function localBusinessSchema(): Json {
       },
       reviewBody: r.text,
     })),
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Home Maintenance Services in Dubai',
+      itemListElement: services.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: s.title,
+          url: `${SITE_URL}/services/${s.slug}`,
+        },
+      })),
+    },
   };
 }
 
@@ -139,14 +194,17 @@ export function serviceSchema(service: Service): Json {
     '@type': 'Service',
     name: `${service.title}`,
     serviceType: service.name,
+    category: service.category,
     description: service.shortDescription,
+    image: service.image,
     url: `${SITE_URL}/services/${service.slug}`,
-    provider: { '@id': BUSINESS_ID },
+    provider: { '@id': BUSINESS_ID, name: company.name },
     areaServed: { '@type': 'City', name: 'Dubai' },
     offers: {
       '@type': 'Offer',
       priceCurrency: 'AED',
       price: service.pricing[0]?.price.replace(/[^0-9.]/g, '') || undefined,
+      availability: 'https://schema.org/InStock',
       url: `${SITE_URL}/services/${service.slug}`,
     },
     hasOfferCatalog: {
@@ -188,13 +246,58 @@ export function articleSchema(post: BlogPost): Json {
     image: post.image,
     datePublished: post.datePublished,
     dateModified: post.dateModified,
-    author: { '@type': 'Organization', name: post.author, url: `${SITE_URL}/` },
+    author: { '@type': 'Organization', name: post.author, '@id': ORG_ID, url: `${SITE_URL}/` },
     publisher: { '@id': ORG_ID },
+    isPartOf: { '@id': WEBSITE_ID },
+    inLanguage: 'en-AE',
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/blog/${post.slug}`,
     },
     articleSection: post.category,
     keywords: post.keywords.join(', '),
+  };
+}
+
+/** Generic WebPage node tied to the site graph — used by content pages that
+ *  aren't a Service/Article so every page is a recognised entity. */
+export function webPageSchema(opts: {
+  path: string;
+  name: string;
+  description: string;
+  type?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage';
+}): Json {
+  const url = `${SITE_URL}${opts.path === '/' ? '' : opts.path}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': opts.type || 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name: opts.name,
+    description: opts.description,
+    isPartOf: { '@id': WEBSITE_ID },
+    about: { '@id': ORG_ID },
+    inLanguage: 'en-AE',
+    publisher: { '@id': ORG_ID },
+  };
+}
+
+/** ItemList for a collection/listing page so AI engines can enumerate the set
+ *  (services, areas, guides) as a single structured list. */
+export function itemListSchema(
+  name: string,
+  items: { name: string; path: string }[]
+): Json {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      url: `${SITE_URL}${item.path}`,
+    })),
   };
 }

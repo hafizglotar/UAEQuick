@@ -30,7 +30,9 @@ export function buildMetadata({
   noindex,
 }: MetaInput): Metadata {
   const url = `${SITE_URL}${path === '/' ? '' : path}`;
-  const ogImage = image || company.ogImage;
+  // When a page supplies its own image, use it; otherwise let Next's
+  // file-convention opengraph-image.tsx provide the branded default.
+  const images = image ? [{ url: image, width: 1200, height: 630, alt: title }] : undefined;
 
   return {
     // Absolute: these titles already include the brand, so bypass the
@@ -59,14 +61,14 @@ export function buildMetadata({
       siteName: company.name,
       locale: 'en_AE',
       type,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+      ...(images ? { images } : {}),
       ...(type === 'article' ? { publishedTime, modifiedTime } : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [ogImage],
+      ...(image ? { images: [image] } : {}),
     },
   };
 }

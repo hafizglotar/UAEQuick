@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Container, Section, SectionHead } from '@/components/ui/Container';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { CtaBand } from '@/components/sections/CtaBand';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { itemListSchema, webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { posts } from '@/lib/data/blog';
 
@@ -50,6 +52,20 @@ export default function BlogPage() {
           </div>
         </Container>
       </Section>
+      <JsonLd
+        data={[
+          webPageSchema({
+            path: '/blog',
+            name: 'Dubai Home Maintenance Guides',
+            description: 'Practical guides on home maintenance costs, problems and seasonal care in Dubai.',
+            type: 'CollectionPage',
+          }),
+          itemListSchema(
+            'Dubai Home Maintenance Guides',
+            posts.map((p) => ({ name: p.title, path: `/blog/${p.slug}` }))
+          ),
+        ]}
+      />
       <CtaBand />
     </>
   );
