@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  /* Reserve space so the mobile sticky CTA bar never covers content */
+  @media (max-width: 1023px) {
+    body {
+      padding-bottom: 56px;
+    }
+  }
+  h1, h2, h3, h4 {
+    @apply text-balance;
+  }
+  a {
+    @apply outline-none;
+  }
+  :focus-visible {
+    @apply ring-2 ring-brand ring-offset-2;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .prose-local {
+    @apply leading-relaxed text-slate-700;
+  }
+  .prose-local p {
+    @apply mb-4;
+  }
+  .prose-local h2 {
+    @apply mb-3 mt-8 text-2xl font-bold text-brand;
+  }
+  .prose-local h3 {
+    @apply mb-2 mt-6 text-xl font-bold text-ink;
+  }
+  .prose-local ul {
+    @apply mb-4 list-disc space-y-1.5 pl-5;
+  }
+  .prose-local ol {
+    @apply mb-4 list-decimal space-y-1.5 pl-5;
+  }
+  .prose-local a {
+    @apply font-semibold text-brand underline decoration-accent/40 underline-offset-2 hover:text-accent;
+  }
+}

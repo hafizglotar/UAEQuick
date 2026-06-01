@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(perl -0777 -i -pe 's{<nav><ul>.*?</ul></nav>}{<nav><ul>\\\\n    <li><a href=\"services.html\">Services</a></li>\\\\n    <li><a href=\"ac-services.html\">AC</a></li>\\\\n    <li><a href=\"handyman-plumber.html\">Handyman</a></li>\\\\n    <li><a href=\"cleaning-services.html\">Cleaning</a></li>\\\\n    <li><a href=\"quick-quote.html\">Get Quote</a></li>\\\\n  </ul></nav>}s' ac-services.html cleaning-services.html electrician-services.html garden-maintenance.html handyman-plumber.html interior-design.html moving-relocating.html painting-partitions.html services.html swimming-pool-jacuzzi.html vehicle-recovery.html)",
+      "Bash(perl -0777 -i -pe 's{<nav>\\\\s*<ul>.*?</ul>\\\\s*</nav>}{<nav>\\\\n      <ul>\\\\n        <li><a href=\"services.html\">Services</a></li>\\\\n        <li><a href=\"ac-services.html\">AC</a></li>\\\\n        <li><a href=\"handyman-plumber.html\">Handyman</a></li>\\\\n        <li><a href=\"cleaning-services.html\">Cleaning</a></li>\\\\n        <li><a href=\"quick-quote.html\">Get Quote</a></li>\\\\n      </ul>\\\\n    </nav>}s' index.html)"
+    ]
+  }
+}

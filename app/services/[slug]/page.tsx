@@ -1,0 +1,191 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { Container, Section, SectionHead } from '@/components/ui/Container';
+import { Button } from '@/components/ui/Button';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+import { AeoBlock } from '@/components/sections/AeoBlock';
+import { Features } from '@/components/sections/Features';
+import { Pricing } from '@/components/sections/Pricing';
+import { Process } from '@/components/sections/Process';
+import { Faq } from '@/components/sections/Faq';
+import { AreasGrid } from '@/components/sections/AreasGrid';
+import { CtaBand } from '@/components/sections/CtaBand';
+import { QuoteForm } from '@/components/forms/QuoteForm';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { serviceSchema, faqSchema } from '@/lib/seo/schema';
+import { buildMetadata } from '@/lib/seo/metadata';
+import { services, getServiceBySlug, serviceSlugs } from '@/lib/data/services';
+import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
+import { serviceValues } from '@/lib/validation';
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return serviceSlugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
+  if (!service) return {};
+  return buildMetadata({
+    title: service.metaTitle,
+    description: service.metaDescription,
+    path: `/services/${service.slug}`,
+    keywords: service.keywords,
+    image: service.image,
+  });
+}
+
+/** Map a service to the matching form default option. */
+function formService(slug: string): (typeof serviceValues)[number] | undefined {
+  const map: Record<string, (typeof serviceValues)[number]> = {
+    'ac-repair': 'AC Repair / Maintenance',
+    'handyman-plumber': 'Handyman & Plumber',
+    electrician: 'Electrician',
+    cleaning: 'Cleaning',
+    'movers-packers': 'Movers & Packers',
+    painting: 'Painting & Partitions',
+    'interior-design': 'Interior Design',
+    'garden-maintenance': 'Garden Maintenance',
+    'pool-maintenance': 'Pool & Jacuzzi',
+    'vehicle-recovery': 'Vehicle Recovery',
+  };
+  return map[slug];
+}
+
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
+  if (!service) notFound();
+
+  const related = service.relatedServices
+    .map((s) => services.find((x) => x.slug === s))
+    .filter(Boolean) as typeof services;
+
+  return (
+    <>
+      <Breadcrumbs
+        items={[
+          { name: 'Services', path: '/services' },
+          { name: service.name, path: `/services/${service.slug}` },
+        ]}
+      />
+
+      {/* Hero with embedded quote form */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand to-brand-dark text-white">
+        <Container className="grid gap-10 py-12 md:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <div>
+            {service.emergency && (
+              <span className="mb-4 inline-block rounded-full bg-gold px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-dark">
+                Same-day · Emergency available
+              </span>
+            )}
+            <h1 className="text-balance text-3xl font-extrabold leading-tight md:text-4xl">
+              {service.hero.headline}
+            </h1>
+            <p className="mt-4 max-w-xl text-lg text-white/90">{service.hero.sub}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href={`tel:${PHONE_E164}`} variant="white" size="lg" external>
+                📞 Call {PHONE_DISPLAY}
+              </Button>
+              <Button href={company.whatsappUrl} variant="green" size="lg" external>
+                💬 WhatsApp
+              </Button>
+            </div>
+            <p className="mt-5 text-sm text-white/80">
+              Starting from <span className="font-bold text-gold">{service.startingPrice}</span> · Fixed
+              pricing · 30-day guarantee
+            </p>
+          </div>
+          <div>
+            <div className="mb-3 text-center text-sm font-semibold uppercase tracking-wide text-gold">
+              Get a free quote
+            </div>
+            <QuoteForm defaultService={formService(service.slug)} />
+          </div>
+        </Container>
+      </section>
+
+      {/* AEO content block */}
+      <Section>
+        <Container>
+          <AeoBlock service={service} />
+        </Container>
+      </Section>
+
+      {/* What we offer */}
+      <Section muted>
+        <Container>
+          <SectionHead title={`${service.name} Services We Offer in Dubai`} />
+          <Features items={service.features} />
+        </Container>
+      </Section>
+
+      {/* Pricing */}
+      <Section>
+        <Container>
+          <SectionHead title={`${service.name} Dubai — Transparent Pricing`} />
+          <Pricing
+            rows={service.pricing}
+            note="Prices are fixed and quoted before any work begins. No call-out fee."
+          />
+        </Container>
+      </Section>
+
+      {/* Process */}
+      <Section muted>
+        <Container>
+          <SectionHead title="How It Works" />
+          <Process steps={service.process} />
+        </Container>
+      </Section>
+
+      {/* FAQ */}
+      <Faq faqs={service.faqs} title={`${service.name} in Dubai — FAQs`} />
+
+      {/* Related services (internal linking) */}
+      {related.length > 0 && (
+        <Section muted>
+          <Container>
+            <SectionHead title="Related Services" />
+            <div className="grid gap-5 sm:grid-cols-3">
+              {related.map((r) => (
+                <Link
+                  key={r.slug}
+                  href={`/services/${r.slug}`}
+                  className="rounded-2xl border border-slate-100 bg-white p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-cardHover"
+                >
+                  <div className="text-2xl">{r.icon}</div>
+                  <h3 className="mt-2 font-bold text-brand">{r.name}</h3>
+                  <p className="mt-1 text-sm text-slate-600">{r.shortDescription}</p>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* Areas */}
+      <section className="bg-brand-dark py-14 text-white">
+        <Container>
+          <div className="mx-auto mb-8 max-w-2xl text-center">
+            <h2 className="text-3xl font-bold">{service.name} Across Dubai</h2>
+            <p className="mt-3 text-white/80">Same-day coverage in every Dubai community.</p>
+          </div>
+          <AreasGrid dark />
+        </Container>
+      </section>
+
+      <CtaBand title={`Need ${service.name} in Dubai Today?`} />
+
+      {/* Schema: Service + FAQ */}
+      <JsonLd data={[serviceSchema(service), faqSchema(service.faqs)]} />
+    </>
+  );
+}
