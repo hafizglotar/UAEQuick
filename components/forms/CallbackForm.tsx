@@ -35,12 +35,12 @@ export function CallbackForm({ compact }: { compact?: boolean }) {
         <input tabIndex={-1} autoComplete="off" {...register('company')} />
       </div>
       <div>
-        <Label htmlFor="cb_name" required>Name</Label>
+        <Label htmlFor="cb_name" required className="text-white">Name</Label>
         <input id="cb_name" className={inputClass(!!errors.name)} {...register('name')} />
         <ErrorText error={errors.name} />
       </div>
       <div>
-        <Label htmlFor="cb_phone" required>Phone</Label>
+        <Label htmlFor="cb_phone" required className="text-white">Phone</Label>
         <input id="cb_phone" type="tel" inputMode="tel" className={inputClass(!!errors.phone)} placeholder="05X XXX XXXX" {...register('phone')} />
         <ErrorText error={errors.phone} />
       </div>
