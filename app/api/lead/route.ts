@@ -7,7 +7,7 @@ export const runtime = 'nodejs';
  * Lead intake endpoint. Validates server-side with the same Zod schema as the
  * client, rejects honeypot/spam, then forwards to whichever delivery channel
  * is configured (generic webhook and/or Resend email). If none is configured
- * it logs the lead — the client also opens WhatsApp, so no lead is ever lost.
+ * it logs the lead - the client also opens WhatsApp, so no lead is ever lost.
  */
 export async function POST(req: Request) {
   let json: unknown;
@@ -37,7 +37,7 @@ export async function POST(req: Request) {
   try {
     await deliver(record);
   } catch (err) {
-    // Don't fail the user — the client also opens WhatsApp as a fallback.
+    // Don't fail the user - the client also opens WhatsApp as a fallback.
     console.error('[lead] delivery error:', err);
   }
 
@@ -70,7 +70,7 @@ async function deliver(record: Record<string, unknown>) {
       body: JSON.stringify({
         from: 'UAE Quick Leads <leads@uaequick.com>',
         to: [notify],
-        subject: `New ${String(record.kind)} lead — UAE Quick`,
+        subject: `New ${String(record.kind)} lead - UAE Quick`,
         html: `<h2>New lead</h2><p>${lines}</p>`,
       }),
     });

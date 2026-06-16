@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Container, Section, SectionHead } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
@@ -112,6 +113,20 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </Container>
       </section>
 
+      {/* Service image under the banner */}
+      <Container className="relative z-10 pt-8 md:pt-12">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border-4 border-white bg-slate-100 shadow-cardHover md:aspect-[21/9]">
+          <Image
+            src={service.image}
+            alt={`${service.name} in Dubai - UAE Quick`}
+            fill
+            priority
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            className="object-cover"
+          />
+        </div>
+      </Container>
+
       {/* AEO content block */}
       <Section>
         <Container>
@@ -130,7 +145,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       {/* Pricing */}
       <Section>
         <Container>
-          <SectionHead title={`${service.name} Dubai — Transparent Pricing`} />
+          <SectionHead title={`${service.name} Dubai - Transparent Pricing`} />
           <Pricing
             rows={service.pricing}
             note="Prices are fixed and quoted before any work begins. No call-out fee."
@@ -147,7 +162,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </Section>
 
       {/* FAQ */}
-      <Faq faqs={service.faqs} title={`${service.name} in Dubai — FAQs`} />
+      <Faq faqs={service.faqs} title={`${service.name} in Dubai - FAQs`} />
 
       {/* Related services (internal linking) */}
       {related.length > 0 && (

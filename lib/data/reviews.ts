@@ -23,7 +23,7 @@ export const reviews: Review[] = [
     service: 'Handyman & Plumber',
     rating: 5,
     date: '2026-04-28',
-    text: 'Booked one handyman hour and got through five jobs — TV mounted, leaking tap fixed, two shelves up and the bathroom re-sealed. Saved me calling separate people. Will use again.',
+    text: 'Booked one handyman hour and got through five jobs - TV mounted, leaking tap fixed, two shelves up and the bathroom re-sealed. Saved me calling separate people. Will use again.',
   },
   {
     author: 'Aisha R.',
@@ -47,7 +47,7 @@ export const reviews: Review[] = [
     service: 'Movers & Packers',
     rating: 5,
     date: '2026-03-18',
-    text: 'Villa move handled really well — packed everything, dismantled the beds and wardrobes and rebuilt them in the new place. Nothing damaged and they handled the building paperwork.',
+    text: 'Villa move handled really well - packed everything, dismantled the beds and wardrobes and rebuilt them in the new place. Nothing damaged and they handled the building paperwork.',
   },
   {
     author: 'Omar S.',

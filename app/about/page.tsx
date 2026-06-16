@@ -3,6 +3,8 @@ import { Container, Section, SectionHead } from '@/components/ui/Container';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { WhyChooseUs } from '@/components/sections/Features';
 import { CtaBand } from '@/components/sections/CtaBand';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { company } from '@/lib/data/site';
 
@@ -17,6 +19,15 @@ export default function AboutPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: 'About', path: '/about' }]} />
+      <JsonLd
+        data={webPageSchema({
+          path: '/about',
+          name: 'About UAE Quick',
+          description:
+            'UAE Quick is a Dubai-based home maintenance company serving 10,000+ homes and offices since 2018.',
+          type: 'AboutPage',
+        })}
+      />
       <Section>
         <Container>
           <div className="prose-local mx-auto max-w-3xl">
@@ -29,7 +40,7 @@ export default function AboutPage() {
             </p>
             <h2>What we believe</h2>
             <p>
-              Dubai homes face a specific set of challenges — relentless dust, summer heat that pushes AC
+              Dubai homes face a specific set of challenges - relentless dust, summer heat that pushes AC
               systems to their limit, humidity that breeds mould, and hard water that scales up plumbing.
               We built our service around those realities, with technicians who know the difference
               between a tower split system in Marina and a ducted villa system in Arabian Ranches, and who

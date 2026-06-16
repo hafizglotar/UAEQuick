@@ -6,21 +6,22 @@ import { AreasGrid } from '@/components/sections/AreasGrid';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { Faq } from '@/components/sections/Faq';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { faqSchema } from '@/lib/seo/schema';
+import { faqSchema, itemListSchema, webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
+import { services } from '@/lib/data/services';
 import type { FAQ } from '@/lib/data/types';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Home Maintenance Services in Dubai | All Services | UAE Quick',
   description:
-    'All UAE Quick home services in Dubai — AC repair, handyman, plumbing, electrical, cleaning, movers, painting, garden, pool and vehicle recovery. Same-day, fixed pricing.',
+    'All UAE Quick home services in Dubai - AC repair, handyman, plumbing, electrical, cleaning, movers, painting, garden, pool and vehicle recovery. Same-day, fixed pricing.',
   path: '/services',
   keywords: ['home maintenance Dubai', 'home services Dubai', 'maintenance company Dubai'],
 });
 
 const faqs: FAQ[] = [
   { q: 'What home services does UAE Quick offer in Dubai?', a: 'AC repair and maintenance, handyman and plumbing, electrical work, cleaning, movers and packers, painting and partitions, interior design, garden maintenance, pool and jacuzzi service, and 24/7 vehicle recovery.' },
-  { q: 'Can I book multiple services in one visit?', a: 'Yes. We can combine jobs across trades in a single booking, which often saves time and the call-out fee — for example a handyman fixing several small jobs while an AC clean is done.' },
+  { q: 'Can I book multiple services in one visit?', a: 'Yes. We can combine jobs across trades in a single booking, which often saves time and the call-out fee - for example a handyman fixing several small jobs while an AC clean is done.' },
   { q: 'Do you charge a call-out fee?', a: 'No. Every job is quoted with a fixed, written price before work begins, with no call-out fee.' },
 ];
 
@@ -49,8 +50,22 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      <Faq faqs={faqs} title="Services in Dubai — FAQs" />
-      <JsonLd data={faqSchema(faqs)} />
+      <Faq faqs={faqs} title="Services in Dubai - FAQs" />
+      <JsonLd
+        data={[
+          webPageSchema({
+            path: '/services',
+            name: 'Home Maintenance Services in Dubai',
+            description: 'All UAE Quick home services in Dubai - same-day, fixed pricing.',
+            type: 'CollectionPage',
+          }),
+          itemListSchema(
+            'Home Maintenance Services in Dubai',
+            services.map((s) => ({ name: s.title, path: `/services/${s.slug}` }))
+          ),
+          faqSchema(faqs),
+        ]}
+      />
       <CtaBand />
     </>
   );

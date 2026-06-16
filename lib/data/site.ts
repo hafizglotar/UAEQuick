@@ -1,5 +1,5 @@
 /**
- * Central site/business configuration — single source of truth for NAP
+ * Central site/business configuration - single source of truth for NAP
  * (Name, Address, Phone), used across metadata, schema, and UI.
  */
 
@@ -30,7 +30,7 @@ export const company = {
     postalCode: '00000',
   },
   geo: { latitude: 25.1339, longitude: 55.2256 },
-  hours: '8:00 AM – 10:00 PM, 7 days a week',
+  hours: '8:00 AM-10:00 PM, 7 days a week',
   openingHoursSpec: [
     {
       days: [
@@ -47,17 +47,18 @@ export const company = {
     },
   ],
   foundingYear: 2018,
-  priceRange: 'AED 80 – AED 5,000',
+  priceRange: 'AED 80-AED 5,000',
   rating: { value: 4.8, count: 412 },
   social: {
     facebook: 'https://www.facebook.com/uaequick',
     instagram: 'https://www.instagram.com/uaequick',
   },
-  logo: `${SITE_URL}/logo.png`,
-  ogImage: `${SITE_URL}/og-default.jpg`,
+  logo: `${SITE_URL}/logo.svg`,
+  // Default social image is generated dynamically by app/opengraph-image.tsx.
+  ogImage: `${SITE_URL}/opengraph-image`,
 } as const;
 
-/** Primary navigation — kept small and intent-led for SXO. */
+/** Primary navigation - kept small and intent-led for SXO. */
 export const mainNav = [
   { label: 'Services', href: '/services' },
   { label: 'AC Repair', href: '/services/ac-repair' },

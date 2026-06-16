@@ -24,7 +24,7 @@ export const serviceValues = [
   'Other',
 ] as const;
 
-/** Quick Quote — the primary lead form. */
+/** Quick Quote - the primary lead form. */
 export const quoteSchema = z.object({
   name: z.string().trim().min(2, 'Please enter your name'),
   phone: uaePhone,
@@ -34,7 +34,7 @@ export const quoteSchema = z.object({
   area: z.string().trim().min(2, 'Please choose your area'),
   preferredTime: z.string().trim().optional(),
   details: z.string().trim().max(1000, 'Please keep details under 1000 characters').optional(),
-  // Honeypot — must stay empty (spam protection)
+  // Honeypot - must stay empty (spam protection)
   company: z.string().max(0).optional(),
 });
 export type QuoteValues = z.infer<typeof quoteSchema>;
@@ -49,7 +49,7 @@ export const contactSchema = z.object({
 });
 export type ContactValues = z.infer<typeof contactSchema>;
 
-/** Callback request — minimal friction. */
+/** Callback request - minimal friction. */
 export const callbackSchema = z.object({
   name: z.string().trim().min(2, 'Please enter your name'),
   phone: uaePhone,

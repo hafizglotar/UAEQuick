@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Container, Section } from '@/components/ui/Container';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
@@ -61,24 +62,38 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <Container>
           <article className="mx-auto max-w-3xl">
             <header>
-              <div className="flex items-center gap-3 text-sm">
+              <div className="flex flex-wrap items-center gap-3 text-sm">
                 <span className="font-semibold uppercase tracking-wide text-accent">{post.category}</span>
                 <span className="text-slate-400">{post.readingMinutes} min read</span>
                 <span className="text-slate-400">
-                  Updated{' '}
-                  {new Date(post.dateModified).toLocaleDateString('en-GB', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
-                  })}
+                  By {post.author} · Updated{' '}
+                  <time dateTime={post.dateModified}>
+                    {new Date(post.dateModified).toLocaleDateString('en-GB', {
+                      day: 'numeric',
+                      month: 'long',
+                      year: 'numeric',
+                    })}
+                  </time>
                 </span>
               </div>
               <h1 className="mt-3 text-balance text-3xl font-extrabold leading-tight text-ink md:text-4xl">
                 {post.title}
               </h1>
+              {post.image && (
+                <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl bg-slate-100">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 768px"
+                    className="object-cover"
+                  />
+                </div>
+              )}
             </header>
 
-            {/* TL;DR — AEO answer target */}
+            {/* TL;DR - AEO answer target */}
             <div className="my-7 rounded-2xl border-l-4 border-accent bg-slate-50 p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-accent">Quick answer</p>
               <p className="mt-2 text-lg leading-relaxed text-ink">{post.tldr}</p>

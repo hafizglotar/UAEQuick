@@ -16,9 +16,9 @@ import { posts } from '@/lib/data/blog';
 import type { FAQ } from '@/lib/data/types';
 
 const homeFaqs: FAQ[] = [
-  { q: 'What home services does UAE Quick offer in Dubai?', a: 'AC repair and maintenance, handyman and plumbing, electrical work, cleaning, movers and packers, painting and partitions, interior design, garden maintenance, pool and jacuzzi service, and 24/7 vehicle recovery — across every community in Dubai.' },
+  { q: 'What home services does UAE Quick offer in Dubai?', a: 'AC repair and maintenance, handyman and plumbing, electrical work, cleaning, movers and packers, painting and partitions, interior design, garden maintenance, pool and jacuzzi service, and 24/7 vehicle recovery - across every community in Dubai.' },
   { q: 'Do you charge a call-out fee?', a: 'No. You get a fixed, written quote before any work begins, with no call-out fee. The price you are quoted is the price you pay.' },
-  { q: 'Which areas in Dubai do you cover?', a: 'All of Dubai — from apartment districts like Dubai Marina, JLT, Business Bay and Downtown to villa communities like Jumeirah, Arabian Ranches, Palm Jumeirah, Emirates Hills and Mirdif. Same-day service for bookings before 4 PM.' },
+  { q: 'Which areas in Dubai do you cover?', a: 'All of Dubai - from apartment districts like Dubai Marina, JLT, Business Bay and Downtown to villa communities like Jumeirah, Arabian Ranches, Palm Jumeirah, Emirates Hills and Mirdif. Same-day service for bookings before 4 PM.' },
   { q: 'Are your technicians licensed and insured?', a: 'Yes. Our technicians work to DEWA and building-management standards, arrive with their own tools and transport, and every job is backed by a 30-day workmanship guarantee.' },
   { q: 'How quickly can you come?', a: 'For most services, book before 4 PM and we reach you the same day. Vehicle recovery runs 24/7, and emergency AC and plumbing are prioritised in summer.' },
 ];
@@ -35,7 +35,7 @@ export default function HomePage() {
               Same-Day <span className="text-gold">Home Maintenance</span> Services in Dubai
             </h1>
             <p className="mt-5 max-w-xl text-lg text-white/90">
-              AC repair, plumbing, handyman, electrical, cleaning, painting and moving — across every
+              AC repair, plumbing, handyman, electrical, cleaning, painting and moving - across every
               community in Dubai. Trained technicians, fixed pricing quoted upfront, and a 30-day
               workmanship guarantee.
             </p>
@@ -65,7 +65,7 @@ export default function HomePage() {
           <SectionHead
             eyebrow="What we do"
             title="Home Services in Dubai, Under One Roof"
-            intro="One trusted team for the whole home — book any service below and we handle it the same day, with fixed pricing and a 30-day guarantee."
+            intro="One trusted team for the whole home - book any service below and we handle it the same day, with fixed pricing and a 30-day guarantee."
           />
           <ServicesGrid />
         </Container>
@@ -82,7 +82,7 @@ export default function HomePage() {
               <Link href="/services/ac-repair">emergency AC repair in Dubai Marina</Link>, a same-day{' '}
               <Link href="/services/handyman-plumber">plumber in JLT</Link>, a{' '}
               <Link href="/services/cleaning">deep clean before a villa move-out in Jumeirah</Link>, or a{' '}
-              <Link href="/services/electrician">licensed electrician in Business Bay</Link> — one call to{' '}
+              <Link href="/services/electrician">licensed electrician in Business Bay</Link> - one call to{' '}
               <a href={`tel:${PHONE_E164}`}>{PHONE_DISPLAY}</a> covers it.
             </p>
             <p>
@@ -91,7 +91,7 @@ export default function HomePage() {
               mixers and water heaters. That is why our most-booked jobs are{' '}
               <Link href="/services/ac-repair">AC servicing</Link>,{' '}
               <Link href="/services/handyman-plumber">leak and tap repairs</Link> and{' '}
-              <Link href="/services/cleaning">deep and move-out cleaning</Link> — and why we recommend
+              <Link href="/services/cleaning">deep and move-out cleaning</Link> - and why we recommend
               quarterly AC cleans rather than the once-a-year advice written for cooler climates.
             </p>
             <p>
@@ -160,7 +160,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Faq faqs={homeFaqs} title="Home Services in Dubai — FAQs" />
+      <Faq faqs={homeFaqs} title="Home Services in Dubai - FAQs" />
       <JsonLd data={faqSchema(homeFaqs)} />
 
       <CtaBand title="Book a Service in Dubai Today" />

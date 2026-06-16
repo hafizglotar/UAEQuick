@@ -6,7 +6,7 @@ import { callbackSchema, type CallbackValues } from '@/lib/validation';
 import { Label, ErrorText, inputClass } from './Field';
 import { useLead } from './useLead';
 
-/** Minimal-friction callback request — name + phone. */
+/** Minimal-friction callback request - name + phone. */
 export function CallbackForm({ compact }: { compact?: boolean }) {
   const {
     register,
@@ -24,7 +24,7 @@ export function CallbackForm({ compact }: { compact?: boolean }) {
   if (status === 'success') {
     return (
       <div className="rounded-xl bg-white/10 p-5 text-center text-white">
-        <p className="font-semibold">✅ Got it — we&apos;ll call you back shortly.</p>
+        <p className="font-semibold">✅ Got it - we&apos;ll call you back shortly.</p>
       </div>
     );
   }
@@ -35,12 +35,12 @@ export function CallbackForm({ compact }: { compact?: boolean }) {
         <input tabIndex={-1} autoComplete="off" {...register('company')} />
       </div>
       <div>
-        <Label htmlFor="cb_name" required>Name</Label>
+        <Label htmlFor="cb_name" required className="text-white">Name</Label>
         <input id="cb_name" className={inputClass(!!errors.name)} {...register('name')} />
         <ErrorText error={errors.name} />
       </div>
       <div>
-        <Label htmlFor="cb_phone" required>Phone</Label>
+        <Label htmlFor="cb_phone" required className="text-white">Phone</Label>
         <input id="cb_phone" type="tel" inputMode="tel" className={inputClass(!!errors.phone)} placeholder="05X XXX XXXX" {...register('phone')} />
         <ErrorText error={errors.phone} />
       </div>

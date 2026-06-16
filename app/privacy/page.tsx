@@ -25,7 +25,7 @@ export default function PrivacyPage() {
             </p>
             <h2>Information we collect</h2>
             <p>
-              When you submit a form we collect the details you provide — your name, phone number, email,
+              When you submit a form we collect the details you provide - your name, phone number, email,
               area and the description of the job. We use this solely to respond to your request and
               provide the service.
             </p>

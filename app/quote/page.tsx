@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
 
 const benefits = [
   { icon: '⚡', title: 'Reply in minutes', text: 'Your request reaches our team on WhatsApp instantly.' },
-  { icon: '💰', title: 'Fixed pricing', text: 'A written quote up front — no surprise charges.' },
+  { icon: '💰', title: 'Fixed pricing', text: 'A written quote up front - no surprise charges.' },
   { icon: '📍', title: 'All over Dubai', text: 'Same-day coverage in 35+ communities.' },
   { icon: '🛡️', title: '30-day guarantee', text: 'Licensed, insured and workmanship guaranteed.' },
 ];
@@ -30,11 +30,11 @@ export default function QuotePage() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
             <div>
               <h1 className="text-balance text-3xl font-extrabold leading-tight text-brand md:text-4xl">
-                Get a Free Quote — Same-Day Service Across Dubai
+                Get a Free Quote - Same-Day Service Across Dubai
               </h1>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
                 Tell us what you need and where you are. Fill the form and your request goes straight to
-                our team on WhatsApp — we reply within minutes with a fixed price. No call-out fee, no
+                our team on WhatsApp - we reply within minutes with a fixed price. No call-out fee, no
                 obligation.
               </p>
               <ul className="mt-8 space-y-5">
@@ -55,7 +55,7 @@ export default function QuotePage() {
                   <a href={`tel:${PHONE_E164}`} className="font-semibold text-brand hover:text-accent">
                     {PHONE_DISPLAY}
                   </a>{' '}
-                  — 8 AM to 10 PM, 7 days a week.
+ - 8 AM to 10 PM, 7 days a week.
                 </p>
               </div>
             </div>

@@ -22,7 +22,7 @@ const whyItems = [
   { icon: '⚡', title: 'Same-Day Across Dubai', text: 'Book before 4 PM and a technician reaches most areas the same day.' },
   { icon: '💰', title: 'Fixed, Upfront Pricing', text: 'A written quote before any work begins. No call-out fee, no surprises.' },
   { icon: '🛡️', title: '30-Day Guarantee', text: 'If a repair fails again within 30 days, we come back and fix it free.' },
-  { icon: '🧰', title: 'Own Tools & Transport', text: 'Every technician arrives fully equipped — no supply runs, no delays.' },
+  { icon: '🧰', title: 'Own Tools & Transport', text: 'Every technician arrives fully equipped - no supply runs, no delays.' },
   { icon: '📋', title: 'Licensed & Insured', text: 'Work done to DEWA and building-management standards across Dubai.' },
   { icon: '⭐', title: 'Rated 4.8/5', text: 'Trusted by 10,000+ Dubai homes and offices, 412+ reviews.' },
 ];

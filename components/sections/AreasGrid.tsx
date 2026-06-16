@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { areas } from '@/lib/data/areas';
 
-/** Linked area pills — internal-linking hub for local SEO. */
+/** Linked area pills - internal-linking hub for local SEO. */
 export function AreasGrid({ dark }: { dark?: boolean }) {
   return (
     <div className="flex flex-wrap justify-center gap-3">

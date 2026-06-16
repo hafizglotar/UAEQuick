@@ -118,7 +118,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         </Container>
       </Section>
 
-      <Faq faqs={area.faqs} title={`Home Services in ${shortName} — FAQs`} />
+      <Faq faqs={area.faqs} title={`Home Services in ${shortName} - FAQs`} />
 
       {nearby.length > 0 && (
         <Section muted>

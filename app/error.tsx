@@ -9,7 +9,7 @@ export default function Error({ reset }: { error: Error & { digest?: string }; r
       <div className="text-5xl">⚠️</div>
       <h1 className="mt-4 text-2xl font-bold text-brand">Something went wrong</h1>
       <p className="mt-2 text-slate-600">
-        Sorry about that. Please try again — or reach us directly and we&apos;ll sort it out fast.
+        Sorry about that. Please try again - or reach us directly and we&apos;ll sort it out fast.
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <button

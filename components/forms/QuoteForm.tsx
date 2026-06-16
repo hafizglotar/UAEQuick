@@ -37,7 +37,7 @@ export function QuoteForm({ defaultService }: { defaultService?: (typeof service
         <div className="text-4xl">✅</div>
         <h3 className="mt-3 text-xl font-bold text-brand">Request sent!</h3>
         <p className="mt-2 text-slate-600">
-          We&apos;ve opened WhatsApp with your details — just press send there and we&apos;ll reply with a fixed price in minutes.
+          We&apos;ve opened WhatsApp with your details - just press send there and we&apos;ll reply with a fixed price in minutes.
         </p>
       </div>
     );
@@ -99,7 +99,7 @@ export function QuoteForm({ defaultService }: { defaultService?: (typeof service
 
       <div className="mt-4">
         <Label htmlFor="details">Job details</Label>
-        <textarea id="details" rows={4} className={inputClass(!!errors.details)} placeholder="Describe the job — e.g. AC not cooling in 2 bedrooms, or a leaking kitchen tap." {...register('details')} />
+        <textarea id="details" rows={4} className={inputClass(!!errors.details)} placeholder="Describe the job - e.g. AC not cooling in 2 bedrooms, or a leaking kitchen tap." {...register('details')} />
         <ErrorText error={errors.details} />
       </div>
 
@@ -112,7 +112,7 @@ export function QuoteForm({ defaultService }: { defaultService?: (typeof service
       </button>
       {status === 'error' && (
         <p className="mt-3 text-center text-sm text-slate-500">
-          We&apos;ve opened WhatsApp so you can reach us directly — just press send.
+          We&apos;ve opened WhatsApp so you can reach us directly - just press send.
         </p>
       )}
       <p className="mt-3 text-center text-xs text-slate-500">

@@ -65,7 +65,7 @@ export function Footer() {
               <li>
                 ✉ <a href={`mailto:${company.email}`} className="hover:text-accent">{company.email}</a>
               </li>
-              <li>🕐 8 AM – 10 PM, 7 days</li>
+              <li>🕐 8 AM-10 PM, 7 days</li>
             </ul>
             <h3 className="mb-3 mt-6 font-semibold text-white">Popular Areas</h3>
             <ul className="flex flex-wrap gap-x-3 gap-y-1 text-sm">

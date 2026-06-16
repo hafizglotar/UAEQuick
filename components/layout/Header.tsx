@@ -40,7 +40,7 @@ export function Header() {
       {/* Topbar */}
       <div className="bg-brand-dark text-white">
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-2 px-5 py-2 text-[13px]">
-          <span className="font-semibold">Open 7 Days — 8 AM to 10 PM</span>
+          <span className="font-semibold">Open 7 Days - 8 AM to 10 PM</span>
           <div className="flex flex-wrap items-center gap-4">
             <a href={`tel:${PHONE_E164}`} className="hover:text-gold">
               📞 {PHONE_DISPLAY}
@@ -85,7 +85,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            {/* Quick quote — opens a compact lead form on every page */}
+            {/* Quick quote - opens a compact lead form on every page */}
             <div className="relative hidden sm:block" ref={quoteRef}>
               <button
                 type="button"
