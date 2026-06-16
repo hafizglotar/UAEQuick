@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               )}
             </header>
 
-            {/* TL;DR — AEO answer target */}
+            {/* TL;DR - AEO answer target */}
             <div className="my-7 rounded-2xl border-l-4 border-accent bg-slate-50 p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-accent">Quick answer</p>
               <p className="mt-2 text-lg leading-relaxed text-ink">{post.tldr}</p>

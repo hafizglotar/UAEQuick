@@ -38,7 +38,7 @@ export async function generateMetadata({
   return buildMetadata({
     title: `Dubai Home Maintenance Blog | Costs, Tips & Guides${suffix} | UAE Quick`,
     description:
-      'Practical guides for Dubai homes — AC repair costs, handyman prices, plumbing problems, deep cleaning checklists and seasonal maintenance advice from local experts.',
+      'Practical guides for Dubai homes - AC repair costs, handyman prices, plumbing problems, deep cleaning checklists and seasonal maintenance advice from local experts.',
     path: pageHref(page),
     keywords: ['Dubai home maintenance blog', 'AC repair cost Dubai', 'handyman cost Dubai'],
   });
@@ -62,7 +62,7 @@ export default async function BlogPage({
             as="h1"
             eyebrow="Guides"
             title="Dubai Home Maintenance Guides"
-            intro="Straight-talking advice on costs, common problems and seasonal care — written from real experience maintaining Dubai homes."
+            intro="Straight-talking advice on costs, common problems and seasonal care - written from real experience maintaining Dubai homes."
           />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {pagePosts.map((p) => (

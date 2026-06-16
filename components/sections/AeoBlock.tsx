@@ -8,7 +8,7 @@ import type { Service } from '@/lib/data/types';
 export function AeoBlock({ service }: { service: Service }) {
   return (
     <div className="mx-auto max-w-3xl space-y-10">
-      {/* Quick answer — the snippet/AI-overview target */}
+      {/* Quick answer - the snippet/AI-overview target */}
       <div className="rounded-2xl border-l-4 border-accent bg-slate-50 p-6">
         <p className="text-[15px] font-semibold uppercase tracking-wide text-accent">In short</p>
         <p className="mt-2 text-lg leading-relaxed text-ink">{service.quickAnswer}</p>

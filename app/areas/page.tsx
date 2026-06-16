@@ -11,7 +11,7 @@ import { areas } from '@/lib/data/areas';
 export const metadata: Metadata = buildMetadata({
   title: 'Areas We Serve in Dubai | Local Home Services | UAE Quick',
   description:
-    'UAE Quick covers every Dubai community — Dubai Marina, Business Bay, JLT, JVC, Jumeirah, Downtown, Palm Jumeirah, Arabian Ranches and more. Same-day local home services.',
+    'UAE Quick covers every Dubai community - Dubai Marina, Business Bay, JLT, JVC, Jumeirah, Downtown, Palm Jumeirah, Arabian Ranches and more. Same-day local home services.',
   path: '/areas',
   keywords: ['home services Dubai areas', 'maintenance Dubai Marina', 'handyman near me Dubai'],
 });
@@ -26,7 +26,7 @@ export default function AreasPage() {
             as="h1"
             eyebrow="Local coverage"
             title="Home Services Across Every Area in Dubai"
-            intro="We know how each Dubai community and building works — from tower service-lift rules to gated villa access. Choose your area for local service details and response times."
+            intro="We know how each Dubai community and building works - from tower service-lift rules to gated villa access. Choose your area for local service details and response times."
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {areas.map((a) => (

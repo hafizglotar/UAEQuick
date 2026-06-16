@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 import { company, PHONE_DISPLAY } from '@/lib/data/site';
 
-export const alt = 'UAE Quick — Same-Day Home Maintenance Services in Dubai';
+export const alt = 'UAE Quick - Same-Day Home Maintenance Services in Dubai';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 

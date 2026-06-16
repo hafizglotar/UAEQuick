@@ -13,7 +13,7 @@ export function whatsappLink(message?: string): string {
 
 /** Compose a structured WhatsApp message from a lead. */
 export function leadToWhatsApp(fields: Record<string, string | undefined>): string {
-  const lines = ['*New Request — UAE Quick*', ''];
+  const lines = ['*New Request - UAE Quick*', ''];
   for (const [label, value] of Object.entries(fields)) {
     if (value) lines.push(`${label}: ${value}`);
   }

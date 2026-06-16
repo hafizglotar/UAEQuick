@@ -6,7 +6,7 @@ import { callbackSchema, type CallbackValues } from '@/lib/validation';
 import { Label, ErrorText, inputClass } from './Field';
 import { useLead } from './useLead';
 
-/** Minimal-friction callback request — name + phone. */
+/** Minimal-friction callback request - name + phone. */
 export function CallbackForm({ compact }: { compact?: boolean }) {
   const {
     register,
@@ -24,7 +24,7 @@ export function CallbackForm({ compact }: { compact?: boolean }) {
   if (status === 'success') {
     return (
       <div className="rounded-xl bg-white/10 p-5 text-center text-white">
-        <p className="font-semibold">✅ Got it — we&apos;ll call you back shortly.</p>
+        <p className="font-semibold">✅ Got it - we&apos;ll call you back shortly.</p>
       </div>
     );
   }

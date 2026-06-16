@@ -1,4 +1,4 @@
-# UAE Quick — Dubai Home Maintenance (Next.js)
+# UAE Quick - Dubai Home Maintenance (Next.js)
 
 Production Next.js (App Router, TypeScript, Tailwind) site for UAE Quick, built to rank in
 Dubai local search and convert visitors into leads. Optimized for **SEO, GEO (AI engines),
@@ -33,7 +33,7 @@ WhatsApp with the details pre-filled (the primary lead channel in Dubai), and th
 
 ```
 app/
-  layout.tsx            Root layout — fonts, header/footer, site-wide schema
+  layout.tsx            Root layout - fonts, header/footer, site-wide schema
   page.tsx              Home
   services/             Services hub + [slug] (10 services, SSG)
   areas/                Areas hub + [slug] (14 Dubai areas, SSG)
@@ -52,12 +52,12 @@ lib/
   data/     site, services, areas, blog, reviews, types  ← edit content here
   seo/      schema.ts (all JSON-LD), metadata.ts (canonical/OG/Twitter builder)
   validation.ts (Zod), utils.ts
-legacy/     Previous static HTML site (reference only — not built)
+legacy/     Previous static HTML site (reference only - not built)
 ```
 
 ## Editing content
 
-All content is data-driven — **no need to touch JSX to add or edit pages**:
+All content is data-driven - **no need to touch JSX to add or edit pages**:
 
 - **Services** → `lib/data/services.ts`. Add an object to the array → a new
   `/services/<slug>` page, sitemap entry, schema and footer link appear automatically.
@@ -69,10 +69,10 @@ All content is data-driven — **no need to touch JSX to add or edit pages**:
 
 ## SEO / GEO / AEO coverage
 
-- **Per-page metadata** via `buildMetadata()` — canonical, Open Graph, Twitter cards, robots.
+- **Per-page metadata** via `buildMetadata()` - canonical, Open Graph, Twitter cards, robots.
 - **Structured data** (JSON-LD): Organization, WebSite (+SearchAction), LocalBusiness
   (HomeAndConstructionBusiness, with AggregateRating + Reviews), Service + OfferCatalog,
-  BreadcrumbList, FAQPage, and Article on blog posts — all entity-linked via stable `@id`s.
+  BreadcrumbList, FAQPage, and Article on blog posts - all entity-linked via stable `@id`s.
 - **AEO blocks** on every service page: What / Why / Common problems / Local Dubai
   considerations / Cost, plus a "quick answer" summary written for featured snippets and AI
   overviews. FAQ answers are always in the DOM (accordion only hides visually).
@@ -90,11 +90,11 @@ All content is data-driven — **no need to touch JSX to add or edit pages**:
 
 ## Assets to add before launch
 
-Drop these into `public/` (referenced by schema/OG — currently placeholders):
+Drop these into `public/` (referenced by schema/OG - currently placeholders):
 
-- `logo.png` — company logo (used in Organization/LocalBusiness schema)
-- `og-default.jpg` — 1200×630 social share image
-- `favicon.ico` / `app/icon.png` — site icon
+- `logo.png` - company logo (used in Organization/LocalBusiness schema)
+- `og-default.jpg` - 1200×630 social share image
+- `favicon.ico` / `app/icon.png` - site icon
 
 ## Deploy
 

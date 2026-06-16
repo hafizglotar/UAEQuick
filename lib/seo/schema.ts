@@ -10,7 +10,7 @@ export const WEBSITE_ID = `${SITE_URL}/#website`;
 
 type Json = Record<string, unknown>;
 
-/** Topics the business is an authority on — strengthens entity understanding
+/** Topics the business is an authority on - strengthens entity understanding
  *  for AI/generative engines (GEO/AIO). */
 const KNOWS_ABOUT = [
   'Home maintenance',
@@ -259,7 +259,7 @@ export function articleSchema(post: BlogPost): Json {
   };
 }
 
-/** Generic WebPage node tied to the site graph — used by content pages that
+/** Generic WebPage node tied to the site graph - used by content pages that
  *  aren't a Service/Article so every page is a recognised entity. */
 export function webPageSchema(opts: {
   path: string;

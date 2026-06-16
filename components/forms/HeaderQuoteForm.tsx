@@ -8,7 +8,7 @@ import { Label, ErrorText, inputClass } from './Field';
 import { useLead } from './useLead';
 
 /**
- * Compact quote form for the header dropdown — name, phone, service, area.
+ * Compact quote form for the header dropdown - name, phone, service, area.
  * Rendered on every page via the global Header so visitors can request a
  * fixed price without leaving the page they're on.
  */
@@ -39,7 +39,7 @@ export function HeaderQuoteForm({ onSuccess }: { onSuccess?: () => void }) {
         <div className="text-3xl">✅</div>
         <h3 className="mt-2 text-base font-bold text-brand">Request sent!</h3>
         <p className="mt-1 text-sm text-slate-600">
-          We&apos;ve opened WhatsApp with your details — just press send and we&apos;ll reply in minutes.
+          We&apos;ve opened WhatsApp with your details - just press send and we&apos;ll reply in minutes.
         </p>
         {onSuccess && (
           <button

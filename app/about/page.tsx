@@ -40,7 +40,7 @@ export default function AboutPage() {
             </p>
             <h2>What we believe</h2>
             <p>
-              Dubai homes face a specific set of challenges — relentless dust, summer heat that pushes AC
+              Dubai homes face a specific set of challenges - relentless dust, summer heat that pushes AC
               systems to their limit, humidity that breeds mould, and hard water that scales up plumbing.
               We built our service around those realities, with technicians who know the difference
               between a tower split system in Marina and a ducted villa system in Arabian Ranches, and who

@@ -3,7 +3,7 @@ import { company } from '@/lib/data/site';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${company.name} — Home Maintenance Services in Dubai`,
+    name: `${company.name} - Home Maintenance Services in Dubai`,
     short_name: company.name,
     description: company.description,
     start_url: '/',

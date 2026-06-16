@@ -2,7 +2,7 @@
   "name": "uaequick",
   "version": "1.0.0",
   "private": true,
-  "description": "UAE Quick — Dubai home maintenance services. Production Next.js site optimized for SEO/GEO/AEO/SXO and lead conversion.",
+  "description": "UAE Quick - Dubai home maintenance services. Production Next.js site optimized for SEO/GEO/AEO/SXO and lead conversion.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

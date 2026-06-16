@@ -24,7 +24,7 @@ export function ContactForm() {
     return (
       <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-card">
         <div className="text-4xl">✅</div>
-        <h3 className="mt-3 text-xl font-bold text-brand">Thanks — message sent!</h3>
+        <h3 className="mt-3 text-xl font-bold text-brand">Thanks - message sent!</h3>
         <p className="mt-2 text-slate-600">We&apos;ll get back to you shortly. We&apos;ve also opened WhatsApp so you can reach us instantly.</p>
       </div>
     );

@@ -15,7 +15,7 @@ interface MetaInput {
 }
 
 /**
- * Central metadata builder — guarantees canonical, Open Graph and Twitter
+ * Central metadata builder - guarantees canonical, Open Graph and Twitter
  * tags on every page. Used by every route's generateMetadata / metadata export.
  */
 export function buildMetadata({
