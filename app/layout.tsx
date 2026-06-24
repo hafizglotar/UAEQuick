@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { StickyCTAs } from '@/components/layout/StickyCTAs';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { organizationSchema, websiteSchema, localBusinessSchema } from '@/lib/seo/schema';
 import { SITE_URL, company } from '@/lib/data/site';
 
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <StickyCTAs />
+        <GoogleAnalytics />
       </body>
     </html>
   );
