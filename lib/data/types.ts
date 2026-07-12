@@ -22,6 +22,8 @@ export interface Feature {
 
 export interface Service {
   slug: string;
+  /** When true, the service is hidden from every listing and its page 404s. */
+  hidden?: boolean;
   /** Short label for navigation and cards */
   name: string;
   /** Page H1 */

@@ -1,13 +1,13 @@
 import type { Service } from './types';
 
-export const services: Service[] = [
+const allServices: Service[] = [
   {
     slug: 'ac-repair',
     name: 'AC Repair',
     title: 'AC Repair & Maintenance in Dubai',
     category: 'Repair',
     icon: '❄️',
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/ac-maintenance.jpg',
+    image: '/services/ac-maintenance.avif',
     shortDescription:
       'Same-day AC repair, cleaning, gas refill and installation across Dubai. Fixed pricing from AED 150.',
     metaTitle: 'AC Repair Dubai | Same-Day AC Service & Gas Refill | UAE Quick',
@@ -83,7 +83,7 @@ export const services: Service[] = [
     title: 'Handyman & Plumber in Dubai',
     category: 'Repair',
     icon: '🔧',
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/services-imgs.jpg',
+    image: '/services/services-imgs.avif',
     shortDescription:
       'Furniture fixing, leak repair, door locks, tap & sink, gypsum work. Same-day, from AED 80.',
     metaTitle: 'Handyman Dubai & Plumber | Same-Day Home Repairs | UAE Quick',
@@ -159,7 +159,7 @@ export const services: Service[] = [
     title: 'Licensed Electrician Services in Dubai',
     category: 'Repair',
     icon: '⚡',
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/uaequick-electrician-2.jpg',
+    image: '/services/uaequick-electrician-2.avif',
     shortDescription:
       'DEWA-aware electricians for wiring, lights, sockets, breakers and rewiring. From AED 100.',
     metaTitle: 'Electrician Dubai | Licensed Same-Day Electrical Repairs | UAE Quick',
@@ -234,7 +234,7 @@ export const services: Service[] = [
     title: 'Cleaning Services in Dubai',
     category: 'Cleaning',
     icon: '🧽',
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/uaequick-villa-cleaning.jpg',
+    image: '/services/uaequick-villa-cleaning.avif',
     shortDescription:
       'Deep cleaning, villa cleaning, move-in/out and upholstery. Supplies included, from AED 35/hr.',
     metaTitle: 'Cleaning Services Dubai | Deep, Villa & Move-Out Cleaning | UAE Quick',
@@ -309,7 +309,7 @@ export const services: Service[] = [
     title: 'Movers and Packers in Dubai',
     category: 'Logistics',
     icon: '📦',
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/moving.jpg',
+    image: '/services/moving.avif',
     shortDescription:
       'Apartment, villa and office moves with packing, dismantling and reassembly. From AED 450.',
     metaTitle: 'Movers and Packers Dubai | Apartment, Villa & Office | UAE Quick',
@@ -383,7 +383,7 @@ export const services: Service[] = [
     title: 'Painting Services & Partitions in Dubai',
     category: 'Improvement',
     icon: '🎨',
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/uaequick-painting-1.jpg',
+    image: '/services/uaequick-painting-1.avif',
     shortDescription:
       'Villa, apartment and office painting, plus gypsum partitions and false ceilings. From AED 350.',
     metaTitle: 'Painting Services Dubai | Villa & Apartment Painters | UAE Quick',
@@ -457,7 +457,7 @@ export const services: Service[] = [
     title: 'Interior Design in Dubai',
     category: 'Improvement',
     icon: '🛋️',
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/uaequick-interior-restaurant.jpg',
+    image: '/services/uaequick-interior-restaurant.avif',
     shortDescription:
       'Home, office and restaurant interior design with fit-out, joinery and approvals handled.',
     metaTitle: 'Interior Design Dubai | Home, Office & Restaurant Fit-Out | UAE Quick',
@@ -531,7 +531,7 @@ export const services: Service[] = [
     title: 'Garden Maintenance in Dubai',
     category: 'Maintenance',
     icon: '🌿',
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/garden-maintenance.jpg',
+    image: '/services/garden-maintenance.avif',
     shortDescription:
       'Landscaping, lawn care, irrigation and palm trimming for Dubai villas. From AED 200.',
     metaTitle: 'Garden Maintenance Dubai | Landscaping & Lawn Care | UAE Quick',
@@ -604,7 +604,7 @@ export const services: Service[] = [
     title: 'Swimming Pool Maintenance in Dubai',
     category: 'Maintenance',
     icon: '🏊',
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/swimming-pool.jpg',
+    image: '/services/swimming-pool.avif',
     shortDescription:
       'Pool cleaning, chemical balancing, pump repair and jacuzzi service for Dubai villas. From AED 250.',
     metaTitle: 'Swimming Pool Maintenance Dubai | Cleaning & Repair | UAE Quick',
@@ -674,11 +674,12 @@ export const services: Service[] = [
 
   {
     slug: 'vehicle-recovery',
+    hidden: true,
     name: 'Vehicle Recovery',
     title: '24/7 Vehicle Recovery in Dubai',
     category: 'Logistics',
     icon: '🚗',
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/uaequick-vehicle-recovery.jpg',
+    image: '/services/uaequick-vehicle-recovery.avif',
     shortDescription:
       '24/7 towing, jump start, flat tyre and fuel delivery across Dubai. From AED 100.',
     metaTitle: 'Vehicle Recovery Dubai 24/7 | Towing & Roadside Help | UAE Quick',
@@ -746,6 +747,13 @@ export const services: Service[] = [
     relatedServices: ['handyman-plumber', 'ac-repair', 'electrician'],
   },
 ];
+
+/**
+ * Publicly visible services. Anything flagged `hidden` is excluded here, which
+ * removes it from every listing (grid, footer, sitemap, related links) and from
+ * `serviceSlugs`, so its /services/[slug] page 404s (dynamicParams is false).
+ */
+export const services: Service[] = allServices.filter((s) => !s.hidden);
 
 export const getServiceBySlug = (slug: string): Service | undefined =>
   services.find((s) => s.slug === slug);

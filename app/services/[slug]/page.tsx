@@ -55,7 +55,6 @@ function formService(slug: string): (typeof serviceValues)[number] | undefined {
     'interior-design': 'Interior Design',
     'garden-maintenance': 'Garden Maintenance',
     'pool-maintenance': 'Pool & Jacuzzi',
-    'vehicle-recovery': 'Vehicle Recovery',
   };
   return map[slug];
 }

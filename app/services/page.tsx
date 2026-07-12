@@ -14,13 +14,13 @@ import type { FAQ } from '@/lib/data/types';
 export const metadata: Metadata = buildMetadata({
   title: 'Home Maintenance Services in Dubai | All Services | UAE Quick',
   description:
-    'All UAE Quick home services in Dubai - AC repair, handyman, plumbing, electrical, cleaning, movers, painting, garden, pool and vehicle recovery. Same-day, fixed pricing.',
+    'All UAE Quick home services in Dubai - AC repair, handyman, plumbing, electrical, cleaning, movers, painting, garden and pool. Same-day, fixed pricing.',
   path: '/services',
   keywords: ['home maintenance Dubai', 'home services Dubai', 'maintenance company Dubai'],
 });
 
 const faqs: FAQ[] = [
-  { q: 'What home services does UAE Quick offer in Dubai?', a: 'AC repair and maintenance, handyman and plumbing, electrical work, cleaning, movers and packers, painting and partitions, interior design, garden maintenance, pool and jacuzzi service, and 24/7 vehicle recovery.' },
+  { q: 'What home services does UAE Quick offer in Dubai?', a: 'AC repair and maintenance, handyman and plumbing, electrical work, cleaning, movers and packers, painting and partitions, interior design, garden maintenance, and pool and jacuzzi service.' },
   { q: 'Can I book multiple services in one visit?', a: 'Yes. We can combine jobs across trades in a single booking, which often saves time and the call-out fee - for example a handyman fixing several small jobs while an AC clean is done.' },
   { q: 'Do you charge a call-out fee?', a: 'No. Every job is quoted with a fixed, written price before work begins, with no call-out fee.' },
 ];

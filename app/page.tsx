@@ -16,11 +16,11 @@ import { posts } from '@/lib/data/blog';
 import type { FAQ } from '@/lib/data/types';
 
 const homeFaqs: FAQ[] = [
-  { q: 'What home services does UAE Quick offer in Dubai?', a: 'AC repair and maintenance, handyman and plumbing, electrical work, cleaning, movers and packers, painting and partitions, interior design, garden maintenance, pool and jacuzzi service, and 24/7 vehicle recovery - across every community in Dubai.' },
+  { q: 'What home services does UAE Quick offer in Dubai?', a: 'AC repair and maintenance, handyman and plumbing, electrical work, cleaning, movers and packers, painting and partitions, interior design, garden maintenance, and pool and jacuzzi service - across every community in Dubai.' },
   { q: 'Do you charge a call-out fee?', a: 'No. You get a fixed, written quote before any work begins, with no call-out fee. The price you are quoted is the price you pay.' },
   { q: 'Which areas in Dubai do you cover?', a: 'All of Dubai - from apartment districts like Dubai Marina, JLT, Business Bay and Downtown to villa communities like Jumeirah, Arabian Ranches, Palm Jumeirah, Emirates Hills and Mirdif. Same-day service for bookings before 4 PM.' },
   { q: 'Are your technicians licensed and insured?', a: 'Yes. Our technicians work to DEWA and building-management standards, arrive with their own tools and transport, and every job is backed by a 30-day workmanship guarantee.' },
-  { q: 'How quickly can you come?', a: 'For most services, book before 4 PM and we reach you the same day. Vehicle recovery runs 24/7, and emergency AC and plumbing are prioritised in summer.' },
+  { q: 'How quickly can you come?', a: 'For most services, book before 4 PM and we reach you the same day. Emergency AC and plumbing are prioritised in summer.' },
 ];
 
 export default function HomePage() {

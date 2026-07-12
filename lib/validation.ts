@@ -20,7 +20,6 @@ export const serviceValues = [
   'Interior Design',
   'Garden Maintenance',
   'Pool & Jacuzzi',
-  'Vehicle Recovery',
   'Other',
 ] as const;
 

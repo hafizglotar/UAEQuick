@@ -24,7 +24,6 @@ const KNOWS_ABOUT = [
   'Interior design',
   'Garden maintenance',
   'Swimming pool maintenance',
-  'Vehicle recovery',
 ];
 
 const LANGUAGES = ['English', 'Arabic', 'Hindi', 'Urdu'];

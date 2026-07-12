@@ -36,7 +36,6 @@ const nextConfig = {
       { source: '/interior-design', destination: '/services/interior-design', permanent: true },
       { source: '/garden-maintenance', destination: '/services/garden-maintenance', permanent: true },
       { source: '/swimming-pool-jacuzzi', destination: '/services/pool-maintenance', permanent: true },
-      { source: '/vehicle-recovery', destination: '/services/vehicle-recovery', permanent: true },
       { source: '/quick-quote', destination: '/quote', permanent: true },
     ];
   },
