@@ -7,8 +7,8 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://uaequick.com'
 ).replace(/\/$/, '');
 
-export const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE || '+971589331711';
-export const PHONE_DISPLAY = '058 933 1711';
+export const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE || '+971507046234';
+export const PHONE_DISPLAY = '050 704 6234';
 export const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP || '971589331711';
 
 export const company = {

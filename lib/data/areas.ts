@@ -7,7 +7,7 @@ export const areas: Area[] = [
     type: 'Apartment district',
     metaTitle: 'Home Services Dubai Marina | AC, Handyman, Cleaning | UAE Quick',
     metaDescription:
-      'Same-day AC repair, handyman, plumbing and cleaning in Dubai Marina. High-rise specialists who handle building access and service-lift rules. Call 058 933 1711.',
+      'Same-day AC repair, handyman, plumbing and cleaning in Dubai Marina. High-rise specialists who handle building access and service-lift rules. Call 050 704 6234.',
     shortDescription:
       'Same-day home services for Dubai Marina towers and apartments.',
     intro:
@@ -32,7 +32,7 @@ export const areas: Area[] = [
     type: 'Mixed',
     metaTitle: 'Home Services Business Bay | AC, Handyman, Office Fit-Out | UAE Quick',
     metaDescription:
-      'AC repair, handyman, plumbing, cleaning and office fit-out in Business Bay. Same-day for apartments and offices, building rules handled. Call 058 933 1711.',
+      'AC repair, handyman, plumbing, cleaning and office fit-out in Business Bay. Same-day for apartments and offices, building rules handled. Call 050 704 6234.',
     shortDescription:
       'Same-day services for Business Bay apartments and offices.',
     intro:
@@ -57,7 +57,7 @@ export const areas: Area[] = [
     type: 'Apartment district',
     metaTitle: 'Home Services JLT | AC, Handyman, Cleaning Jumeirah Lakes | UAE Quick',
     metaDescription:
-      'Same-day AC repair, handyman, plumbing and cleaning in JLT (Jumeirah Lakes Towers). Cluster specialists, building access handled. Call 058 933 1711.',
+      'Same-day AC repair, handyman, plumbing and cleaning in JLT (Jumeirah Lakes Towers). Cluster specialists, building access handled. Call 050 704 6234.',
     shortDescription:
       'Same-day home services across all JLT clusters.',
     intro:
@@ -82,7 +82,7 @@ export const areas: Area[] = [
     type: 'Mixed',
     metaTitle: 'Home Services JVC | AC, Handyman, Cleaning Jumeirah Village | UAE Quick',
     metaDescription:
-      'Same-day AC repair, handyman, plumbing and cleaning in JVC (Jumeirah Village Circle) - apartments, townhouses and villas. Call 058 933 1711.',
+      'Same-day AC repair, handyman, plumbing and cleaning in JVC (Jumeirah Village Circle) - apartments, townhouses and villas. Call 050 704 6234.',
     shortDescription:
       'Home services for JVC apartments, townhouses and villas.',
     intro:
@@ -107,7 +107,7 @@ export const areas: Area[] = [
     type: 'Villa community',
     metaTitle: 'Home Services Jumeirah | Villa AC, Handyman, Pool & Garden | UAE Quick',
     metaDescription:
-      'Villa home services in Jumeirah - AC and duct repair, handyman, plumbing, pool, garden and cleaning. Same-day, villa specialists. Call 058 933 1711.',
+      'Villa home services in Jumeirah - AC and duct repair, handyman, plumbing, pool, garden and cleaning. Same-day, villa specialists. Call 050 704 6234.',
     shortDescription:
       'Villa maintenance across Jumeirah 1, 2 and 3.',
     intro:
@@ -132,7 +132,7 @@ export const areas: Area[] = [
     type: 'Apartment district',
     metaTitle: 'Home Services Downtown Dubai | AC, Handyman, Cleaning | UAE Quick',
     metaDescription:
-      'Same-day AC repair, handyman, plumbing and cleaning in Downtown Dubai - Burj Khalifa district towers. Building access handled. Call 058 933 1711.',
+      'Same-day AC repair, handyman, plumbing and cleaning in Downtown Dubai - Burj Khalifa district towers. Building access handled. Call 050 704 6234.',
     shortDescription:
       'Premium-tower home services in Downtown Dubai.',
     intro:
@@ -157,7 +157,7 @@ export const areas: Area[] = [
     type: 'Mixed',
     metaTitle: 'Home Services Al Barsha | AC, Handyman, Villa & Apartment | UAE Quick',
     metaDescription:
-      'Same-day AC repair, handyman, plumbing, cleaning and garden in Al Barsha - villas and apartments. Local team, fast response. Call 058 933 1711.',
+      'Same-day AC repair, handyman, plumbing, cleaning and garden in Al Barsha - villas and apartments. Local team, fast response. Call 050 704 6234.',
     shortDescription:
       'Villa and apartment services across Al Barsha.',
     intro:
@@ -182,7 +182,7 @@ export const areas: Area[] = [
     type: 'Villa community',
     metaTitle: 'Home Services Palm Jumeirah | Villa AC, Pool, Handyman | UAE Quick',
     metaDescription:
-      'Villa and apartment home services on Palm Jumeirah - AC, pool, garden, handyman, plumbing and cleaning. Frond and Shoreline access handled. Call 058 933 1711.',
+      'Villa and apartment home services on Palm Jumeirah - AC, pool, garden, handyman, plumbing and cleaning. Frond and Shoreline access handled. Call 050 704 6234.',
     shortDescription:
       'Villa and apartment services across Palm Jumeirah.',
     intro:
@@ -207,7 +207,7 @@ export const areas: Area[] = [
     type: 'Villa community',
     metaTitle: 'Home Services Arabian Ranches | Villa AC, Garden, Pool | UAE Quick',
     metaDescription:
-      'Villa home services in Arabian Ranches - AC and duct repair, garden, pool, handyman, plumbing and painting. Family-villa specialists. Call 058 933 1711.',
+      'Villa home services in Arabian Ranches - AC and duct repair, garden, pool, handyman, plumbing and painting. Family-villa specialists. Call 050 704 6234.',
     shortDescription:
       'Full villa maintenance across Arabian Ranches.',
     intro:
@@ -232,7 +232,7 @@ export const areas: Area[] = [
     type: 'Villa community',
     metaTitle: 'Home Services Mirdif | Villa AC, Handyman, Garden, Cleaning | UAE Quick',
     metaDescription:
-      'Same-day villa home services in Mirdif - AC repair, handyman, plumbing, garden and cleaning. Family-home specialists, fast response. Call 058 933 1711.',
+      'Same-day villa home services in Mirdif - AC repair, handyman, plumbing, garden and cleaning. Family-home specialists, fast response. Call 050 704 6234.',
     shortDescription:
       'Villa and townhouse services across Mirdif.',
     intro:
@@ -257,7 +257,7 @@ export const areas: Area[] = [
     type: 'Mixed',
     metaTitle: 'Home Services Silicon Oasis | AC, Handyman, Cleaning | UAE Quick',
     metaDescription:
-      'Same-day AC repair, handyman, plumbing and cleaning in Dubai Silicon Oasis (DSO) - apartments, villas and offices. Call 058 933 1711.',
+      'Same-day AC repair, handyman, plumbing and cleaning in Dubai Silicon Oasis (DSO) - apartments, villas and offices. Call 050 704 6234.',
     shortDescription:
       'Apartment, villa and office services in Silicon Oasis.',
     intro:
@@ -282,7 +282,7 @@ export const areas: Area[] = [
     type: 'Mixed',
     metaTitle: 'Home Services Motor City | AC, Handyman, Garden, Cleaning | UAE Quick',
     metaDescription:
-      'Same-day home services in Motor City - AC repair, handyman, plumbing, garden and cleaning for apartments and townhouses. Call 058 933 1711.',
+      'Same-day home services in Motor City - AC repair, handyman, plumbing, garden and cleaning for apartments and townhouses. Call 050 704 6234.',
     shortDescription:
       'Apartment and townhouse services across Motor City.',
     intro:
@@ -307,7 +307,7 @@ export const areas: Area[] = [
     type: 'Mixed',
     metaTitle: 'Home Services Dubai Sports City | AC, Handyman, Cleaning | UAE Quick',
     metaDescription:
-      'Same-day AC repair, handyman, plumbing and cleaning in Dubai Sports City - apartments and villas. Local team, fast response. Call 058 933 1711.',
+      'Same-day AC repair, handyman, plumbing and cleaning in Dubai Sports City - apartments and villas. Local team, fast response. Call 050 704 6234.',
     shortDescription:
       'Apartment and villa services across Dubai Sports City.',
     intro:
@@ -332,7 +332,7 @@ export const areas: Area[] = [
     type: 'Villa community',
     metaTitle: 'Home Services Emirates Hills | Luxury Villa AC, Pool, Garden | UAE Quick',
     metaDescription:
-      'Premium villa home services in Emirates Hills - AC and duct care, pool, landscaping, handyman and painting. Discreet, gated-access specialists. Call 058 933 1711.',
+      'Premium villa home services in Emirates Hills - AC and duct care, pool, landscaping, handyman and painting. Discreet, gated-access specialists. Call 050 704 6234.',
     shortDescription:
       'Premium villa maintenance across Emirates Hills.',
     intro:

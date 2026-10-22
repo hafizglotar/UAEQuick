@@ -12,7 +12,7 @@ const allServices: Service[] = [
       'Same-day AC repair, cleaning, gas refill and installation across Dubai. Fixed pricing from AED 150.',
     metaTitle: 'AC Repair Dubai | Same-Day AC Service & Gas Refill | UAE Quick',
     metaDescription:
-      'AC not cooling? UAE Quick fixes it the same day across Dubai - split & duct AC repair, cleaning, gas refill and installation. Fixed prices from AED 150. Call 058 933 1711.',
+      'AC not cooling? UAE Quick fixes it the same day across Dubai - split & duct AC repair, cleaning, gas refill and installation. Fixed prices from AED 150. Call 050 704 6234.',
     keywords: [
       'AC repair Dubai',
       'AC maintenance Dubai',
@@ -88,7 +88,7 @@ const allServices: Service[] = [
       'Furniture fixing, leak repair, door locks, tap & sink, gypsum work. Same-day, from AED 80.',
     metaTitle: 'Handyman Dubai & Plumber | Same-Day Home Repairs | UAE Quick',
     metaDescription:
-      'Same-day handyman and plumber in Dubai. Furniture fixing, leak repair, door locks, tap & sink, gypsum partitions. Fixed pricing from AED 80. Call 058 933 1711.',
+      'Same-day handyman and plumber in Dubai. Furniture fixing, leak repair, door locks, tap & sink, gypsum partitions. Fixed pricing from AED 80. Call 050 704 6234.',
     keywords: [
       'handyman Dubai',
       'plumber Dubai',
@@ -164,7 +164,7 @@ const allServices: Service[] = [
       'DEWA-aware electricians for wiring, lights, sockets, breakers and rewiring. From AED 100.',
     metaTitle: 'Electrician Dubai | Licensed Same-Day Electrical Repairs | UAE Quick',
     metaDescription:
-      'Licensed electrician in Dubai for light fitting, sockets, breakers, appliance wiring and full rewiring. Safe, same-day, fixed pricing from AED 100. Call 058 933 1711.',
+      'Licensed electrician in Dubai for light fitting, sockets, breakers, appliance wiring and full rewiring. Safe, same-day, fixed pricing from AED 100. Call 050 704 6234.',
     keywords: [
       'electrician Dubai',
       'electrical services Dubai',
@@ -239,7 +239,7 @@ const allServices: Service[] = [
       'Deep cleaning, villa cleaning, move-in/out and upholstery. Supplies included, from AED 35/hr.',
     metaTitle: 'Cleaning Services Dubai | Deep, Villa & Move-Out Cleaning | UAE Quick',
     metaDescription:
-      'Professional cleaning services in Dubai - deep cleaning, villa cleaning, move-in/move-out and sofa shampoo. Supplies included, from AED 35/hr. Call 058 933 1711.',
+      'Professional cleaning services in Dubai - deep cleaning, villa cleaning, move-in/move-out and sofa shampoo. Supplies included, from AED 35/hr. Call 050 704 6234.',
     keywords: [
       'cleaning services Dubai',
       'deep cleaning Dubai',
@@ -314,7 +314,7 @@ const allServices: Service[] = [
       'Apartment, villa and office moves with packing, dismantling and reassembly. From AED 450.',
     metaTitle: 'Movers and Packers Dubai | Apartment, Villa & Office | UAE Quick',
     metaDescription:
-      'Reliable movers and packers in Dubai. Apartment, villa and office moves with packing, dismantling, reassembly and insurance. From AED 450. Call 058 933 1711.',
+      'Reliable movers and packers in Dubai. Apartment, villa and office moves with packing, dismantling, reassembly and insurance. From AED 450. Call 050 704 6234.',
     keywords: [
       'movers and packers Dubai',
       'movers Dubai',
@@ -388,7 +388,7 @@ const allServices: Service[] = [
       'Villa, apartment and office painting, plus gypsum partitions and false ceilings. From AED 350.',
     metaTitle: 'Painting Services Dubai | Villa & Apartment Painters | UAE Quick',
     metaDescription:
-      'Professional painting services in Dubai - apartment, villa and office painting, gypsum partitions and false ceilings. Clean, fast, from AED 350. Call 058 933 1711.',
+      'Professional painting services in Dubai - apartment, villa and office painting, gypsum partitions and false ceilings. Clean, fast, from AED 350. Call 050 704 6234.',
     keywords: [
       'painting services Dubai',
       'painters Dubai',
@@ -462,7 +462,7 @@ const allServices: Service[] = [
       'Home, office and restaurant interior design with fit-out, joinery and approvals handled.',
     metaTitle: 'Interior Design Dubai | Home, Office & Restaurant Fit-Out | UAE Quick',
     metaDescription:
-      'Bespoke interior design in Dubai for homes, offices and restaurants - concept, joinery, fit-out and approvals handled end to end. Free consultation. Call 058 933 1711.',
+      'Bespoke interior design in Dubai for homes, offices and restaurants - concept, joinery, fit-out and approvals handled end to end. Free consultation. Call 050 704 6234.',
     keywords: [
       'interior design Dubai',
       'fit out Dubai',
@@ -536,7 +536,7 @@ const allServices: Service[] = [
       'Landscaping, lawn care, irrigation and palm trimming for Dubai villas. From AED 200.',
     metaTitle: 'Garden Maintenance Dubai | Landscaping & Lawn Care | UAE Quick',
     metaDescription:
-      'Garden maintenance in Dubai - lawn care, landscaping, irrigation systems and palm tree trimming for villas. Weekly plans from AED 400/mo. Call 058 933 1711.',
+      'Garden maintenance in Dubai - lawn care, landscaping, irrigation systems and palm tree trimming for villas. Weekly plans from AED 400/mo. Call 050 704 6234.',
     keywords: [
       'garden maintenance Dubai',
       'landscaping Dubai',
@@ -609,7 +609,7 @@ const allServices: Service[] = [
       'Pool cleaning, chemical balancing, pump repair and jacuzzi service for Dubai villas. From AED 250.',
     metaTitle: 'Swimming Pool Maintenance Dubai | Cleaning & Repair | UAE Quick',
     metaDescription:
-      'Swimming pool maintenance in Dubai - cleaning, chemical balancing, pump and filter repair, jacuzzi service and acid wash. Weekly plans from AED 500/mo. Call 058 933 1711.',
+      'Swimming pool maintenance in Dubai - cleaning, chemical balancing, pump and filter repair, jacuzzi service and acid wash. Weekly plans from AED 500/mo. Call 050 704 6234.',
     keywords: [
       'swimming pool maintenance Dubai',
       'pool cleaning Dubai',
@@ -684,7 +684,7 @@ const allServices: Service[] = [
       '24/7 towing, jump start, flat tyre and fuel delivery across Dubai. From AED 100.',
     metaTitle: 'Vehicle Recovery Dubai 24/7 | Towing & Roadside Help | UAE Quick',
     metaDescription:
-      '24/7 vehicle recovery in Dubai - towing, jump start, flat tyre help and fuel delivery. Fast roadside response from AED 100. Call 058 933 1711.',
+      '24/7 vehicle recovery in Dubai - towing, jump start, flat tyre help and fuel delivery. Fast roadside response from AED 100. Call 050 704 6234.',
     keywords: [
       'vehicle recovery Dubai',
       'car towing Dubai',
