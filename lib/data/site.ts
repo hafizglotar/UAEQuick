@@ -3,9 +3,12 @@
  * (Name, Address, Phone), used across metadata, schema, and UI.
  */
 
-export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://uaequick.com'
-).replace(/\/$/, '');
+/**
+ * Canonical origin. Hardcoded on purpose: canonical tags, sitemap, schema and
+ * llms.txt must always say https://uaequick.com, whatever host Vercel happens
+ * to serve the page on.
+ */
+export const SITE_URL = 'https://uaequick.com';
 
 export const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE || '+971507046234';
 export const PHONE_DISPLAY = '050 704 6234';

@@ -30,16 +30,28 @@ const nextConfig = {
       },
     ];
   },
-  // Legacy WordPress pretty-URLs → new App Router paths (preserve SEO equity).
-  //
-  // Canonical host (www -> apex) is NOT handled here on purpose. Vercel already
-  // redirects between the apex and www domains according to the project's
-  // "primary domain" setting, and a code-level host redirect that disagrees
-  // with it creates an infinite 308 loop (this took the site down on
-  // 2026-10-25). Set uaequick.com as the primary domain in Vercel
-  // (Settings -> Domains) so www.uaequick.com redirects to it there.
   async redirects() {
+    // Canonical host: www.uaequick.com -> https://uaequick.com (single 308).
+    //
+    // GATED by CANONICAL_HOST_REDIRECT=1. Vercel redirects between the apex and
+    // www according to the project's primary-domain setting; while www is the
+    // primary domain this rule would send every request back and forth forever
+    // (it took the site down on 2026-10-25). Make uaequick.com the primary
+    // domain in Vercel (Settings -> Domains) FIRST, then set the env var.
+    const canonicalHost =
+      process.env.CANONICAL_HOST_REDIRECT === '1'
+        ? [
+            {
+              source: '/:path*',
+              has: [{ type: 'host', value: 'www.uaequick.com' }],
+              destination: 'https://uaequick.com/:path*',
+              permanent: true,
+            },
+          ]
+        : [];
+    // Legacy WordPress pretty-URLs → new App Router paths (preserve SEO equity).
     return [
+      ...canonicalHost,
       { source: '/ac-services-air-conditioning-servicing-in-dubai', destination: '/services/ac-repair', permanent: true },
       { source: '/handyman-plumber', destination: '/services/handyman-plumber', permanent: true },
       { source: '/electrician-services', destination: '/services/electrician', permanent: true },

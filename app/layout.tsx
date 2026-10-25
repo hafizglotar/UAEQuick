@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL('https://uaequick.com'),
   title: {
     default: 'UAE Quick | Same-Day Home Maintenance Services in Dubai',
     template: '%s | UAE Quick',
