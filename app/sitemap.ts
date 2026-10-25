@@ -31,6 +31,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // 9 services x 14 areas = 126 "Same Day {Service} in {Area}" pages.
+  const serviceAreaPages: MetadataRoute.Sitemap = services.flatMap((s) =>
+    areas.map((a) => ({
+      url: `${SITE_URL}/services/${s.slug}/${a.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    }))
+  );
+
   const blogPages: MetadataRoute.Sitemap = posts.map((p) => ({
     url: `${SITE_URL}/blog/${p.slug}`,
     lastModified: new Date(p.dateModified),
@@ -38,5 +48,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...servicePages, ...areaPages, ...blogPages];
+  return [...staticPages, ...servicePages, ...areaPages, ...serviceAreaPages, ...blogPages];
 }

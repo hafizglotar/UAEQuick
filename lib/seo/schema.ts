@@ -269,6 +269,36 @@ export function areaServiceSchema(area: Area): Json {
   };
 }
 
+/** Service node for a /services/[service]/[area] page. */
+export function serviceAreaSchema(service: Service, area: Area, description: string): Json {
+  const shortName = area.name.split(' (')[0];
+  const url = `${SITE_URL}/services/${service.slug}/${area.slug}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Same-Day ${service.keyword} in ${shortName}`,
+    serviceType: service.name,
+    category: service.category,
+    description,
+    image: service.image,
+    url,
+    provider: { '@id': BUSINESS_ID, name: company.name },
+    areaServed: {
+      '@type': 'Place',
+      name: `${shortName}, Dubai`,
+      url: `${SITE_URL}/areas/${area.slug}`,
+      containedInPlace: DUBAI,
+    },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'AED',
+      price: service.pricing[0]?.price.replace(/[^0-9.]/g, '') || undefined,
+      availability: 'https://schema.org/InStock',
+      url,
+    },
+  };
+}
+
 export function articleSchema(post: BlogPost): Json {
   return {
     '@context': 'https://schema.org',

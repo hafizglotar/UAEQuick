@@ -1,4 +1,4 @@
-import type { Area } from './types';
+import type { Area, AreaNotes } from './types';
 
 export const areas: Area[] = [
   {
@@ -356,3 +356,150 @@ export const getAreaBySlug = (slug: string): Area | undefined =>
   areas.find((a) => a.slug === slug);
 
 export const areaSlugs = areas.map((a) => a.slug);
+
+/**
+ * Area facts combined with `serviceNotes` to generate the unique
+ * /services/[service]/[area] pages (property types, access rules, common problems).
+ */
+export const areaNotes: Record<string, AreaNotes> = {
+  'dubai-marina': {
+    propertyTypes: 'a dense high-rise district of studios and 1-3 bedroom apartments in towers such as Marina Gate, Princess Tower and Cayan, with a fast-moving rental market',
+    accessRules: 'Marina towers require technicians to register at security, use the service lift and work within building hours; many need management sign-off for wet or partition work, which we arrange before arrival.',
+    commonProblems: [
+      'Split and chiller AC units straining against sun-facing glass',
+      'Compact bathroom plumbing - blocked drains, dripping mixers, silicone mould',
+      'End-of-tenancy snags and move-out cleans between tenants',
+      'Balcony doors, blinds and fittings worn by salt air',
+    ],
+  },
+  'business-bay': {
+    propertyTypes: 'a mix of 1-3 bedroom apartments and commercial offices in glass towers along the Dubai Canal',
+    accessRules: 'Business Bay buildings are strict on contractor registration, service-lift booking and working hours; office jobs often have to run in the evening or at weekends, which we schedule around.',
+    commonProblems: [
+      'High AC load in glass towers - weak cooling and blocked drains',
+      'Office electrical, partition and painting work that must happen out of hours',
+      'Kitchen and bathroom leaks in compact apartments',
+      'Deep cleans between corporate and short-term tenants',
+    ],
+  },
+  jlt: {
+    propertyTypes: 'clusters of towers around the lakes, from studios near the metro to 3-bed apartments, each cluster with its own building management',
+    accessRules: 'JLT towers need security registration and service-lift use; telling us your cluster letter and tower when you book gets the technician to the right door faster.',
+    commonProblems: [
+      'AC cleaning and gas top-ups in sun-facing units',
+      'Move-in/move-out cleans and snag fixes for a mobile tenant base',
+      'Dripping taps, slow drains and water-heater faults',
+      'Furniture assembly and TV mounting after a move',
+    ],
+  },
+  jvc: {
+    propertyTypes: 'low- and mid-rise apartment buildings mixed with townhouses and small villas, many in newer buildings still bedding in',
+    accessRules: 'Access in JVC is straightforward - parking is close to most buildings and few require service-lift booking, so technicians can usually start on arrival.',
+    commonProblems: [
+      'First-year snags in new buildings - silicone, taps, minor leaks, AC drainage',
+      'AC not cooling in top-floor and sun-facing apartments',
+      'Garden and small-pool upkeep for townhouses and villas',
+      'Deep cleans and painting at handover',
+    ],
+  },
+  jumeirah: {
+    propertyTypes: 'an established coastal community of independent and compound villas across Jumeirah 1-3, most with gardens, pools and ducted AC',
+    accessRules: 'Most Jumeirah homes are independent villas, so access is direct - we can bring larger teams and vans for deep cleans, painting and full villa maintenance without lift or security bookings.',
+    commonProblems: [
+      'Ducted FCU AC systems that need duct cleaning and larger repairs',
+      'Pool and garden care through the summer',
+      'Plumbing across several bathrooms and outdoor taps',
+      'Exterior and interior repainting on older villas',
+    ],
+  },
+  'downtown-dubai': {
+    propertyTypes: 'premium high-rise apartments and penthouses around Burj Khalifa, in towers such as the Address Residences, Boulevard and Burj Views',
+    accessRules: 'Downtown towers have some of the strictest contractor rules in the city - security registration, service-lift booking, approved hours and a tidy, professional standard on site - and we follow all of them.',
+    commonProblems: [
+      'AC cleaning and gas top-ups in sun-facing glass apartments',
+      'Premium-finish handyman work - mounting, fittings, careful repairs',
+      'Deep and move-out cleans for high-value rentals',
+      'Lighting and smart-home electrical work',
+    ],
+  },
+  'al-barsha': {
+    propertyTypes: 'villa neighbourhoods in Al Barsha 1-3 and Barsha South plus mid-rise apartments near Mall of the Emirates',
+    accessRules: 'Al Barsha is central and just off Sheikh Zayed Road, so response times are short; villas have direct access and the apartment buildings near MOE mostly need only a quick reception sign-in.',
+    commonProblems: [
+      'Ducted and multi-split AC across villa rooms',
+      'Garden irrigation and lawn care for villa plots',
+      'Apartment AC, plumbing and cleaning near MOE',
+      'Handyman fixes around busy family villas',
+    ],
+  },
+  'palm-jumeirah': {
+    propertyTypes: 'frond villas with pools and gardens, plus Shoreline, Golden Mile and Palm-tower apartments',
+    accessRules: 'Frond villas sit behind gated, guarded entries that require visitor registration, which we coordinate in advance so the technician is not held at the gate; tower apartments follow normal service-lift rules.',
+    commonProblems: [
+      'AC units and outdoor finishes worked hard by salt and humidity',
+      'Weekly pool care to keep frond-villa pools clear',
+      'Garden irrigation on sea-facing plots',
+      'High-standard handyman and plumbing work in premium homes',
+    ],
+  },
+  'arabian-ranches': {
+    propertyTypes: 'a gated community of family villas with gardens and, in many cases, private pools, almost all running ducted AC',
+    accessRules: 'As a gated community, Arabian Ranches requires visitor registration at the gate, which we arrange before the visit so teams arrive on time.',
+    commonProblems: [
+      'Ducted FCU systems needing duct cleaning and servicing',
+      'Large gardens that depend on a tuned irrigation system in summer',
+      'Private pool chemistry and pump care',
+      'Painting and handyman work in lived-in family villas',
+    ],
+  },
+  mirdif: {
+    propertyTypes: 'a long-established family community of independent villas and townhouses, including Uptown Mirdif, with gardens and split or ducted AC',
+    accessRules: 'Access is easy in Mirdif - street parking outside most villas and no gate or lift bookings - so we can bring teams for larger jobs like deep cleans and painting.',
+    commonProblems: [
+      'Pre-summer AC cleans and repairs on split and ducted systems',
+      'Garden upkeep and irrigation checks',
+      'Recurring handyman and plumbing fixes in family homes',
+      'Regular and deep cleaning for larger villas',
+    ],
+  },
+  'silicon-oasis': {
+    propertyTypes: 'mid-rise apartment buildings, villa clusters such as Cedre Villas, and a large base of offices and free-zone units',
+    accessRules: 'DSO apartment buildings usually need a reception sign-in, the villa clusters have direct access, and office work is scheduled around your working hours; the community is further out, so we route visits efficiently.',
+    commonProblems: [
+      'AC, plumbing and cleaning calls from mid-rise apartments',
+      'Garden and full home maintenance in Cedre and other villa clusters',
+      'Office cleaning, electrical and handyman support',
+      'Move-in/move-out cleans for a mobile tenant base',
+    ],
+  },
+  'motor-city': {
+    propertyTypes: 'Uptown Motor City apartment buildings alongside townhouse and villa enclaves such as Green Community, on leafy low-rise streets',
+    accessRules: 'Low- and mid-rise buildings make access easy compared with the big towers - most jobs need only a quick sign-in, and townhouses have direct parking.',
+    commonProblems: [
+      'AC and plumbing in Uptown apartments',
+      'Garden and irrigation work for townhouses',
+      'Handyman fixes and furniture assembly',
+      'Regular cleaning for family homes',
+    ],
+  },
+  'sports-city': {
+    propertyTypes: 'apartment towers around the stadiums plus nearby villa clusters such as Victory Heights, with a mix of family and sharer tenants',
+    accessRules: 'Sports City towers need a reception sign-in and sometimes a service-lift booking; the villa clusters have gated entry that we arrange in advance.',
+    commonProblems: [
+      'AC cleaning and repairs in apartment towers',
+      'End-of-tenancy cleans from a mobile tenant base',
+      'Plumbing leaks and blocked drains in shared apartments',
+      'Garden and handyman work in the villa clusters',
+    ],
+  },
+  'emirates-hills': {
+    propertyTypes: 'large custom villas and mansions with extensive gardens and private pools overlooking the Montgomerie golf course',
+    accessRules: 'Emirates Hills is strictly gated with guarded entry; we arrange visitor registration in advance and send experienced technicians who work to the discretion and finish the community expects.',
+    commonProblems: [
+      'Large ducted AC systems serving many rooms',
+      'Extensive landscaping and irrigation',
+      'Weekly pool care for large private pools',
+      'Premium-finish handyman and painting work',
+    ],
+  },
+};

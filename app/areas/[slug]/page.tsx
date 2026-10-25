@@ -102,17 +102,30 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             {topServices.map((s) => (
               <Link
                 key={s.slug}
-                href={`/services/${s.slug}`}
+                href={`/services/${s.slug}/${area.slug}`}
                 className="rounded-2xl border border-slate-100 bg-white p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-cardHover"
               >
                 <div className="text-2xl">{s.icon}</div>
-                <h3 className="mt-2 font-bold text-brand">{s.name}</h3>
+                <h3 className="mt-2 font-bold text-brand">Same-day {s.keyword} in {shortName}</h3>
                 <p className="mt-1 text-sm text-slate-600">From {s.startingPrice}</p>
               </Link>
             ))}
           </div>
+          <h3 className="mt-10 text-center text-lg font-bold text-ink">Every service we offer in {shortName}</h3>
+          <ul className="mt-4 flex flex-wrap justify-center gap-3">
+            {services.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/services/${s.slug}/${area.slug}`}
+                  className="inline-block rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-ink hover:border-brand hover:text-brand"
+                >
+                  {s.keyword} in {shortName}
+                </Link>
+              </li>
+            ))}
+          </ul>
           <p className="mt-6 text-center text-sm text-slate-500">
-            We provide every service in {shortName}. <Link href="/services" className="font-semibold text-brand hover:text-accent">See all services →</Link>
+            <Link href="/services" className="font-semibold text-brand hover:text-accent">See all services →</Link>
           </p>
         </Container>
       </Section>

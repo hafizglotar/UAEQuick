@@ -1,4 +1,5 @@
-import type { Service } from './types';
+import type { Service, ServiceNotes } from './types';
+import type { serviceValues } from '@/lib/validation';
 
 const allServices: Service[] = [
   {
@@ -668,3 +669,156 @@ export const getServiceBySlug = (slug: string): Service | undefined =>
   services.find((s) => s.slug === slug);
 
 export const serviceSlugs = services.map((s) => s.slug);
+
+/**
+ * Service facts combined with `areaNotes` to generate the unique
+ * /services/[service]/[area] pages.
+ */
+export const serviceNotes: Record<string, ServiceNotes> = {
+  'ac-repair': {
+    descBits: 'AC cleaning, gas refill, repair and installation',
+    typicalJobs: [
+      'Split-unit cleaning - filter, coil and drain',
+      'Gas refill with leak check',
+      'Repair of units running but not cooling',
+      'Duct cleaning on villa FCU systems',
+    ],
+    apartments: 'In apartment towers the work is mostly split or chiller units working against sun-facing glass - dirty coils, blocked condensate drains and low gas are the usual culprits, and we carry the parts to fix them in one visit.',
+    villas: 'Villas here typically run ducted FCU systems, so we service the fan-coil units and clean the ducts as well as the filters, and quote any larger repair on site after checking the system.',
+    tip: 'Send a photo of the indoor unit and model sticker when you book so the technician brings the right gas and parts.',
+    priceLine: 'from AED 150 for a split-unit clean, AED 200 for a repair visit and AED 250 for a gas refill',
+  },
+  'handyman-plumber': {
+    descBits: 'furniture fixing, leaks, locks, taps and gypsum',
+    typicalJobs: [
+      'Furniture assembly and repair',
+      'Tap, mixer and sink repairs',
+      'Leak detection and repair',
+      'Door locks, shelves, TVs and curtain rails',
+    ],
+    apartments: 'In apartments the jobs are compact-bathroom plumbing, flat-pack furniture, mounting and the snag list that comes with every move-in - one handyman with tools and transport clears several in a single visit.',
+    villas: 'Villas add outdoor taps, water tanks, more bathrooms and heavier fixing work, so we send a handyman or plumber with the parts and ladders for a full-house job list.',
+    tip: 'List every small job when you book - bundling three to five tasks into one visit is the cheapest way to use the service.',
+    priceLine: 'from AED 80 for small jobs, AED 120 for a handyman hour and AED 200 for leak repair',
+  },
+  electrician: {
+    descBits: 'lights, sockets, breakers, fans and appliance wiring',
+    typicalJobs: [
+      'Light, chandelier and spotlight fitting',
+      'Socket and switch replacement',
+      'Tripping breaker diagnosis and MCB replacement',
+      'Oven, dishwasher and washer wiring',
+    ],
+    apartments: 'Apartment work is mostly fittings, sockets and breakers on a shared distribution board, done within building rules and to DEWA standards.',
+    villas: 'Villas carry larger loads with garden and outdoor circuits, pool pumps and multiple boards, so we isolate, diagnose and repair to DEWA standards and advise when an approval is needed.',
+    tip: 'If something sparks or smells hot, isolate the circuit at the main board and describe the fault when you call so the electrician comes prepared.',
+    priceLine: 'from AED 100 for a light, socket or switch and AED 200 for breaker or ceiling-fan work',
+  },
+  cleaning: {
+    descBits: 'deep, move-out, hourly and sofa cleaning',
+    typicalJobs: [
+      'Hourly cleaning with supplies included',
+      'Deep cleaning by apartment size',
+      'Move-in/move-out handover cleans',
+      'Sofa shampoo and mattress cleaning',
+    ],
+    apartments: 'Apartment bookings are mostly hourly cleans, deep cleans and end-of-tenancy cleans to handover standard - the clean most landlords and agents expect before releasing the deposit.',
+    villas: 'Villas need larger teams for a full deep clean across several bathrooms, kitchens and outdoor areas, and many homes book regular weekly cleaning alongside seasonal deep cleans.',
+    tip: 'Tell us the property size and whether it is a regular, deep or move-out clean so we send the right team size with the right equipment.',
+    priceLine: 'from AED 35/hr for hourly cleaning, AED 450 for a 1-bed deep clean and AED 600 for a move-out clean',
+  },
+  'movers-packers': {
+    descBits: 'apartment, villa and office moves with packing',
+    typicalJobs: [
+      'Studio and apartment moves with packing',
+      'Villa moves with two trucks and a larger crew',
+      'Furniture dismantling and reassembly',
+      'Office relocations out of hours',
+    ],
+    apartments: 'Tower moves depend on service-lift booking, approved hours and often a moving deposit - our coordinators handle that paperwork with building management so moving day runs on time.',
+    villas: 'Villa moves usually need two trucks and a five-person crew, with wardrobes, beds and garden furniture dismantled, wrapped and rebuilt at the new home.',
+    tip: 'Send a short video walk-through of the home for a fixed per-size quote with no hidden extras.',
+    priceLine: 'from AED 450 for a studio, AED 650 for a 1-bed and AED 2,500 for a villa move',
+  },
+  painting: {
+    descBits: 'room, apartment and villa painting, gypsum partitions',
+    typicalJobs: [
+      'Single-room and full-apartment repainting',
+      'End-of-tenancy touch-ups and repaints',
+      'Gypsum partitions for home offices',
+      'False ceilings with recessed lighting',
+    ],
+    apartments: 'Apartment work is mostly end-of-tenancy repaints and single rooms, plus gypsum partitions to create a home office in open-plan units - with landlord or management approval arranged where needed.',
+    villas: 'Villa painting covers interiors and exteriors, high ceilings and stairwells, and is quoted on site after we measure and check the surfaces.',
+    tip: 'Decide on colours before the visit if you can - standard emulsion is included in the price and premium or textured paints are quoted separately.',
+    priceLine: 'from AED 350 for a single room, AED 1,500 for a 1-bed apartment and AED 350/m² for gypsum partitions',
+  },
+  'interior-design': {
+    descBits: 'concept, 3D visuals, joinery and fit-out',
+    typicalJobs: [
+      'Concept and photoreal 3D visuals',
+      'Custom joinery - wardrobes, kitchens, TV units',
+      'Turnkey apartment and villa fit-outs',
+      'Restaurant, café and office interiors',
+    ],
+    apartments: 'Apartment projects focus on layout, storage and light - turning a handover shell or dated unit into a space that works, within building fit-out rules and working hours.',
+    villas: 'Villa projects run from single-room refreshes to full redesigns with custom joinery, lighting plans and outdoor areas, managed by one project lead from concept to handover.',
+    tip: 'Gather a few reference images and a rough budget before the free consultation so we can give you useful direction on the first visit.',
+    priceLine: 'free consultation, with design and fit-out quoted per project after a site visit',
+  },
+  'garden-maintenance': {
+    descBits: 'lawn care, irrigation, trimming and palm care',
+    typicalJobs: [
+      'One-off garden tidies - mow, trim, weed',
+      'Weekly and bi-weekly maintenance plans',
+      'Irrigation installation and repair',
+      'Palm trimming and landscape design',
+    ],
+    apartments: 'For townhouses and ground-floor plots the work is small lawns, planters and drip irrigation on a bi-weekly schedule.',
+    villas: 'Villa gardens depend entirely on a tuned irrigation system through the summer, so every visit checks sprinkler and drip zones alongside mowing, trimming and weeding.',
+    tip: 'Book an irrigation check before summer - a misfiring zone can brown a lawn in a few weeks of 45°C heat.',
+    priceLine: 'from AED 200 for a one-off tidy and AED 400/month for a bi-weekly plan',
+  },
+  'pool-maintenance': {
+    descBits: 'cleaning, chemicals, pump and jacuzzi service',
+    typicalJobs: [
+      'One-off pool clean and chemical reset',
+      'Weekly maintenance with chemicals included',
+      'Pump, motor and filter repair',
+      'Jacuzzi service and acid wash',
+    ],
+    apartments: 'For townhouses and plunge pools the work is a smaller weekly or bi-weekly visit to keep chemicals balanced and filters clear.',
+    villas: 'Villa pools need weekly attention through the hot months - chlorine burns off fast and evaporation shifts the balance - so each visit cleans, tests, doses and checks the pump and filter.',
+    tip: 'If the water has already turned green, book a one-off clean and chemical reset first, then start a weekly plan.',
+    priceLine: 'from AED 250 for a one-off clean and AED 500/month for a bi-weekly plan',
+  },
+  'vehicle-recovery': {
+    descBits: 'towing, jump start, flat tyre and fuel delivery',
+    typicalJobs: [
+      'Jump start for a dead battery',
+      'Flat tyre change or inflation',
+      'Fuel delivery',
+      'Flatbed towing within Dubai',
+    ],
+    apartments: 'Tower car parks and basement levels need a recovery unit that can reach low-clearance bays - tell us the parking level when you call.',
+    villas: 'Villa communities with gated entry need the recovery unit registered at the gate, which we arrange while the driver is on the way.',
+    tip: 'Share a live location pin and move to a safe spot away from traffic before the unit arrives.',
+    priceLine: 'from AED 100 for roadside help and AED 150 for local towing',
+  },
+};
+
+/** Map a service slug to the matching quote-form option. */
+export function formServiceValue(slug: string): (typeof serviceValues)[number] | undefined {
+  const map: Record<string, (typeof serviceValues)[number]> = {
+    'ac-repair': 'AC Repair / Maintenance',
+    'handyman-plumber': 'Handyman & Plumber',
+    electrician: 'Electrician',
+    cleaning: 'Cleaning',
+    'movers-packers': 'Movers & Packers',
+    painting: 'Painting & Partitions',
+    'interior-design': 'Interior Design',
+    'garden-maintenance': 'Garden Maintenance',
+    'pool-maintenance': 'Pool & Jacuzzi',
+  };
+  return map[slug];
+}

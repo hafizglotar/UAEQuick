@@ -115,3 +115,28 @@ export type BlogBlock =
   | { type: 'ol'; items: string[] }
   | { type: 'quote'; text: string }
   | { type: 'table'; headers: string[]; rows: string[][] };
+
+/** Area-level facts combined with ServiceNotes to build unique service x area pages. */
+export interface AreaNotes {
+  /** Property mix, written to follow "{Area} is ..." */
+  propertyTypes: string;
+  /** How contractors get in: security, service lifts, gates, hours */
+  accessRules: string;
+  /** Maintenance problems that come up most in this community */
+  commonProblems: string[];
+}
+
+/** Service-level facts combined with AreaNotes to build unique service x area pages. */
+export interface ServiceNotes {
+  /** Short job list for meta descriptions, e.g. "AC cleaning, gas refill, repair and installation" */
+  descBits: string;
+  typicalJobs: string[];
+  /** How the service plays out in apartment districts */
+  apartments: string;
+  /** How the service plays out in villa communities */
+  villas: string;
+  /** One practical booking/prep tip */
+  tip: string;
+  /** Price sentence fragment starting with "from", e.g. "from AED 150 for a split-unit clean" */
+  priceLine: string;
+}

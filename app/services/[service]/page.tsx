@@ -17,22 +17,21 @@ import { JsonLd } from '@/components/JsonLd';
 import { serviceSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { serviceTitle, serviceH1 } from '@/lib/seo/titles';
-import { services, getServiceBySlug, serviceSlugs } from '@/lib/data/services';
+import { services, getServiceBySlug, serviceSlugs, formServiceValue } from '@/lib/data/services';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
-import { serviceValues } from '@/lib/validation';
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return serviceSlugs.map((slug) => ({ slug }));
+  return serviceSlugs.map((service) => ({ service }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ service: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { service: slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
   return buildMetadata({
@@ -43,24 +42,8 @@ export async function generateMetadata({
   });
 }
 
-/** Map a service to the matching form default option. */
-function formService(slug: string): (typeof serviceValues)[number] | undefined {
-  const map: Record<string, (typeof serviceValues)[number]> = {
-    'ac-repair': 'AC Repair / Maintenance',
-    'handyman-plumber': 'Handyman & Plumber',
-    electrician: 'Electrician',
-    cleaning: 'Cleaning',
-    'movers-packers': 'Movers & Packers',
-    painting: 'Painting & Partitions',
-    'interior-design': 'Interior Design',
-    'garden-maintenance': 'Garden Maintenance',
-    'pool-maintenance': 'Pool & Jacuzzi',
-  };
-  return map[slug];
-}
-
-export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function ServicePage({ params }: { params: Promise<{ service: string }> }) {
+  const { service: slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
@@ -107,7 +90,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <div className="mb-3 text-center text-sm font-semibold uppercase tracking-wide text-gold">
               Get a free quote
             </div>
-            <QuoteForm defaultService={formService(service.slug)} />
+            <QuoteForm defaultService={formServiceValue(service.slug)} />
           </div>
         </Container>
       </section>
@@ -190,9 +173,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <Container>
           <div className="mx-auto mb-8 max-w-2xl text-center">
             <h2 className="text-3xl font-bold">{service.name} Across Dubai</h2>
-            <p className="mt-3 text-white/80">Same-day coverage in every Dubai community.</p>
+            <p className="mt-3 text-white/80">
+              Same-day coverage in every Dubai community - pick your area for local pricing, access notes and FAQs.
+            </p>
           </div>
-          <AreasGrid dark />
+          <AreasGrid dark hrefFor={(a) => `/services/${service.slug}/${a.slug}`} />
         </Container>
       </section>
 
