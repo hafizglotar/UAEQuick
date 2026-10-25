@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { FAQ } from '@/lib/data/types';
 import { Container, SectionHead } from '@/components/ui/Container';
+import { Icon } from '@/components/ui/Icon';
 
 /**
  * Accessible FAQ accordion. The full answer text is always in the DOM
@@ -28,9 +29,7 @@ export function Faq({ faqs, title = 'Frequently Asked Questions' }: { faqs: FAQ[
                     className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-[17px] font-semibold text-ink"
                   >
                     {f.q}
-                    <span className="shrink-0 text-brand" aria-hidden>
-                      {isOpen ? '−' : '+'}
-                    </span>
+                    <Icon name={isOpen ? 'Minus' : 'Plus'} size={18} className="shrink-0 text-brand" />
                   </button>
                 </h3>
                 <div className={isOpen ? 'block' : 'hidden'}>

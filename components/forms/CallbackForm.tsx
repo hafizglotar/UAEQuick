@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { callbackSchema, type CallbackValues } from '@/lib/validation';
 import { Label, ErrorText, inputClass } from './Field';
 import { useLead } from './useLead';
+import { Icon } from '@/components/ui/Icon';
 
 /** Minimal-friction callback request - name + phone. */
 export function CallbackForm({ compact }: { compact?: boolean }) {
@@ -24,7 +25,9 @@ export function CallbackForm({ compact }: { compact?: boolean }) {
   if (status === 'success') {
     return (
       <div className="rounded-xl bg-white/10 p-5 text-center text-white">
-        <p className="font-semibold">✅ Got it - we&apos;ll call you back shortly.</p>
+        <p className="flex items-center justify-center gap-2 font-semibold">
+          <Icon name="CircleCheck" size={20} /> Got it - we&apos;ll call you back shortly.
+        </p>
       </div>
     );
   }

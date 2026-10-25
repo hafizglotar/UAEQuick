@@ -1,5 +1,11 @@
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // This repo is the workspace root (a stray lockfile in the home directory
+  // otherwise makes Next infer the wrong root).
+  turbopack: { root: path.dirname(fileURLToPath(import.meta.url)) },
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,

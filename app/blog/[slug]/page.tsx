@@ -8,6 +8,7 @@ import { BlogBody } from '@/components/sections/BlogBody';
 import { Faq } from '@/components/sections/Faq';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { JsonLd } from '@/components/JsonLd';
+import { Icon } from '@/components/ui/Icon';
 import { articleSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { getPostBySlug, postSlugs, posts } from '@/lib/data/blog';
@@ -63,8 +64,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <header>
               <div className="flex flex-wrap items-center gap-3 text-sm">
                 <span className="font-semibold uppercase tracking-wide text-accent">{post.category}</span>
-                <span className="text-slate-400">{post.readingMinutes} min read</span>
-                <span className="text-slate-400">
+                <span className="text-slate-500">{post.readingMinutes} min read</span>
+                <span className="text-slate-500">
                   By {post.author} · Updated{' '}
                   <time dateTime={post.dateModified}>
                     {new Date(post.dateModified).toLocaleDateString('en-GB', {
@@ -108,9 +109,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <Link
                       key={r.slug}
                       href={`/services/${r.slug}`}
-                      className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-brand shadow-card hover:text-accent"
+                      className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-brand shadow-card hover:text-accent"
                     >
-                      {r.icon} {r.name} in Dubai →
+                      <Icon name={r.icon} size={16} /> {r.name} in Dubai →
                     </Link>
                   ))}
                 </div>

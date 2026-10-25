@@ -62,9 +62,9 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '28px', color: '#dbe6f5' }}>
-          <div style={{ display: 'flex' }}>📞 {PHONE_DISPLAY}</div>
+          <div style={{ display: 'flex' }}>Call {PHONE_DISPLAY}</div>
           <div style={{ display: 'flex' }}>
-            {`⭐ ${company.rating.value}/5 · ${company.rating.count}+ reviews · 30-day guarantee`}
+            {`Rated ${company.rating.value}/5 · ${company.rating.count}+ reviews · 30-day guarantee`}
           </div>
         </div>
       </div>

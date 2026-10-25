@@ -6,6 +6,7 @@ import { quoteSchema, serviceValues, type QuoteValues } from '@/lib/validation';
 import { areas } from '@/lib/data/areas';
 import { Label, ErrorText, inputClass } from './Field';
 import { useLead } from './useLead';
+import { Icon } from '@/components/ui/Icon';
 
 /**
  * Compact quote form for the header dropdown - name, phone, service, area.
@@ -36,7 +37,7 @@ export function HeaderQuoteForm({ onSuccess }: { onSuccess?: () => void }) {
   if (status === 'success') {
     return (
       <div className="p-5 text-center">
-        <div className="text-3xl">✅</div>
+        <Icon name="CircleCheck" size={32} className="mx-auto text-accent" />
         <h3 className="mt-2 text-base font-bold text-brand">Request sent!</h3>
         <p className="mt-1 text-sm text-slate-600">
           We&apos;ve opened WhatsApp with your details - just press send and we&apos;ll reply in minutes.
@@ -102,7 +103,13 @@ export function HeaderQuoteForm({ onSuccess }: { onSuccess?: () => void }) {
         disabled={status === 'submitting'}
         className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp py-3 text-sm font-bold text-white transition-colors hover:bg-whatsapp-dark disabled:opacity-60"
       >
-        {status === 'submitting' ? 'Sending…' : '💬 Send on WhatsApp'}
+        {status === 'submitting' ? (
+          'Sending…'
+        ) : (
+          <>
+            <Icon name="MessageCircle" size={16} /> Send on WhatsApp
+          </>
+        )}
       </button>
       <p className="mt-2 text-center text-xs text-slate-500">
         No call-out fee · We reply in minutes

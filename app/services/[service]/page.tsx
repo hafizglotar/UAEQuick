@@ -14,6 +14,7 @@ import { AreasGrid } from '@/components/sections/AreasGrid';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { JsonLd } from '@/components/JsonLd';
+import { Icon } from '@/components/ui/Icon';
 import { serviceSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { serviceTitle, serviceH1 } from '@/lib/seo/titles';
@@ -80,10 +81,10 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             <p className="mt-5 max-w-xl text-lg text-white/90">{service.heroSub}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href={`tel:${PHONE_E164}`} variant="white" size="lg" external>
-                📞 Call {PHONE_DISPLAY}
+                <Icon name="Phone" size={18} /> Call {PHONE_DISPLAY}
               </Button>
               <Button href={company.whatsappUrl} variant="green" size="lg" external>
-                💬 WhatsApp
+                <Icon name="MessageCircle" size={18} /> WhatsApp
               </Button>
             </div>
             <p className="mt-5 text-sm text-white/80">
@@ -163,7 +164,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
                   href={`/services/${r.slug}`}
                   className="rounded-2xl border border-slate-100 bg-white p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-cardHover"
                 >
-                  <div className="text-2xl">{r.icon}</div>
+                  <Icon name={r.icon} size={28} className="text-brand" />
                   <h3 className="mt-2 font-bold text-brand">{r.name}</h3>
                   <p className="mt-1 text-sm text-slate-600">{r.shortDescription}</p>
                 </Link>

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { services } from '@/lib/data/services';
 import type { Service } from '@/lib/data/types';
+import { Icon } from '@/components/ui/Icon';
 
 export function ServiceCard({ service }: { service: Service }) {
   return (
@@ -13,13 +14,13 @@ export function ServiceCard({ service }: { service: Service }) {
         <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
           <Image
             src={service.image}
-            alt={service.name}
+            alt={`${service.name} in Dubai - UAE Quick`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="absolute left-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-lg shadow-sm backdrop-blur" aria-hidden>
-            {service.icon}
+          <span className="absolute left-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-brand shadow-sm backdrop-blur">
+            <Icon name={service.icon} size={18} />
           </span>
         </div>
       )}

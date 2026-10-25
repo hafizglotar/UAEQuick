@@ -8,7 +8,7 @@ const allServices: Service[] = [
     keyword: 'AC Repair',
     title: 'AC Repair & Maintenance in Dubai',
     category: 'Repair',
-    icon: '❄️',
+    icon: 'Snowflake',
     image: '/services/ac-maintenance.avif',
     shortDescription:
       'Same-day AC repair, cleaning, gas refill and installation across Dubai. Fixed pricing from AED 150.',
@@ -35,12 +35,12 @@ const allServices: Service[] = [
     costGuidance:
       'Expect AED 150 for a standard split-unit clean, AED 200+ for a repair visit (diagnosis plus labour, parts extra), and from AED 250 for a gas refill with leak check. Annual maintenance contracts with four visits start at AED 600, which works out cheaper than paying per visit and includes priority booking in summer.',
     features: [
-      { icon: '🧊', title: 'AC Cleaning', text: 'Filter, coil and drain clean per split unit. From AED 150.' },
-      { icon: '🛢️', title: 'Gas Refill', text: 'Leak check plus refrigerant top-up. From AED 250.' },
-      { icon: '🌬️', title: 'Duct Cleaning', text: 'Per duct line - villa systems quoted on site. From AED 400.' },
-      { icon: '🔧', title: 'AC Repair', text: 'Diagnosis and labour; parts quoted first. From AED 200.' },
-      { icon: '🛠️', title: 'Split Installation', text: 'Indoor + outdoor unit, copper, drainage. From AED 450.' },
-      { icon: '📅', title: 'Annual Contract', text: '4 visits a year + priority summer booking. From AED 600.' },
+      { icon: 'AirVent', title: 'AC Cleaning', text: 'Filter, coil and drain clean per split unit. From AED 150.' },
+      { icon: 'Cylinder', title: 'Gas Refill', text: 'Leak check plus refrigerant top-up. From AED 250.' },
+      { icon: 'Wind', title: 'Duct Cleaning', text: 'Per duct line - villa systems quoted on site. From AED 400.' },
+      { icon: 'Wrench', title: 'AC Repair', text: 'Diagnosis and labour; parts quoted first. From AED 200.' },
+      { icon: 'Hammer', title: 'Split Installation', text: 'Indoor + outdoor unit, copper, drainage. From AED 450.' },
+      { icon: 'CalendarCheck', title: 'Annual Contract', text: '4 visits a year + priority summer booking. From AED 600.' },
     ],
     pricing: [
       { item: 'AC Cleaning', includes: 'Filter, coil, drain - per split unit', price: 'AED 150' },
@@ -75,7 +75,7 @@ const allServices: Service[] = [
     keyword: 'Handyman & Plumber',
     title: 'Handyman & Plumber in Dubai',
     category: 'Repair',
-    icon: '🔧',
+    icon: 'Wrench',
     image: '/services/services-imgs.avif',
     shortDescription:
       'Furniture fixing, leak repair, door locks, tap & sink, gypsum work. Same-day, from AED 80.',
@@ -103,12 +103,12 @@ const allServices: Service[] = [
     costGuidance:
       'Small jobs like furniture fixing start at AED 80, a door lock change from AED 120, tap or sink repair from AED 150, and leak diagnosis and repair from AED 200 with parts extra. A one-hour handyman slot is AED 120 and is the best value if you have three to five small tasks to clear in one visit.',
     features: [
-      { icon: '🛠️', title: 'Furniture Fixing', text: 'IKEA, Home Centre, custom - assembly and repair. From AED 80.' },
-      { icon: '🚪', title: 'Door Lock Change', text: 'Smart locks, traditional locks, padlocks. From AED 120.' },
-      { icon: '🚰', title: 'Tap & Sink Repair', text: 'Replace, fix leaks, install new mixers. From AED 150.' },
-      { icon: '💧', title: 'Leak Repair', text: 'Pipe, ceiling and water-tank leaks. From AED 200.' },
-      { icon: '🪵', title: 'Gypsum Partitions', text: 'Room dividers and false ceilings. From AED 350/m².' },
-      { icon: '🖼️', title: 'Mounting & Hanging', text: 'TVs, shelves, mirrors, curtain rails - multiple in one visit.' },
+      { icon: 'Hammer', title: 'Furniture Fixing', text: 'IKEA, Home Centre, custom - assembly and repair. From AED 80.' },
+      { icon: 'DoorOpen', title: 'Door Lock Change', text: 'Smart locks, traditional locks, padlocks. From AED 120.' },
+      { icon: 'Droplet', title: 'Tap & Sink Repair', text: 'Replace, fix leaks, install new mixers. From AED 150.' },
+      { icon: 'Droplets', title: 'Leak Repair', text: 'Pipe, ceiling and water-tank leaks. From AED 200.' },
+      { icon: 'BrickWall', title: 'Gypsum Partitions', text: 'Room dividers and false ceilings. From AED 350/m².' },
+      { icon: 'Frame', title: 'Mounting & Hanging', text: 'TVs, shelves, mirrors, curtain rails - multiple in one visit.' },
     ],
     pricing: [
       { item: 'Furniture Fixing', includes: 'Assembly or repair (1 item)', price: 'AED 80' },
@@ -142,7 +142,7 @@ const allServices: Service[] = [
     keyword: 'Electrician',
     title: 'Licensed Electrician Services in Dubai',
     category: 'Repair',
-    icon: '⚡',
+    icon: 'Zap',
     image: '/services/uaequick-electrician-2.avif',
     shortDescription:
       'DEWA-aware electricians for wiring, lights, sockets, breakers and rewiring. From AED 100.',
@@ -169,12 +169,12 @@ const allServices: Service[] = [
     costGuidance:
       'A single light fitting, socket or switch replacement is around AED 100. A ceiling fan supply-and-install is from AED 200, breaker diagnosis and replacement from AED 200, and appliance wiring from AED 150. Full apartment or villa rewiring is quoted after a site visit and typically starts from AED 2,500 depending on size.',
     features: [
-      { icon: '💡', title: 'Light & Chandelier Fitting', text: 'Per light supplied by you. From AED 100.' },
-      { icon: '🔌', title: 'Sockets & Switches', text: 'Replace per outlet, safely terminated. AED 100.' },
-      { icon: '🌀', title: 'Ceiling Fans', text: 'Supply and install. From AED 200.' },
-      { icon: '🔋', title: 'Breaker Repair', text: 'Diagnose and replace MCB. From AED 200.' },
-      { icon: '🧺', title: 'Appliance Wiring', text: 'Oven, dishwasher, washer. From AED 150.' },
-      { icon: '🏠', title: 'Full Rewiring', text: 'Apartment or villa, quoted on site. From AED 2,500.' },
+      { icon: 'Lightbulb', title: 'Light & Chandelier Fitting', text: 'Per light supplied by you. From AED 100.' },
+      { icon: 'Plug', title: 'Sockets & Switches', text: 'Replace per outlet, safely terminated. AED 100.' },
+      { icon: 'Fan', title: 'Ceiling Fans', text: 'Supply and install. From AED 200.' },
+      { icon: 'CircuitBoard', title: 'Breaker Repair', text: 'Diagnose and replace MCB. From AED 200.' },
+      { icon: 'WashingMachine', title: 'Appliance Wiring', text: 'Oven, dishwasher, washer. From AED 150.' },
+      { icon: 'House', title: 'Full Rewiring', text: 'Apartment or villa, quoted on site. From AED 2,500.' },
     ],
     pricing: [
       { item: 'Light Fitting', includes: 'Per light (supplied by you)', price: 'AED 100' },
@@ -208,7 +208,7 @@ const allServices: Service[] = [
     keyword: 'Cleaning',
     title: 'Cleaning Services in Dubai',
     category: 'Cleaning',
-    icon: '🧽',
+    icon: 'Sparkles',
     image: '/services/uaequick-villa-cleaning.avif',
     shortDescription:
       'Deep cleaning, villa cleaning, move-in/out and upholstery. Supplies included, from AED 35/hr.',
@@ -235,12 +235,12 @@ const allServices: Service[] = [
     costGuidance:
       'Hourly cleaning is AED 35/hr with a two-hour minimum and supplies included. Deep cleans are priced by size: from AED 450 for a 1-bed, AED 650 for a 2-bed and AED 1,200 for a 3-4 bed villa. Move-in/move-out starts at AED 600 for a one-bed, sofa shampoo from AED 50 per seat and mattress cleaning from AED 80.',
     features: [
-      { icon: '🧴', title: 'Hourly Cleaning', text: 'Min 2 hours, supplies included. AED 35/hr.' },
-      { icon: '✨', title: 'Deep Cleaning', text: 'Full apartment scrub, top to bottom. From AED 450.' },
-      { icon: '🏡', title: 'Villa Deep Clean', text: '3-4 bedroom villa, team of cleaners. From AED 1,200.' },
-      { icon: '📦', title: 'Move-In / Move-Out', text: 'Handover-standard clean. From AED 600.' },
-      { icon: '🛋️', title: 'Sofa Shampoo', text: 'Per seat, deep extraction. From AED 50.' },
-      { icon: '🛏️', title: 'Mattress Cleaning', text: 'Per mattress, sanitised. From AED 80.' },
+      { icon: 'SprayCan', title: 'Hourly Cleaning', text: 'Min 2 hours, supplies included. AED 35/hr.' },
+      { icon: 'Sparkles', title: 'Deep Cleaning', text: 'Full apartment scrub, top to bottom. From AED 450.' },
+      { icon: 'Home', title: 'Villa Deep Clean', text: '3-4 bedroom villa, team of cleaners. From AED 1,200.' },
+      { icon: 'Package', title: 'Move-In / Move-Out', text: 'Handover-standard clean. From AED 600.' },
+      { icon: 'Sofa', title: 'Sofa Shampoo', text: 'Per seat, deep extraction. From AED 50.' },
+      { icon: 'BedDouble', title: 'Mattress Cleaning', text: 'Per mattress, sanitised. From AED 80.' },
     ],
     pricing: [
       { item: 'Hourly Cleaning', includes: 'Min 2 hours, supplies included', price: 'AED 35/hr' },
@@ -274,7 +274,7 @@ const allServices: Service[] = [
     keyword: 'Movers & Packers',
     title: 'Movers and Packers in Dubai',
     category: 'Logistics',
-    icon: '📦',
+    icon: 'Package',
     image: '/services/moving.avif',
     shortDescription:
       'Apartment, villa and office moves with packing, dismantling and reassembly. From AED 450.',
@@ -301,12 +301,12 @@ const allServices: Service[] = [
     costGuidance:
       'Pricing is by property size: studio from AED 450, 1-bed from AED 650, 2-bed from AED 950, 3-bed from AED 1,400 and a villa from AED 2,500 (two trucks, larger crew). Office moves start from AED 1,500 with weekend availability. Quotes include the truck, crew, basic packing materials, and dismantling and reassembly.',
     features: [
-      { icon: '📦', title: 'Full Packing', text: 'Boxes, bubble wrap and labelling included in the quote.' },
-      { icon: '🛏️', title: 'Dismantle & Reassemble', text: 'Beds, wardrobes and TV units taken apart and rebuilt.' },
-      { icon: '🚚', title: 'Padded Trucks', text: 'Clean, covered trucks with blankets and straps.' },
-      { icon: '🛡️', title: 'Transit Cover', text: 'Goods-in-transit protection on every move.' },
-      { icon: '🏢', title: 'Office Moves', text: 'Out-of-hours and weekend relocations to limit downtime.' },
-      { icon: '🌆', title: 'Inter-Emirate', text: 'Moves to Abu Dhabi, Sharjah and the northern emirates.' },
+      { icon: 'Package', title: 'Full Packing', text: 'Boxes, bubble wrap and labelling included in the quote.' },
+      { icon: 'BedDouble', title: 'Dismantle & Reassemble', text: 'Beds, wardrobes and TV units taken apart and rebuilt.' },
+      { icon: 'Truck', title: 'Padded Trucks', text: 'Clean, covered trucks with blankets and straps.' },
+      { icon: 'ShieldCheck', title: 'Transit Cover', text: 'Goods-in-transit protection on every move.' },
+      { icon: 'Building2', title: 'Office Moves', text: 'Out-of-hours and weekend relocations to limit downtime.' },
+      { icon: 'Route', title: 'Inter-Emirate', text: 'Moves to Abu Dhabi, Sharjah and the northern emirates.' },
     ],
     pricing: [
       { item: 'Studio', includes: 'Truck + 2 movers + basic packing', price: 'From AED 450' },
@@ -339,7 +339,7 @@ const allServices: Service[] = [
     keyword: 'Painting & Partitions',
     title: 'Painting Services & Partitions in Dubai',
     category: 'Improvement',
-    icon: '🎨',
+    icon: 'Palette',
     image: '/services/uaequick-painting-1.avif',
     shortDescription:
       'Villa, apartment and office painting, plus gypsum partitions and false ceilings. From AED 350.',
@@ -366,12 +366,12 @@ const allServices: Service[] = [
     costGuidance:
       'A single room (walls and ceiling, standard emulsion) is from AED 350. A full one-bed apartment is from AED 1,500, a two-bed from AED 2,500 and villa interiors from AED 5,000 quoted on site. Gypsum partitions are from AED 350 per square metre and false ceilings from AED 120 per square metre. Premium and textured paints are quoted on request.',
     features: [
-      { icon: '🖌️', title: 'Room Painting', text: 'Walls and ceiling, standard emulsion. From AED 350.' },
-      { icon: '🏠', title: 'Full Apartment', text: 'Whole unit, walls and ceilings, proper prep. From AED 1,500.' },
-      { icon: '🏡', title: 'Villa Painting', text: 'Interior and exterior, quoted on site. From AED 5,000.' },
-      { icon: '🪵', title: 'Gypsum Partitions', text: 'Room dividers and home offices. From AED 350/m².' },
-      { icon: '💡', title: 'False Ceilings', text: 'With recessed lighting recesses. From AED 120/m².' },
-      { icon: '🛡️', title: 'Full Protection', text: 'Furniture and floors covered, surfaces prepped and primed.' },
+      { icon: 'Paintbrush', title: 'Room Painting', text: 'Walls and ceiling, standard emulsion. From AED 350.' },
+      { icon: 'House', title: 'Full Apartment', text: 'Whole unit, walls and ceilings, proper prep. From AED 1,500.' },
+      { icon: 'Home', title: 'Villa Painting', text: 'Interior and exterior, quoted on site. From AED 5,000.' },
+      { icon: 'BrickWall', title: 'Gypsum Partitions', text: 'Room dividers and home offices. From AED 350/m².' },
+      { icon: 'Lightbulb', title: 'False Ceilings', text: 'With recessed lighting recesses. From AED 120/m².' },
+      { icon: 'ShieldCheck', title: 'Full Protection', text: 'Furniture and floors covered, surfaces prepped and primed.' },
     ],
     pricing: [
       { item: 'Single Room', includes: 'Walls + ceiling, standard emulsion', price: 'From AED 350' },
@@ -404,7 +404,7 @@ const allServices: Service[] = [
     keyword: 'Interior Design',
     title: 'Interior Design in Dubai',
     category: 'Improvement',
-    icon: '🛋️',
+    icon: 'Sofa',
     image: '/services/uaequick-interior-restaurant.avif',
     shortDescription:
       'Home, office and restaurant interior design with fit-out, joinery and approvals handled.',
@@ -431,12 +431,12 @@ const allServices: Service[] = [
     costGuidance:
       'The first consultation is free. Design and fit-out are quoted per project after a site visit because cost depends entirely on scope, materials and finish level - a single-room refresh, a full apartment redesign and a restaurant fit-out are very different budgets. You receive an itemised proposal before committing.',
     features: [
-      { icon: '✏️', title: 'Concept & 3D', text: 'Mood boards, layouts and photoreal 3D visuals before work starts.' },
-      { icon: '🪚', title: 'Custom Joinery', text: 'Wardrobes, kitchens, TV units and reception desks built to spec.' },
-      { icon: '🏗️', title: 'Turnkey Fit-Out', text: 'All trades managed on site by one project lead.' },
-      { icon: '🍽️', title: 'Restaurant & Café', text: 'Front- and back-of-house design that meets approval standards.' },
-      { icon: '🏢', title: 'Office Interiors', text: 'Workspaces, meeting rooms and branding-led reception areas.' },
-      { icon: '📋', title: 'Approvals Handled', text: 'Authority and building-management approvals managed for you.' },
+      { icon: 'Pencil', title: 'Concept & 3D', text: 'Mood boards, layouts and photoreal 3D visuals before work starts.' },
+      { icon: 'PencilRuler', title: 'Custom Joinery', text: 'Wardrobes, kitchens, TV units and reception desks built to spec.' },
+      { icon: 'HardHat', title: 'Turnkey Fit-Out', text: 'All trades managed on site by one project lead.' },
+      { icon: 'Utensils', title: 'Restaurant & Café', text: 'Front- and back-of-house design that meets approval standards.' },
+      { icon: 'Building2', title: 'Office Interiors', text: 'Workspaces, meeting rooms and branding-led reception areas.' },
+      { icon: 'ClipboardCheck', title: 'Approvals Handled', text: 'Authority and building-management approvals managed for you.' },
     ],
     pricing: [
       { item: 'Design Consultation', includes: 'Site visit, brief, direction', price: 'Free' },
@@ -469,7 +469,7 @@ const allServices: Service[] = [
     keyword: 'Garden Maintenance',
     title: 'Garden Maintenance in Dubai',
     category: 'Maintenance',
-    icon: '🌿',
+    icon: 'Leaf',
     image: '/services/garden-maintenance.avif',
     shortDescription:
       'Landscaping, lawn care, irrigation and palm trimming for Dubai villas. From AED 200.',
@@ -496,12 +496,12 @@ const allServices: Service[] = [
     costGuidance:
       'A one-off clean-up (mow, trim, weed, tidy) is from AED 200. Regular maintenance is from AED 400/month for two visits or AED 600/month for four visits. Irrigation installation is from AED 500 per zone, palm tree trimming from AED 150 per tree, and a full landscape design project from AED 3,000.',
     features: [
-      { icon: '🌱', title: 'Lawn Care', text: 'Mowing, edging, weeding and fertilising on schedule.' },
-      { icon: '✂️', title: 'Trimming & Pruning', text: 'Hedges, shrubs and seasonal pruning kept tidy.' },
-      { icon: '💧', title: 'Irrigation', text: 'Install, repair and tune drip and sprinkler zones. From AED 500.' },
-      { icon: '🌴', title: 'Palm Tree Care', text: 'Safe trimming and cleaning per tree. From AED 150.' },
-      { icon: '🪴', title: 'Planting & Supply', text: 'Seasonal plants, turf and beds supplied and planted.' },
-      { icon: '🎨', title: 'Landscape Design', text: 'Full garden redesign and build. From AED 3,000.' },
+      { icon: 'Sprout', title: 'Lawn Care', text: 'Mowing, edging, weeding and fertilising on schedule.' },
+      { icon: 'Scissors', title: 'Trimming & Pruning', text: 'Hedges, shrubs and seasonal pruning kept tidy.' },
+      { icon: 'Droplets', title: 'Irrigation', text: 'Install, repair and tune drip and sprinkler zones. From AED 500.' },
+      { icon: 'TreePalm', title: 'Palm Tree Care', text: 'Safe trimming and cleaning per tree. From AED 150.' },
+      { icon: 'Flower2', title: 'Planting & Supply', text: 'Seasonal plants, turf and beds supplied and planted.' },
+      { icon: 'Palette', title: 'Landscape Design', text: 'Full garden redesign and build. From AED 3,000.' },
     ],
     pricing: [
       { item: 'One-Off Clean', includes: 'Mow, trim, weed, tidy', price: 'From AED 200' },
@@ -533,7 +533,7 @@ const allServices: Service[] = [
     keyword: 'Pool Maintenance',
     title: 'Swimming Pool Maintenance in Dubai',
     category: 'Maintenance',
-    icon: '🏊',
+    icon: 'Waves',
     image: '/services/swimming-pool.avif',
     shortDescription:
       'Pool cleaning, chemical balancing, pump repair and jacuzzi service for Dubai villas. From AED 250.',
@@ -560,12 +560,12 @@ const allServices: Service[] = [
     costGuidance:
       'A one-off clean (vacuum, brush, chemical reset) is from AED 250. Regular maintenance is from AED 500/month bi-weekly or AED 800/month weekly with chemicals included. Pump repair is from AED 500, jacuzzi service from AED 300, and a full acid wash to remove scale and staining from AED 1,500.',
     features: [
-      { icon: '🧹', title: 'Clean & Vacuum', text: 'Vacuum, brush, skim and empty baskets each visit.' },
-      { icon: '⚗️', title: 'Chemical Balancing', text: 'Test and dose chlorine, pH and alkalinity. Included in plans.' },
-      { icon: '🔁', title: 'Filter & Backwash', text: 'Clean filters and backwash so water stays clear.' },
-      { icon: '🔧', title: 'Pump Repair', text: 'Diagnose and replace pumps and motors. From AED 500.' },
-      { icon: '🛁', title: 'Jacuzzi Service', text: 'Jets, filtration and chemicals checked. From AED 300.' },
-      { icon: '🧱', title: 'Acid Wash', text: 'Full tile clean to remove scale and stains. From AED 1,500.' },
+      { icon: 'Brush', title: 'Clean & Vacuum', text: 'Vacuum, brush, skim and empty baskets each visit.' },
+      { icon: 'FlaskConical', title: 'Chemical Balancing', text: 'Test and dose chlorine, pH and alkalinity. Included in plans.' },
+      { icon: 'RefreshCw', title: 'Filter & Backwash', text: 'Clean filters and backwash so water stays clear.' },
+      { icon: 'Wrench', title: 'Pump Repair', text: 'Diagnose and replace pumps and motors. From AED 500.' },
+      { icon: 'Bath', title: 'Jacuzzi Service', text: 'Jets, filtration and chemicals checked. From AED 300.' },
+      { icon: 'BrickWall', title: 'Acid Wash', text: 'Full tile clean to remove scale and stains. From AED 1,500.' },
     ],
     pricing: [
       { item: 'One-Off Pool Clean', includes: 'Vacuum, brush, chemical reset', price: 'From AED 250' },
@@ -599,7 +599,7 @@ const allServices: Service[] = [
     keyword: 'Vehicle Recovery',
     title: '24/7 Vehicle Recovery in Dubai',
     category: 'Logistics',
-    icon: '🚗',
+    icon: 'Car',
     image: '/services/uaequick-vehicle-recovery.avif',
     shortDescription:
       '24/7 towing, jump start, flat tyre and fuel delivery across Dubai. From AED 100.',
@@ -626,12 +626,12 @@ const allServices: Service[] = [
     costGuidance:
       'Roadside jobs - jump start, flat tyre, fuel delivery - start at AED 100. Local towing within Dubai is from AED 150 and inter-emirate towing (to Abu Dhabi, Sharjah, etc.) from AED 500. A late-night surcharge of AED 50 applies between 12 AM and 6 AM. We confirm the price before dispatch and accept card payment on the road.',
     features: [
-      { icon: '🔋', title: 'Jump Start', text: 'Dead-battery boost to get you moving. From AED 100.' },
-      { icon: '🛞', title: 'Flat Tyre', text: 'Change to your spare or inflate on the spot. From AED 100.' },
-      { icon: '⛽', title: 'Fuel Delivery', text: '10 litres delivered to your location. From AED 100.' },
-      { icon: '🚚', title: 'Local Towing', text: 'Flatbed tow anywhere within Dubai. From AED 150.' },
-      { icon: '🌆', title: 'Inter-Emirate Tow', text: 'To Abu Dhabi, Sharjah and beyond. From AED 500.' },
-      { icon: '🌙', title: '24/7 Response', text: 'Day or night, with a late-night surcharge after midnight.' },
+      { icon: 'BatteryCharging', title: 'Jump Start', text: 'Dead-battery boost to get you moving. From AED 100.' },
+      { icon: 'LifeBuoy', title: 'Flat Tyre', text: 'Change to your spare or inflate on the spot. From AED 100.' },
+      { icon: 'Fuel', title: 'Fuel Delivery', text: '10 litres delivered to your location. From AED 100.' },
+      { icon: 'Truck', title: 'Local Towing', text: 'Flatbed tow anywhere within Dubai. From AED 150.' },
+      { icon: 'Route', title: 'Inter-Emirate Tow', text: 'To Abu Dhabi, Sharjah and beyond. From AED 500.' },
+      { icon: 'Moon', title: '24/7 Response', text: 'Day or night, with a late-night surcharge after midnight.' },
     ],
     pricing: [
       { item: 'Jump Start', includes: 'Dead battery boost', price: 'From AED 100' },

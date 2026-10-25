@@ -6,6 +6,7 @@ import { quoteSchema, serviceValues, type QuoteValues } from '@/lib/validation';
 import { areas } from '@/lib/data/areas';
 import { Label, ErrorText, inputClass } from './Field';
 import { useLead } from './useLead';
+import { Icon } from '@/components/ui/Icon';
 
 export function QuoteForm({ defaultService }: { defaultService?: (typeof serviceValues)[number] }) {
   const {
@@ -34,7 +35,7 @@ export function QuoteForm({ defaultService }: { defaultService?: (typeof service
   if (status === 'success') {
     return (
       <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-card">
-        <div className="text-4xl">✅</div>
+        <Icon name="CircleCheck" size={40} className="mx-auto text-accent" />
         <h3 className="mt-3 text-xl font-bold text-brand">Request sent!</h3>
         <p className="mt-2 text-slate-600">
           We&apos;ve opened WhatsApp with your details - just press send there and we&apos;ll reply with a fixed price in minutes.
@@ -108,7 +109,13 @@ export function QuoteForm({ defaultService }: { defaultService?: (typeof service
         disabled={status === 'submitting'}
         className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp py-4 text-base font-bold text-white transition-colors hover:bg-whatsapp-dark disabled:opacity-60"
       >
-        {status === 'submitting' ? 'Sending…' : '💬 Send on WhatsApp'}
+        {status === 'submitting' ? (
+          'Sending…'
+        ) : (
+          <>
+            <Icon name="MessageCircle" size={18} /> Send on WhatsApp
+          </>
+        )}
       </button>
       {status === 'error' && (
         <p className="mt-3 text-center text-sm text-slate-500">

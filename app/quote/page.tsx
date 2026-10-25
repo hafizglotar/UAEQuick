@@ -5,6 +5,7 @@ import { QuoteForm } from '@/components/forms/QuoteForm';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
+import { Icon, type IconName } from '@/components/ui/Icon';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Get a Free Quote | Same-Day Home Services Dubai | UAE Quick',
@@ -13,11 +14,11 @@ export const metadata: Metadata = buildMetadata({
   path: '/quote',
 });
 
-const benefits = [
-  { icon: '⚡', title: 'Reply in minutes', text: 'Your request reaches our team on WhatsApp instantly.' },
-  { icon: '💰', title: 'Fixed pricing', text: 'A written quote up front - no surprise charges.' },
-  { icon: '📍', title: 'All over Dubai', text: 'Same-day coverage in 35+ communities.' },
-  { icon: '🛡️', title: '30-day guarantee', text: 'Licensed, insured and workmanship guaranteed.' },
+const benefits: { icon: IconName; title: string; text: string }[] = [
+  { icon: 'Zap', title: 'Reply in minutes', text: 'Your request reaches our team on WhatsApp instantly.' },
+  { icon: 'Coins', title: 'Fixed pricing', text: 'A written quote up front - no surprise charges.' },
+  { icon: 'MapPin', title: 'All over Dubai', text: 'Same-day coverage in 35+ communities.' },
+  { icon: 'ShieldCheck', title: '30-day guarantee', text: 'Licensed, insured and workmanship guaranteed.' },
 ];
 
 export default function QuotePage() {
@@ -39,7 +40,7 @@ export default function QuotePage() {
               <ul className="mt-8 space-y-5">
                 {benefits.map((b) => (
                   <li key={b.title} className="flex gap-4">
-                    <span className="text-2xl" aria-hidden>{b.icon}</span>
+                    <Icon name={b.icon} size={26} className="mt-0.5 shrink-0 text-brand" />
                     <div>
                       <p className="font-bold text-ink">{b.title}</p>
                       <p className="text-sm text-slate-600">{b.text}</p>

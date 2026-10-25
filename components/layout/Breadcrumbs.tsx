@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/schema';
+import { Icon } from '@/components/ui/Icon';
 
 export interface Crumb {
   name: string;
@@ -26,9 +27,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
                   <Link href={c.path} className="hover:text-accent">
                     {c.name}
                   </Link>
-                  <span aria-hidden className="text-slate-400">
-                    ›
-                  </span>
+                  <Icon name="ChevronRight" size={14} className="text-slate-500" />
                 </>
               )}
             </li>

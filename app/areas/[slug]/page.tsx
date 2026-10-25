@@ -7,6 +7,7 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { Faq } from '@/components/sections/Faq';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { JsonLd } from '@/components/JsonLd';
+import { Icon } from '@/components/ui/Icon';
 import { areaServiceSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { getAreaBySlug, areaSlugs, areas } from '@/lib/data/areas';
@@ -67,10 +68,10 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
           <p className="mt-4 max-w-2xl text-lg text-white/90">{area.intro}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href={`tel:${PHONE_E164}`} variant="white" external>
-              📞 Call {PHONE_DISPLAY}
+              <Icon name="Phone" size={18} /> Call {PHONE_DISPLAY}
             </Button>
             <Button href={company.whatsappUrl} variant="green" external>
-              💬 WhatsApp
+              <Icon name="MessageCircle" size={18} /> WhatsApp
             </Button>
             <Button href="/quote" variant="outline" className="border-white text-white hover:bg-white hover:text-brand">
               Get a Quote
@@ -105,7 +106,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                 href={`/services/${s.slug}/${area.slug}`}
                 className="rounded-2xl border border-slate-100 bg-white p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-cardHover"
               >
-                <div className="text-2xl">{s.icon}</div>
+                <Icon name={s.icon} size={28} className="text-brand" />
                 <h3 className="mt-2 font-bold text-brand">Same-day {s.keyword} in {shortName}</h3>
                 <p className="mt-1 text-sm text-slate-600">From {s.startingPrice}</p>
               </Link>

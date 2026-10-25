@@ -1,6 +1,7 @@
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
+import { Icon } from '@/components/ui/Icon';
 
 export function CtaBand({
   title = 'Need Help in Dubai Today?',
@@ -17,10 +18,10 @@ export function CtaBand({
           <p className="mt-3 text-lg text-white/90">{subtitle}</p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Button href={`tel:${PHONE_E164}`} variant="white" size="lg" external>
-              📞 Call {PHONE_DISPLAY}
+              <Icon name="Phone" size={18} /> Call {PHONE_DISPLAY}
             </Button>
             <Button href={company.whatsappUrl} variant="green" size="lg" external>
-              💬 WhatsApp
+              <Icon name="MessageCircle" size={18} /> WhatsApp
             </Button>
             <Button href="/quote" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand">
               Get a Free Quote

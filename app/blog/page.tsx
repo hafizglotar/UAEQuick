@@ -81,7 +81,7 @@ export default async function BlogPage({
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center gap-3 text-xs">
                     <span className="font-semibold uppercase tracking-wide text-accent">{p.category}</span>
-                    <span className="text-slate-400">{p.readingMinutes} min read</span>
+                    <span className="text-slate-500">{p.readingMinutes} min read</span>
                   </div>
                   <h2 className="mt-2 text-lg font-bold text-brand">
                     <Link href={`/blog/${p.slug}`} className="hover:text-accent">

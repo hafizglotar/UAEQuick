@@ -1,11 +1,19 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { company, mainNav, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { cn } from '@/lib/utils';
-import { HeaderQuoteForm } from '@/components/forms/HeaderQuoteForm';
+import { Icon } from '@/components/ui/Icon';
+
+// The header quote form (react-hook-form + zod) only loads when a visitor opens
+// it, keeping it out of the JavaScript shipped with every page.
+const HeaderQuoteForm = dynamic(
+  () => import('@/components/forms/HeaderQuoteForm').then((m) => m.HeaderQuoteForm),
+  { ssr: false, loading: () => <div className="h-72 animate-pulse bg-slate-50" aria-hidden /> }
+);
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -42,12 +50,14 @@ export function Header() {
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-2 px-5 py-2 text-[13px]">
           <span className="font-semibold">Open 7 Days - 8 AM to 10 PM</span>
           <div className="flex flex-wrap items-center gap-4">
-            <a href={`tel:${PHONE_E164}`} className="hover:text-gold">
-              📞 {PHONE_DISPLAY}
+            <a href={`tel:${PHONE_E164}`} className="inline-flex items-center gap-1.5 hover:text-gold">
+              <Icon name="Phone" size={14} /> {PHONE_DISPLAY}
             </a>
-            <span className="hidden sm:inline">📍 Al Quoz, Dubai</span>
-            <a href={`mailto:${company.email}`} className="hidden hover:text-gold md:inline">
-              ✉ {company.email}
+            <span className="hidden items-center gap-1.5 sm:inline-flex">
+              <Icon name="MapPin" size={14} /> Al Quoz, Dubai
+            </span>
+            <a href={`mailto:${company.email}`} className="hidden items-center gap-1.5 hover:text-gold md:inline-flex">
+              <Icon name="Mail" size={14} /> {company.email}
             </a>
           </div>
         </div>
@@ -56,7 +66,7 @@ export function Header() {
       {/* Main header */}
       <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-5 py-3">
-          <Link href="/" className="flex items-center" aria-label="UAE Quick home">
+          <Link href="/" className="flex items-center" aria-label="UAEQuick - home">
             <span className="text-xl font-extrabold tracking-tight text-brand">
               UAE<span className="text-accent">Quick</span>
             </span>
@@ -121,7 +131,7 @@ export function Header() {
               onClick={() => setOpen((v) => !v)}
               className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 lg:hidden"
             >
-              <span className="text-xl">{open ? '✕' : '☰'}</span>
+              <Icon name={open ? 'X' : 'Menu'} size={22} />
             </button>
           </div>
         </div>

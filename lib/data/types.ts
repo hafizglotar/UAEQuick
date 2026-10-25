@@ -1,3 +1,5 @@
+import type { IconName } from '@/components/ui/Icon';
+
 export interface PriceRow {
   item: string;
   includes: string;
@@ -15,7 +17,7 @@ export interface ProcessStep {
 }
 
 export interface Feature {
-  icon: string;
+  icon: IconName;
   title: string;
   text: string;
 }
@@ -35,7 +37,8 @@ export interface Service {
   /** Descriptive service name used in schema and listings */
   title: string;
   category: 'Maintenance' | 'Repair' | 'Cleaning' | 'Improvement' | 'Logistics';
-  icon: string;
+  /** lucide icon name rendered through components/ui/Icon */
+  icon: IconName;
   image: string;
   shortDescription: string;
   /** 150-160 characters */

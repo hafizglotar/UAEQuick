@@ -13,6 +13,7 @@ import { QuoteForm } from '@/components/forms/QuoteForm';
 import { JsonLd } from '@/components/JsonLd';
 import { faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
+import { Icon } from '@/components/ui/Icon';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { posts } from '@/lib/data/blog';
 import type { FAQ } from '@/lib/data/types';
@@ -49,10 +50,10 @@ export default function HomePage() {
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button href={`tel:${PHONE_E164}`} variant="white" size="lg" external>
-                📞 Call {PHONE_DISPLAY}
+                <Icon name="Phone" size={18} /> Call {PHONE_DISPLAY}
               </Button>
               <Button href={company.whatsappUrl} variant="green" size="lg" external>
-                💬 WhatsApp Now
+                <Icon name="MessageCircle" size={18} /> WhatsApp Now
               </Button>
             </div>
             <TrustRow />

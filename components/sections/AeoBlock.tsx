@@ -1,4 +1,5 @@
 import type { Service } from '@/lib/data/types';
+import { Icon } from '@/components/ui/Icon';
 
 /**
  * Answer-Engine-Optimized content block: explicit What / Why / Problems /
@@ -24,7 +25,7 @@ export function AeoBlock({ service }: { service: Service }) {
         <ul className="mt-3 space-y-2">
           {service.commonProblems.map((p) => (
             <li key={p} className="flex gap-3 leading-relaxed text-slate-700">
-              <span className="mt-1 text-accent" aria-hidden>✓</span>
+              <Icon name="Check" size={18} className="mt-1 shrink-0 text-accent" />
               <span>{p}</span>
             </li>
           ))}

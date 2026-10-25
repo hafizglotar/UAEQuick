@@ -9,6 +9,7 @@ import { Faq } from '@/components/sections/Faq';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { JsonLd } from '@/components/JsonLd';
+import { Icon } from '@/components/ui/Icon';
 import { serviceAreaSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { serviceAreaTitle, serviceAreaH1, areaShortName } from '@/lib/seo/titles';
@@ -91,10 +92,10 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href={`tel:${PHONE_E164}`} variant="white" size="lg" external>
-                📞 Call {PHONE_DISPLAY}
+                <Icon name="Phone" size={18} /> Call {PHONE_DISPLAY}
               </Button>
               <Button href={company.whatsappUrl} variant="green" size="lg" external>
-                💬 WhatsApp
+                <Icon name="MessageCircle" size={18} /> WhatsApp
               </Button>
             </div>
             <p className="mt-5 text-sm text-white/80">

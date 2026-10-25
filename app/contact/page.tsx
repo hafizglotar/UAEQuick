@@ -7,6 +7,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
+import { Icon } from '@/components/ui/Icon';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Contact UAE Quick | Home Services Dubai | Call 050 704 6234',
@@ -38,13 +39,13 @@ export default function ContactPage() {
               </p>
               <dl className="mt-8 space-y-4 text-[15px]">
                 <div className="flex gap-3">
-                  <dt className="font-semibold text-brand">📞 Phone</dt>
+                  <dt className="flex items-center gap-2 font-semibold text-brand"><Icon name="Phone" size={16} /> Phone</dt>
                   <dd>
                     <a href={`tel:${PHONE_E164}`} className="hover:text-accent">{PHONE_DISPLAY}</a>
                   </dd>
                 </div>
                 <div className="flex gap-3">
-                  <dt className="font-semibold text-brand">💬 WhatsApp</dt>
+                  <dt className="flex items-center gap-2 font-semibold text-brand"><Icon name="MessageCircle" size={16} /> WhatsApp</dt>
                   <dd>
                     <a href={company.whatsappUrl} target="_blank" rel="noopener" className="hover:text-accent">
                       {PHONE_DISPLAY}
@@ -52,17 +53,17 @@ export default function ContactPage() {
                   </dd>
                 </div>
                 <div className="flex gap-3">
-                  <dt className="font-semibold text-brand">✉ Email</dt>
+                  <dt className="flex items-center gap-2 font-semibold text-brand"><Icon name="Mail" size={16} /> Email</dt>
                   <dd>
                     <a href={`mailto:${company.email}`} className="hover:text-accent">{company.email}</a>
                   </dd>
                 </div>
                 <div className="flex gap-3">
-                  <dt className="font-semibold text-brand">📍 Address</dt>
+                  <dt className="flex items-center gap-2 font-semibold text-brand"><Icon name="MapPin" size={16} /> Address</dt>
                   <dd>{company.address.street}, {company.address.locality}, Dubai, UAE</dd>
                 </div>
                 <div className="flex gap-3">
-                  <dt className="font-semibold text-brand">🕐 Hours</dt>
+                  <dt className="flex items-center gap-2 font-semibold text-brand"><Icon name="Clock" size={16} /> Hours</dt>
                   <dd>{company.hours}</dd>
                 </div>
               </dl>
