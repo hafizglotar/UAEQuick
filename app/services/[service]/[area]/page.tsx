@@ -85,7 +85,7 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
               {serviceAreaH1(service, area)}
             </h1>
             <div className="mt-5 rounded-2xl border-l-4 border-gold bg-white/10 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-gold">In short</p>
+              <span className="block text-xs font-semibold uppercase tracking-wide text-gold">In short</span>
               <p className="mt-2 text-base leading-relaxed text-white/95 md:text-lg">
                 {serviceAreaAnswer(service, area)}
               </p>

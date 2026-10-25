@@ -44,11 +44,12 @@ export interface Service {
   /** 150-160 characters */
   metaDescription: string;
   startingPrice: string;
-  /** First paragraph under the H1 - must contain "same-day {keyword}" once */
+  /** Supporting paragraph below the direct answer (the same-day keyword lives in quickAnswer) */
   heroSub: string;
   /**
-   * AEO "In short" answer rendered directly under the H1: 40-60 words with
-   * price, response time and area coverage, written for AI Overviews/ChatGPT.
+   * First paragraph under the H1 ("In short"): 40-60 words containing
+   * "same-day {keyword}" once, the starting price, "book before 4 PM" and
+   * "fixed price, 30-day guarantee", written for AI Overviews/ChatGPT.
    */
   quickAnswer: string;
   /** AEO: "What is …?" */

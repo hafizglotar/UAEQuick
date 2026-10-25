@@ -44,9 +44,9 @@ export default function HomePage() {
               Same-Day <span className="text-gold">Home Maintenance</span> Services in Dubai
             </h1>
             <p className="mt-5 max-w-xl text-lg text-white/90">
-              AC repair, plumbing, handyman, electrical, cleaning, painting and moving - across every
-              community in Dubai. Trained technicians, fixed pricing quoted upfront, and a 30-day
-              workmanship guarantee.
+              AC repair, plumbing, handyman, electrical, cleaning, painting and moving across every
+              community in Dubai, with cleaning from AED 35/hr and a same-day visit when booked before
+              4 PM. Trained technicians, fixed pricing quoted upfront and a 30-day workmanship guarantee.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button href={`tel:${PHONE_E164}`} variant="white" size="lg" external>
