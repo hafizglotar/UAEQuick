@@ -12,13 +12,14 @@ import { JsonLd } from '@/components/JsonLd';
 import { Icon } from '@/components/ui/Icon';
 import { serviceAreaSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
-import { serviceAreaTitle, serviceAreaH1, areaShortName } from '@/lib/seo/titles';
+import { serviceAreaTitle, serviceAreaH1, areaShortName, lowerKeyword } from '@/lib/seo/titles';
 import {
   notesFor,
   propertyAngle,
   serviceAreaDescription,
   serviceAreaAnswer,
   serviceAreaFaqs,
+  serviceAreaIssues,
   nearbyAreas,
 } from '@/lib/seo/serviceArea';
 import { services, getServiceBySlug, serviceSlugs, formServiceValue } from '@/lib/data/services';
@@ -56,6 +57,7 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
   const { an, sn } = notesFor(service, area);
   const shortName = areaShortName(area);
   const kw = service.keyword;
+  const kwLower = lowerKeyword(service.keyword);
   const faqs = serviceAreaFaqs(service, area);
   const description = serviceAreaDescription(service, area);
   const nearby = nearbyAreas(area, 3);
@@ -125,15 +127,29 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
             {propertyAngle(service, area).map((text) => (
               <p key={text}>{text}</p>
             ))}
+            <h3>Working in {shortName}</h3>
+            <p>{area.localContext}</p>
+            <p>
+              Our technicians are in {shortName} most days - around {area.landmarks.slice(0, 3).join(', ')} - and the
+              same team covers {nearby.map((n) => areaShortName(n)).join(', ')} nearby.
+            </p>
             <h3>Getting a technician in</h3>
             <p>{an.accessRules}</p>
-            <h3>What we see most in {shortName}</h3>
+            <h2>
+              Common {kwLower} issues in {shortName}
+            </h2>
+            <ul>
+              {serviceAreaIssues(service, area).map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <h3>What else we see in {shortName}</h3>
             <ul>
               {an.commonProblems.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-            <h3>Typical {kw.toLowerCase()} jobs</h3>
+            <h3>Typical {kwLower} jobs</h3>
             <ul>
               {sn.typicalJobs.map((item) => (
                 <li key={item}>{item}</li>
@@ -143,7 +159,7 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
               <strong>Tip:</strong> {sn.tip}
             </p>
             <p>
-              Read more about <Link href={`/services/${service.slug}`}>{service.name.toLowerCase()} across Dubai</Link> or{' '}
+              Read more about <Link href={`/services/${service.slug}`}>{kwLower} across Dubai</Link> or{' '}
               <Link href={`/areas/${area.slug}`}>all our services in {shortName}</Link>.
             </p>
           </div>
@@ -158,6 +174,9 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
             rows={service.pricing}
             note={`The same fixed prices apply across Dubai, including ${shortName}. Quoted in writing before any work begins - no call-out fee.`}
           />
+          <p className="mx-auto mt-3 max-w-3xl rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-ink">
+            {shortName}: {an.pricingNote}
+          </p>
         </Container>
       </Section>
 
@@ -176,7 +195,7 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
                       href={`/services/${service.slug}/${n.slug}`}
                       className="font-semibold text-ink hover:text-accent"
                     >
-                      Same-day {kw.toLowerCase()} in {areaShortName(n)} →
+                      Same-day {kwLower} in {areaShortName(n)} →
                     </Link>
                   </li>
                 ))}
@@ -191,7 +210,7 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
                       href={`/services/${r.slug}/${area.slug}`}
                       className="font-semibold text-ink hover:text-accent"
                     >
-                      Same-day {r.keyword.toLowerCase()} in {shortName} →
+                      Same-day {lowerKeyword(r.keyword)} in {shortName} →
                     </Link>
                   </li>
                 ))}

@@ -131,6 +131,12 @@ export interface AreaNotes {
   accessRules: string;
   /** Maintenance problems that come up most in this community */
   commonProblems: string[];
+  /** Short property descriptor for bullet prefixes, e.g. "sun-facing Marina towers" */
+  propertyShort: string;
+  /** Area-specific line shown under the price table on service x area pages */
+  pricingNote: string;
+  /** Booking advice used in the area FAQ (never repeats the body's access text) */
+  bookingTip: string;
 }
 
 /** Service-level facts combined with AreaNotes to build unique service x area pages. */

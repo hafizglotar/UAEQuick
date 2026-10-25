@@ -2,7 +2,7 @@ import type { Area, FAQ, Service } from '@/lib/data/types';
 import { areas, areaNotes } from '@/lib/data/areas';
 import { serviceNotes } from '@/lib/data/services';
 import { PHONE_DISPLAY } from '@/lib/data/site';
-import { areaShortName } from '@/lib/seo/titles';
+import { areaShortName, lowerKeyword, lowerFirst } from '@/lib/seo/titles';
 
 /** Generators for the /services/[service]/[area] pages. Everything here is
  *  derived from `areaNotes` + `serviceNotes` so each of the 126 pages reads
@@ -34,7 +34,7 @@ export function propertyAngle(service: Service, area: Area): string[] {
 export function serviceAreaDescription(service: Service, area: Area): string {
   const { sn } = notesFor(service, area);
   const name = areaShortName(area);
-  const lead = `Same-day ${service.keyword.toLowerCase()} in ${name}, Dubai - ${sn.descBits}.`;
+  const lead = `Same-day ${lowerKeyword(service.keyword)} in ${name}, Dubai - ${sn.descBits}.`;
   const price = /^AED/.test(service.startingPrice) ? ` From ${service.startingPrice}.` : ' Free consultation.';
   const phone = ` Call ${PHONE_DISPLAY}.`;
   const trust = [
@@ -71,33 +71,53 @@ export function serviceAreaDescription(service: Service, area: Area): string {
 
 /** The 40-60 word direct answer shown under the H1. */
 export function serviceAreaAnswer(service: Service, area: Area): string {
-  const { sn } = notesFor(service, area);
+  const { an, sn } = notesFor(service, area);
   const name = areaShortName(area);
   const price = /^AED/.test(service.startingPrice)
     ? `Prices start ${sn.priceLine}.`
     : `The first consultation is free; design and fit-out are quoted per project after a site visit.`;
-  return `UAE Quick provides same-day ${service.keyword.toLowerCase()} in ${name} - ${sn.descBits}. ${price} ${area.responseTime}, with a fixed written price before any work begins and a 30-day workmanship guarantee.`;
+  return `UAE Quick provides same-day ${lowerKeyword(service.keyword)} in ${name} - ${sn.descBits} for ${an.propertyShort}. ${price} ${area.responseTime}, with a fixed written price before any work begins and a 30-day workmanship guarantee.`;
 }
 
-/** Two FAQs specific to this service x area combination. */
+/**
+ * Two FAQs specific to this service x area combination. Written from fields
+ * that the page body does not print (bookingTip, priceLine) so no sentence in
+ * an answer is identical to a sentence in the body.
+ */
 export function serviceAreaFaqs(service: Service, area: Area): FAQ[] {
   const { an, sn } = notesFor(service, area);
   const name = areaShortName(area);
-  const kw = service.keyword.toLowerCase();
-  const angle = propertyAngle(service, area)[0];
+  const kw = lowerKeyword(service.keyword);
   const priceA = /^AED/.test(service.startingPrice)
-    ? `${cap(sn.priceLine)} - the same fixed prices we charge everywhere in Dubai. ${angle} The technician confirms the written price on arrival, before any work starts.`
-    : `${cap(sn.priceLine)}. ${angle} You receive an itemised proposal before committing to anything.`;
+    ? `Prices in ${name} are identical to the rest of Dubai: ${sn.priceLine}. The written quote is confirmed on arrival before any work starts, and there is no call-out fee.`
+    : `${cap(sn.priceLine)} - in ${name} as everywhere else in Dubai. You receive an itemised proposal and commit only once you are happy with it.`;
   return [
     {
       q: `Can I get same-day ${kw} in ${name}?`,
-      a: `Yes. ${area.responseTime}. ${an.accessRules} You get a fixed price before work begins, backed by our 30-day guarantee.`,
+      a: `Yes - ${area.responseTime.charAt(0).toLowerCase()}${area.responseTime.slice(1)}. ${an.bookingTip} The price is fixed in writing before the work starts and covered by our 30-day guarantee.`,
     },
     {
       q: `How much does ${kw} cost in ${name}?`,
       a: priceA,
     },
   ];
+}
+
+/**
+ * "Common {service} issues in {area}": three service problems chosen by the
+ * area's property type (apartment districts see the first problems on the
+ * list, villa communities the last, mixed areas the middle) and framed with
+ * the area's property descriptor.
+ */
+export function serviceAreaIssues(service: Service, area: Area): string[] {
+  const { an } = notesFor(service, area);
+  const list = service.commonProblems;
+  let picked: string[];
+  if (area.type === 'Villa community') picked = list.slice(-3);
+  else if (area.type === 'Apartment district') picked = list.slice(0, 3);
+  else picked = list.slice(1, 4);
+  const where = cap(an.propertyShort);
+  return picked.map((problem) => `${where}: ${lowerFirst(problem)}`);
 }
 
 /** Three nearby areas: the area's own `nearby` list topped up with same-type communities. */

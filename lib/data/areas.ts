@@ -371,6 +371,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'End-of-tenancy snags and move-out cleans between tenants',
       'Balcony doors, blinds and fittings worn by salt air',
     ],
+    propertyShort: 'sun-facing Marina towers',
+    pricingNote: 'Service-lift booking may add 30 minutes to arrival; there is no extra charge for tower access or security registration.',
+    bookingTip: 'Give us your tower name when you book so security registration and the service lift are sorted before the technician arrives.',
   },
   'business-bay': {
     propertyTypes: 'a mix of 1-3 bedroom apartments and commercial offices in glass towers along the Dubai Canal',
@@ -381,6 +384,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Kitchen and bathroom leaks in compact apartments',
       'Deep cleans between corporate and short-term tenants',
     ],
+    propertyShort: 'Business Bay towers and offices',
+    pricingNote: 'Office jobs can be booked for evenings or weekends; the written quote covers the agreed slot and any building paperwork, with no call-out fee.',
+    bookingTip: 'Tell us whether it is a home or an office so we can offer an evening or weekend slot if your building requires it.',
   },
   jlt: {
     propertyTypes: 'clusters of towers around the lakes, from studios near the metro to 3-bed apartments, each cluster with its own building management',
@@ -391,6 +397,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Dripping taps, slow drains and water-heater faults',
       'Furniture assembly and TV mounting after a move',
     ],
+    propertyShort: 'JLT cluster towers',
+    pricingNote: 'Share your cluster letter and tower for the quote; the price is the same across all JLT clusters and includes service-lift coordination.',
+    bookingTip: 'Mention your cluster letter and tower - it is the fastest way to get a JLT technician to the right lobby.',
   },
   jvc: {
     propertyTypes: 'low- and mid-rise apartment buildings mixed with townhouses and small villas, many in newer buildings still bedding in',
@@ -401,6 +410,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Garden and small-pool upkeep for townhouses and villas',
       'Deep cleans and painting at handover',
     ],
+    propertyShort: 'JVC apartments, townhouses and villas',
+    pricingNote: 'Snag-list visits are priced per job, so several small fixes in one booking usually cost less than separate visits.',
+    bookingTip: 'Share your building or street; most JVC addresses have parking at the door, so the technician can start on arrival.',
   },
   jumeirah: {
     propertyTypes: 'an established coastal community of independent and compound villas across Jumeirah 1-3, most with gardens, pools and ducted AC',
@@ -411,6 +423,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Plumbing across several bathrooms and outdoor taps',
       'Exterior and interior repainting on older villas',
     ],
+    propertyShort: 'Jumeirah villas',
+    pricingNote: 'Villa work is quoted on site after a walk-through, with each room or system itemised; travel to Jumeirah 1-3 is included.',
+    bookingTip: 'Let us know the villa size and which systems need attention so we send the right team in one trip.',
   },
   'downtown-dubai': {
     propertyTypes: 'premium high-rise apartments and penthouses around Burj Khalifa, in towers such as the Address Residences, Boulevard and Burj Views',
@@ -421,6 +436,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Deep and move-out cleans for high-value rentals',
       'Lighting and smart-home electrical work',
     ],
+    propertyShort: 'Downtown premium towers',
+    pricingNote: 'Premium-tower requirements such as protective floor covering and approved working hours are built into the fixed quote you receive before work starts.',
+    bookingTip: 'Name your tower when booking - we pre-register with security and book the service lift within the building\'s approved hours.',
   },
   'al-barsha': {
     propertyTypes: 'villa neighbourhoods in Al Barsha 1-3 and Barsha South plus mid-rise apartments near Mall of the Emirates',
@@ -431,6 +449,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Apartment AC, plumbing and cleaning near MOE',
       'Handyman fixes around busy family villas',
     ],
+    propertyShort: 'Al Barsha villas and MOE apartments',
+    pricingNote: 'The central location keeps travel short; the quote is the same for Al Barsha villas and the apartments near Mall of the Emirates.',
+    bookingTip: 'Say whether you are in a Barsha villa or an apartment near MOE; both are usually reachable within hours.',
   },
   'palm-jumeirah': {
     propertyTypes: 'frond villas with pools and gardens, plus Shoreline, Golden Mile and Palm-tower apartments',
@@ -441,6 +462,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Garden irrigation on sea-facing plots',
       'High-standard handyman and plumbing work in premium homes',
     ],
+    propertyShort: 'Palm frond villas and Shoreline apartments',
+    pricingNote: 'Frond access is arranged in advance at no charge; villa jobs are itemised per system (pool, AC, garden) so you can book one or all.',
+    bookingTip: 'Tell us your frond or building; we send the technician\'s details to the gate beforehand so there is no delay.',
   },
   'arabian-ranches': {
     propertyTypes: 'a gated community of family villas with gardens and, in many cases, private pools, almost all running ducted AC',
@@ -451,6 +475,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Private pool chemistry and pump care',
       'Painting and handyman work in lived-in family villas',
     ],
+    propertyShort: 'Arabian Ranches family villas',
+    pricingNote: 'Villa jobs are quoted per room or per system; travel to Arabian Ranches is included.',
+    bookingTip: 'Share your villa number so gate registration is done before the visit and the team arrives on schedule.',
   },
   mirdif: {
     propertyTypes: 'a long-established family community of independent villas and townhouses, including Uptown Mirdif, with gardens and split or ducted AC',
@@ -461,6 +488,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Recurring handyman and plumbing fixes in family homes',
       'Regular and deep cleaning for larger villas',
     ],
+    propertyShort: 'Mirdif villas and townhouses',
+    pricingNote: 'Easy street access keeps visits efficient; recurring AC and garden plans are quoted monthly at the same per-visit prices.',
+    bookingTip: 'Give the street or villa number; parking outside is easy, so the technician can begin as soon as they arrive.',
   },
   'silicon-oasis': {
     propertyTypes: 'mid-rise apartment buildings, villa clusters such as Cedre Villas, and a large base of offices and free-zone units',
@@ -471,6 +501,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Office cleaning, electrical and handyman support',
       'Move-in/move-out cleans for a mobile tenant base',
     ],
+    propertyShort: 'DSO apartments, Cedre villas and offices',
+    pricingNote: 'DSO is further out, so we batch visits by day; the fixed price includes travel and there is no call-out fee.',
+    bookingTip: 'Tell us whether it is an apartment, Cedre villa or office so the visit is routed with others in DSO that day.',
   },
   'motor-city': {
     propertyTypes: 'Uptown Motor City apartment buildings alongside townhouse and villa enclaves such as Green Community, on leafy low-rise streets',
@@ -481,6 +514,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Handyman fixes and furniture assembly',
       'Regular cleaning for family homes',
     ],
+    propertyShort: 'Motor City apartments and townhouses',
+    pricingNote: 'Townhouse and apartment jobs carry the same fixed prices; garden work is quoted per plot size on the first visit.',
+    bookingTip: 'Mention Uptown or Green Community and your building; most jobs need only a quick sign-in at reception.',
   },
   'sports-city': {
     propertyTypes: 'apartment towers around the stadiums plus nearby villa clusters such as Victory Heights, with a mix of family and sharer tenants',
@@ -491,6 +527,9 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Plumbing leaks and blocked drains in shared apartments',
       'Garden and handyman work in the villa clusters',
     ],
+    propertyShort: 'Sports City towers and villa clusters',
+    pricingNote: 'Move-out cleans are quoted by apartment size; tower sign-in and lift booking are handled without extra charge.',
+    bookingTip: 'Share your tower or villa cluster so we can book the lift or arrange gated entry ahead of time.',
   },
   'emirates-hills': {
     propertyTypes: 'large custom villas and mansions with extensive gardens and private pools overlooking the Montgomerie golf course',
@@ -501,5 +540,8 @@ export const areaNotes: Record<string, AreaNotes> = {
       'Weekly pool care for large private pools',
       'Premium-finish handyman and painting work',
     ],
+    propertyShort: 'Emirates Hills mansions',
+    pricingNote: 'Large villas are quoted after a site visit and itemised per system; discretion, gate registration and travel are all included.',
+    bookingTip: 'Provide your villa number for gate registration; we confirm the technician\'s name and arrival window in advance.',
   },
 };

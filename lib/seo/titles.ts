@@ -6,6 +6,24 @@ export function priceLabel(service: Service): string {
   return /^AED/.test(p) ? `From ${p}` : p.replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+/**
+ * Lower-case a keyword for mid-sentence use while keeping acronyms:
+ * "AC Repair" -> "AC repair", "Handyman & Plumber" -> "handyman & plumber".
+ */
+export function lowerKeyword(keyword: string): string {
+  return keyword
+    .split(' ')
+    .map((w) => (w.length > 1 && w === w.toUpperCase() ? w : w.toLowerCase()))
+    .join(' ');
+}
+
+/** Lower-case the first character unless the word is an acronym ("AC running" stays). */
+export function lowerFirst(text: string): string {
+  const first = text.split(' ')[0];
+  if (first.length > 1 && first === first.toUpperCase()) return text;
+  return text.charAt(0).toLowerCase() + text.slice(1);
+}
+
 /** Area display name without the bracketed long form, e.g. "JLT". */
 export function areaShortName(area: Area): string {
   return area.name.split(' (')[0];
