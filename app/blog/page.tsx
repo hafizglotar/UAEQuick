@@ -38,9 +38,8 @@ export async function generateMetadata({
   return buildMetadata({
     title: `Dubai Home Maintenance Blog | Costs, Tips & Guides${suffix} | UAE Quick`,
     description:
-      'Practical guides for Dubai homes - AC repair costs, handyman prices, plumbing problems, deep cleaning checklists and seasonal maintenance advice from local experts.',
+      'Practical guides for Dubai homes - AC repair costs, handyman prices, plumbing problems, deep cleaning checklists and seasonal maintenance advice from our team.',
     path: pageHref(page),
-    keywords: ['Dubai home maintenance blog', 'AC repair cost Dubai', 'handyman cost Dubai'],
   });
 }
 

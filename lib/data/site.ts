@@ -16,7 +16,7 @@ export const company = {
   legalName: 'UAE Quick Technical Services LLC',
   tagline: "Dubai's same-day home maintenance team",
   description:
-    'UAE Quick is a Dubai-based home maintenance company providing same-day AC repair, plumbing, handyman, electrical, cleaning, painting and moving services across every community in the emirate. Fixed pricing, licensed technicians, 30-day workmanship guarantee.',
+    'Same-day home maintenance in Dubai - AC repair, plumbing, handyman, electrical, cleaning, painting and moving. Fixed pricing, licensed techs, 30-day guarantee.',
   phoneE164: PHONE_E164,
   phoneDisplay: PHONE_DISPLAY,
   whatsapp: WHATSAPP,

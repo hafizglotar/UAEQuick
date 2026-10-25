@@ -26,17 +26,23 @@ export interface Service {
   hidden?: boolean;
   /** Short label for navigation and cards */
   name: string;
-  /** Page H1 */
+  /**
+   * Primary "same-day" keyword, e.g. "AC Repair". Drives the page title
+   * ("Same Day {keyword} in Dubai | From {price} | UAE Quick"), the H1
+   * ("Same-Day {keyword} in Dubai") and the service x area pages.
+   */
+  keyword: string;
+  /** Descriptive service name used in schema and listings */
   title: string;
   category: 'Maintenance' | 'Repair' | 'Cleaning' | 'Improvement' | 'Logistics';
   icon: string;
   image: string;
   shortDescription: string;
-  metaTitle: string;
+  /** 150-160 characters */
   metaDescription: string;
-  keywords: string[];
   startingPrice: string;
-  hero: { headline: string; sub: string };
+  /** First paragraph under the H1 - must contain "same-day {keyword}" once */
+  heroSub: string;
   /** AEO: concise, extractable answer for snippets / AI overviews */
   quickAnswer: string;
   /** AEO: "What is …?" */

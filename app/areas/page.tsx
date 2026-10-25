@@ -11,9 +11,8 @@ import { areas } from '@/lib/data/areas';
 export const metadata: Metadata = buildMetadata({
   title: 'Areas We Serve in Dubai | Local Home Services | UAE Quick',
   description:
-    'UAE Quick covers every Dubai community - Dubai Marina, Business Bay, JLT, JVC, Jumeirah, Downtown, Palm Jumeirah, Arabian Ranches and more. Same-day local home services.',
+    'UAE Quick covers every Dubai community - Dubai Marina, Business Bay, JLT, JVC, Jumeirah, Downtown, Palm Jumeirah and Arabian Ranches. Same-day home services.',
   path: '/areas',
-  keywords: ['home services Dubai areas', 'maintenance Dubai Marina', 'handyman near me Dubai'],
 });
 
 export default function AreasPage() {

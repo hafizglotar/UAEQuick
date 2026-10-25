@@ -6,7 +6,7 @@ import { company } from '@/lib/data/site';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Terms of Service | UAE Quick',
-  description: 'The terms that apply when you book a service with UAE Quick.',
+  description: 'The terms that apply when you book a service with UAE Quick in Dubai - quotes and pricing, the 30-day workmanship guarantee, bookings and property access.',
   path: '/terms',
   noindex: true,
 });

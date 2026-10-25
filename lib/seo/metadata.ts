@@ -6,7 +6,6 @@ interface MetaInput {
   description: string;
   /** Path beginning with "/" (e.g. "/services/ac-repair") */
   path: string;
-  keywords?: string[];
   image?: string;
   type?: 'website' | 'article';
   publishedTime?: string;
@@ -22,7 +21,6 @@ export function buildMetadata({
   title,
   description,
   path,
-  keywords,
   image,
   type = 'website',
   publishedTime,
@@ -39,7 +37,6 @@ export function buildMetadata({
     // layout's "%s | UAE Quick" template (avoids a doubled suffix).
     title: { absolute: title },
     description,
-    keywords,
     alternates: { canonical: url },
     robots: noindex
       ? { index: false, follow: false }

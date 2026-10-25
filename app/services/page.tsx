@@ -16,7 +16,6 @@ export const metadata: Metadata = buildMetadata({
   description:
     'All UAE Quick home services in Dubai - AC repair, handyman, plumbing, electrical, cleaning, movers, painting, garden and pool. Same-day, fixed pricing.',
   path: '/services',
-  keywords: ['home maintenance Dubai', 'home services Dubai', 'maintenance company Dubai'],
 });
 
 const faqs: FAQ[] = [

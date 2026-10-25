@@ -11,7 +11,7 @@ import { company } from '@/lib/data/site';
 export const metadata: Metadata = buildMetadata({
   title: 'About UAE Quick | Dubai Home Maintenance Company',
   description:
-    'UAE Quick is a Dubai-based home maintenance company serving 10,000+ homes and offices with same-day AC, plumbing, handyman, electrical and cleaning services since 2018.',
+    'UAE Quick is a Dubai home maintenance company serving 10,000+ homes and offices with same-day AC, plumbing, handyman, electrical and cleaning since 2018.',
   path: '/about',
 });
 

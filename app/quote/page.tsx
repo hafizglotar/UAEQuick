@@ -9,9 +9,8 @@ import { PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 export const metadata: Metadata = buildMetadata({
   title: 'Get a Free Quote | Same-Day Home Services Dubai | UAE Quick',
   description:
-    'Get a free, no-obligation quote for AC, handyman, plumbing, cleaning, painting and moving services anywhere in Dubai. Fill the form and we reply on WhatsApp in minutes.',
+    'Get a free, no-obligation quote for AC, handyman, plumbing, cleaning, painting and moving anywhere in Dubai. Fill the form and we reply on WhatsApp in minutes.',
   path: '/quote',
-  keywords: ['free quote Dubai', 'home service quote Dubai', 'book handyman Dubai'],
 });
 
 const benefits = [

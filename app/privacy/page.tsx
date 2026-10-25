@@ -6,7 +6,7 @@ import { company } from '@/lib/data/site';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Privacy Policy | UAE Quick',
-  description: 'How UAE Quick collects, uses and protects your personal information.',
+  description: 'How UAE Quick collects, uses and protects the personal information you share when you request a free quote, book a home service or contact our Dubai team.',
   path: '/privacy',
   noindex: true,
 });

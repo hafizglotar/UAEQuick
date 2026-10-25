@@ -189,7 +189,7 @@ export const posts: BlogPost[] = [
     title: 'Deep Cleaning Checklist for Dubai Homes',
     metaTitle: 'Deep Cleaning Checklist Dubai | Room by Room | UAE Quick',
     metaDescription:
-      'A room-by-room deep cleaning checklist for Dubai apartments and villas - what a professional deep clean actually covers, including move-out cleaning.',
+      'A room-by-room deep cleaning checklist for Dubai apartments and villas - what a professional deep clean actually covers, including move-out cleaning jobs.',
     excerpt:
       'Exactly what a professional deep clean covers in a Dubai home, room by room - useful whether you are hiring or doing it yourself.',
     category: 'Cleaning',
@@ -282,7 +282,7 @@ export const posts: BlogPost[] = [
     title: 'Cheap Home Cleaning Services in Dubai - Without Cutting Corners',
     metaTitle: 'Cheap Home Cleaning Services Dubai | Trusted Cleaners | UAE Quick',
     metaDescription:
-      'How to get affordable home cleaning in Dubai without sacrificing quality - real hourly rates, what is included, and how to keep the bill down with trusted cleaners.',
+      'How to get affordable home cleaning in Dubai without sacrificing quality - real hourly rates, what is included, and how to keep the bill down with pros.',
     excerpt:
       'Affordable does not have to mean unreliable. Here is how cleaning is priced in Dubai and how to get a trusted cleaner for less.',
     category: 'Cleaning',
@@ -415,7 +415,7 @@ export const posts: BlogPost[] = [
     title: 'Best Car Towing & Recovery Services in Dubai and Abu Dhabi',
     metaTitle: 'Car Towing Services Dubai & Abu Dhabi | 24/7 Recovery | UAE Quick',
     metaDescription:
-      '24/7 car towing and roadside recovery in Dubai and Abu Dhabi - breakdowns, flat tyres, dead batteries, lockouts and fuel delivery. How to choose, and what it costs.',
+      '24/7 car towing and roadside recovery in Dubai and Abu Dhabi - breakdowns, flat tyres, dead batteries, lockouts and fuel delivery, plus what it costs.',
     excerpt:
       'What to look for in a 24/7 towing service in Dubai, the roadside help that gets you moving without a tow, and what affects the price.',
     category: 'Vehicle Recovery',
@@ -459,7 +459,7 @@ export const posts: BlogPost[] = [
     title: 'Expert Tips for Swimming Pool Cleaning in Dubai',
     metaTitle: 'Swimming Pool Cleaning Dubai | Expert Tips & Costs | UAE Quick',
     metaDescription:
-      'Keep a Dubai pool clean and safe in the heat - skimming, chemical balancing, filter and pump care, plus how often to service and what professional cleaning costs.',
+      'Keep a Dubai pool clean and safe in the summer heat - skimming, chemical balancing, filter and pump care, how often to service and what pool cleaning costs.',
     excerpt:
       'Dubai’s heat and dust make pool care a year-round job. Here are the practical tips that keep water clear and safe - and when to call a professional.',
     category: 'Pool & Outdoor',
@@ -499,7 +499,7 @@ export const posts: BlogPost[] = [
     title: 'Ultimate Guide to Finding the Best AC Services in Dubai',
     metaTitle: 'Best AC Services in Dubai | How to Choose (2026) | UAE Quick',
     metaDescription:
-      'How to find the best AC service in Dubai - what good technicians do, the maintenance schedule that prevents breakdowns, and how to avoid paying for work you do not need.',
+      'How to find the best AC service in Dubai - what good technicians do, the maintenance schedule that prevents breakdowns, and how to avoid overpaying for work.',
     excerpt:
       'Air conditioning is a necessity in Dubai, not a luxury. Here is how to choose an AC service you can rely on and keep your unit running through the summer.',
     category: 'AC & Cooling',
@@ -548,7 +548,7 @@ export const posts: BlogPost[] = [
     title: 'A Guide to Top Electrician Services in Dubai',
     metaTitle: 'Electrician Services Dubai | Licensed & Safe | UAE Quick',
     metaDescription:
-      'A guide to electrician services in Dubai - common electrical problems, the work licensed electricians handle, how to choose one, and key safety tips for homeowners.',
+      'A guide to electrician services in Dubai - common electrical problems, the work licensed electricians handle, how to choose one, and essential safety tips.',
     excerpt:
       'Electrical faults are a safety risk, not just an inconvenience. Here is what to expect from a licensed Dubai electrician and how to choose the right one.',
     category: 'Electrical',
@@ -643,7 +643,7 @@ export const posts: BlogPost[] = [
     title: 'Best Home Deep Cleaning Services in Dubai',
     metaTitle: 'Home Deep Cleaning Services Dubai | What’s Included | UAE Quick',
     metaDescription:
-      'What a professional home deep clean in Dubai includes, when you need one, and prices by home size - from move-out cleans to post-renovation and seasonal deep cleans.',
+      'What a professional home deep clean in Dubai includes, when you need one, and prices by home size - from move-out and post-renovation to seasonal cleans.',
     excerpt:
       'A deep clean reaches everything a regular clean does not. Here is exactly what is included, when to book one, and what it costs in Dubai.',
     category: 'Cleaning',
@@ -696,7 +696,7 @@ export const posts: BlogPost[] = [
     title: 'How to Choose the Right Cleaning Service for Your Needs',
     metaTitle: 'How to Choose a Cleaning Service in Dubai | Checklist | UAE Quick',
     metaDescription:
-      'A practical checklist for choosing the right cleaning service in Dubai - define your needs, check credentials and insurance, get a written estimate and a satisfaction guarantee.',
+      'A practical checklist for choosing a cleaning service in Dubai - define your needs, check credentials and insurance, get a written estimate and guarantee.',
     excerpt:
       'Not every cleaning service fits every home. Use this simple checklist to pick a reliable, trustworthy cleaner in Dubai with confidence.',
     category: 'Cleaning',

@@ -16,6 +16,7 @@ import { QuoteForm } from '@/components/forms/QuoteForm';
 import { JsonLd } from '@/components/JsonLd';
 import { serviceSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
+import { serviceTitle, serviceH1 } from '@/lib/seo/titles';
 import { services, getServiceBySlug, serviceSlugs } from '@/lib/data/services';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { serviceValues } from '@/lib/validation';
@@ -35,10 +36,9 @@ export async function generateMetadata({
   const service = getServiceBySlug(slug);
   if (!service) return {};
   return buildMetadata({
-    title: service.metaTitle,
+    title: serviceTitle(service),
     description: service.metaDescription,
     path: `/services/${service.slug}`,
-    keywords: service.keywords,
     image: service.image,
   });
 }
@@ -87,9 +87,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </span>
             )}
             <h1 className="text-balance text-3xl font-extrabold leading-tight md:text-4xl">
-              {service.hero.headline}
+              {serviceH1(service)}
             </h1>
-            <p className="mt-4 max-w-xl text-lg text-white/90">{service.hero.sub}</p>
+            <p className="mt-4 max-w-xl text-lg text-white/90">{service.heroSub}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href={`tel:${PHONE_E164}`} variant="white" size="lg" external>
                 📞 Call {PHONE_DISPLAY}
