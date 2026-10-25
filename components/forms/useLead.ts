@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { LeadPayload } from '@/lib/validation';
 import { whatsappLink, leadToWhatsApp } from '@/lib/utils';
+import { trackEvent } from '@/lib/analytics';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -24,6 +25,15 @@ export function useLead() {
       });
       if (!res.ok) throw new Error('Request failed');
       setStatus('success');
+      // GA4 conversions. `generate_lead` fires for every form (GA4's
+      // recommended lead event); `quote_submit` additionally fires when the
+      // quote form succeeds (home, service, service x area and /quote pages).
+      // Mark only one of them as a key event in GA4 to avoid double counting.
+      const service = 'service' in payload ? payload.service : undefined;
+      trackEvent('generate_lead', { lead_kind: payload.kind, service });
+      if (payload.kind === 'quote') {
+        trackEvent('quote_submit', { service, area: payload.area });
+      }
       // Open WhatsApp with the details pre-filled (primary lead channel).
       const url = whatsappLink(leadToWhatsApp(whatsappFields));
       window.open(url, '_blank', 'noopener');
