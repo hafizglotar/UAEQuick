@@ -14,7 +14,7 @@ import { AreasGrid } from '@/components/sections/AreasGrid';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { JsonLd } from '@/components/JsonLd';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 import { serviceSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { serviceTitle, serviceH1 } from '@/lib/seo/titles';

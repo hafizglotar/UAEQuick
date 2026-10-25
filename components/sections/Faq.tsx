@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import type { FAQ } from '@/lib/data/types';
 import { Container, SectionHead } from '@/components/ui/Container';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 /**
  * Accessible FAQ accordion. The full answer text is always in the DOM

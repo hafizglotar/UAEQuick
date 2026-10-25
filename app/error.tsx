@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/Button';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 export default function Error({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return (

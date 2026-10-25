@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Contact UAE Quick | Home Services Dubai | Call 050 704 6234',

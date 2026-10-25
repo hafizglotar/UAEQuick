@@ -13,7 +13,7 @@ import { QuoteForm } from '@/components/forms/QuoteForm';
 import { JsonLd } from '@/components/JsonLd';
 import { faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { posts } from '@/lib/data/blog';
 import type { FAQ } from '@/lib/data/types';

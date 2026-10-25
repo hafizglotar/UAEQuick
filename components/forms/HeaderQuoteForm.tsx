@@ -6,7 +6,7 @@ import { quoteSchema, serviceValues, type QuoteValues } from '@/lib/validation';
 import { areas } from '@/lib/data/areas';
 import { Label, ErrorText, inputClass } from './Field';
 import { useLead } from './useLead';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 /**
  * Compact quote form for the header dropdown - name, phone, service, area.

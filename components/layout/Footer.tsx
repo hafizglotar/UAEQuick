@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { services } from '@/lib/data/services';
 import { areas } from '@/lib/data/areas';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 export function Footer() {
   const half = Math.ceil(services.length / 2);

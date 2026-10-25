@@ -5,7 +5,7 @@ import { QuoteForm } from '@/components/forms/QuoteForm';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
-import { Icon, type IconName } from '@/components/ui/Icon';
+import { Icon, type IconName } from '@/components/icons/Icon';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Get a Free Quote | Same-Day Home Services Dubai | UAE Quick',

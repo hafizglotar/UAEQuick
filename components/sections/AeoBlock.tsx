@@ -1,5 +1,5 @@
 import type { Service } from '@/lib/data/types';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 /**
  * Answer-Engine-Optimized content block: explicit What / Why / Problems /

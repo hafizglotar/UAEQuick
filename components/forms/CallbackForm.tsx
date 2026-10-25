@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { callbackSchema, type CallbackValues } from '@/lib/validation';
 import { Label, ErrorText, inputClass } from './Field';
 import { useLead } from './useLead';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 /** Minimal-friction callback request - name + phone. */
 export function CallbackForm({ compact }: { compact?: boolean }) {

@@ -69,9 +69,10 @@ import {
 } from 'lucide-react';
 
 /**
- * Inline SVG icon set (lucide). Data files reference icons by name so the
- * whole icon vocabulary is tree-shaken from this one map. Decorative by
- * default (aria-hidden); pass `label` for an icon that carries meaning.
+ * components/icons - the site's inline SVG icon set (lucide, rendered as
+ * <svg> inline, no emoji anywhere in the UI). Data files reference icons by
+ * name so the whole vocabulary is tree-shaken from this one map. Decorative
+ * by default (aria-hidden); pass `label` for an icon that carries meaning.
  */
 export const icons = {
   AirVent,

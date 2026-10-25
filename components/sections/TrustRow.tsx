@@ -1,4 +1,4 @@
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 const items = [
   { strong: 'Fixed', label: 'pricing, quoted first' },

@@ -1,5 +1,5 @@
 import { company, PHONE_E164 } from '@/lib/data/site';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 /**
  * Mobile sticky call + WhatsApp bar (conversion). Hidden on lg where the
@@ -12,6 +12,7 @@ export function StickyCTAs() {
       <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-white/10 lg:hidden">
         <a
           href={`tel:${PHONE_E164}`}
+          aria-label="Call UAE Quick"
           className="flex items-center justify-center gap-2 bg-brand py-3.5 font-semibold text-white"
         >
           <Icon name="Phone" size={18} /> Call Now
@@ -20,6 +21,7 @@ export function StickyCTAs() {
           href={company.whatsappUrl}
           target="_blank"
           rel="noopener"
+          aria-label="Chat on WhatsApp"
           className="flex items-center justify-center gap-2 bg-whatsapp py-3.5 font-semibold text-white"
         >
           <Icon name="MessageCircle" size={18} /> WhatsApp

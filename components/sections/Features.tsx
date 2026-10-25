@@ -1,5 +1,5 @@
 import type { Feature } from '@/lib/data/types';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 export function Features({ items }: { items: Feature[] }) {
   return (

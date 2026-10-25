@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { services } from '@/lib/data/services';
 import type { Service } from '@/lib/data/types';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 export function ServiceCard({ service }: { service: Service }) {
   return (

@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { contactSchema, type ContactValues } from '@/lib/validation';
 import { Label, ErrorText, inputClass } from './Field';
 import { useLead } from './useLead';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 export function ContactForm() {
   const {

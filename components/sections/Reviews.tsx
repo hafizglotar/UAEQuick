@@ -1,5 +1,5 @@
 import { reviews } from '@/lib/data/reviews';
-import { Icon } from '@/components/ui/Icon';
+import { Icon } from '@/components/icons/Icon';
 
 export function Reviews() {
   return (
