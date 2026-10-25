@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { Faq } from '@/components/sections/Faq';
 import { CtaBand } from '@/components/sections/CtaBand';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { JsonLd } from '@/components/JsonLd';
 import { areaServiceSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { getAreaBySlug, areaSlugs, areas } from '@/lib/data/areas';

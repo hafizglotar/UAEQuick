@@ -5,7 +5,7 @@ import { ServicesGrid } from '@/components/sections/ServicesGrid';
 import { AreasGrid } from '@/components/sections/AreasGrid';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { Faq } from '@/components/sections/Faq';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { JsonLd } from '@/components/JsonLd';
 import { faqSchema, itemListSchema, webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { services } from '@/lib/data/services';

@@ -47,11 +47,14 @@ export const company = {
     },
   ],
   foundingYear: 2018,
-  priceRange: 'AED 80-AED 5,000',
+  priceRange: 'AED 35 - AED 1200',
   rating: { value: 4.8, count: 412 },
   social: {
     facebook: 'https://www.facebook.com/uaequick',
     instagram: 'https://www.instagram.com/uaequick',
+    // Google Business Profile share link (https://g.page/... or maps.app.goo.gl/...).
+    // Set NEXT_PUBLIC_GBP_URL in the hosting env; included in schema sameAs when set.
+    googleBusinessProfile: process.env.NEXT_PUBLIC_GBP_URL || '',
   },
   logo: `${SITE_URL}/logo.svg`,
   // Default social image is generated dynamically by app/opengraph-image.tsx.

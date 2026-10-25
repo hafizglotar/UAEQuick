@@ -3,7 +3,7 @@ import { Container, Section } from '@/components/ui/Container';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { CallbackForm } from '@/components/forms/CallbackForm';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { JsonLd } from '@/components/JsonLd';
 import { webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';

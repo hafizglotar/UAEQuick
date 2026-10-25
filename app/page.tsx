@@ -10,7 +10,7 @@ import { Reviews } from '@/components/sections/Reviews';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { Faq } from '@/components/sections/Faq';
 import { QuoteForm } from '@/components/forms/QuoteForm';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { JsonLd } from '@/components/JsonLd';
 import { faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';

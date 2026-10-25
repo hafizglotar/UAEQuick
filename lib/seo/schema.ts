@@ -1,7 +1,7 @@
 import { SITE_URL, company } from '@/lib/data/site';
 import type { Service, Area, BlogPost, FAQ } from '@/lib/data/types';
-import { reviews } from '@/lib/data/reviews';
 import { services } from '@/lib/data/services';
+import { areas } from '@/lib/data/areas';
 
 /** Stable @id anchors so entities reference each other (entity-based SEO). */
 export const ORG_ID = `${SITE_URL}/#organization`;
@@ -27,6 +27,39 @@ const KNOWS_ABOUT = [
 ];
 
 const LANGUAGES = ['English', 'Arabic', 'Hindi', 'Urdu'];
+
+const DUBAI: Json = { '@type': 'City', name: 'Dubai', '@id': 'https://www.wikidata.org/wiki/Q612' };
+
+/** Public profiles. The Google Business Profile link is included only when configured. */
+function sameAs(): string[] {
+  return [
+    company.social.googleBusinessProfile,
+    company.social.instagram,
+    company.social.facebook,
+  ].filter(Boolean);
+}
+
+/** Every community we serve, as schema Places inside Dubai (one per /areas page). */
+function areasServed(): Json[] {
+  return areas.map((a) => ({
+    '@type': 'Place',
+    name: `${a.name.split(' (')[0]}, Dubai`,
+    url: `${SITE_URL}/areas/${a.slug}`,
+    containedInPlace: DUBAI,
+  }));
+}
+
+/** "Mo-Su 08:00-22:00" style strings for schema openingHours. */
+function openingHours(): string[] {
+  const short: Record<string, string> = {
+    Monday: 'Mo', Tuesday: 'Tu', Wednesday: 'We', Thursday: 'Th', Friday: 'Fr', Saturday: 'Sa', Sunday: 'Su',
+  };
+  return company.openingHoursSpec.map((o) => {
+    const days = o.days.map((d) => short[d]);
+    const range = days.length === 7 ? 'Mo-Su' : days.join(',');
+    return `${range} ${o.opens}-${o.closes}`;
+  });
+}
 
 function contactPoint(): Json {
   return {
@@ -59,7 +92,7 @@ export function organizationSchema(): Json {
     telephone: company.phoneE164,
     foundingDate: String(company.foundingYear),
     knowsAbout: KNOWS_ABOUT,
-    areaServed: { '@type': 'City', name: 'Dubai', '@id': 'https://www.wikidata.org/wiki/Q612' },
+    areaServed: DUBAI,
     contactPoint: contactPoint(),
     address: {
       '@type': 'PostalAddress',
@@ -69,7 +102,7 @@ export function organizationSchema(): Json {
       postalCode: company.address.postalCode,
       addressCountry: company.address.country,
     },
-    sameAs: [company.social.facebook, company.social.instagram],
+    sameAs: sameAs(),
   };
 }
 
@@ -86,12 +119,18 @@ export function websiteSchema(): Json {
   };
 }
 
+/**
+ * Site-wide HomeAndConstructionBusiness node. No aggregateRating/review on
+ * purpose: self-published ratings on a LocalBusiness are against Google's
+ * review-snippet guidelines and can trigger a manual action.
+ */
 export function localBusinessSchema(): Json {
   return {
     '@context': 'https://schema.org',
     '@type': 'HomeAndConstructionBusiness',
     '@id': BUSINESS_ID,
     name: company.name,
+    legalName: company.legalName,
     image: [company.logo, company.ogImage],
     logo: company.logo,
     url: `${SITE_URL}/`,
@@ -105,7 +144,7 @@ export function localBusinessSchema(): Json {
     availableLanguage: LANGUAGES,
     knowsAbout: KNOWS_ABOUT,
     contactPoint: contactPoint(),
-    sameAs: [company.social.facebook, company.social.instagram],
+    sameAs: sameAs(),
     parentOrganization: { '@id': ORG_ID },
     address: {
       '@type': 'PostalAddress',
@@ -120,30 +159,13 @@ export function localBusinessSchema(): Json {
       latitude: company.geo.latitude,
       longitude: company.geo.longitude,
     },
-    areaServed: { '@type': 'City', name: 'Dubai' },
+    areaServed: [DUBAI, ...areasServed()],
+    openingHours: openingHours(),
     openingHoursSpecification: company.openingHoursSpec.map((o) => ({
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: o.days,
       opens: o.opens,
       closes: o.closes,
-    })),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: String(company.rating.value),
-      reviewCount: String(company.rating.count),
-      bestRating: '5',
-      worstRating: '1',
-    },
-    review: reviews.slice(0, 4).map((r) => ({
-      '@type': 'Review',
-      author: { '@type': 'Person', name: r.author },
-      datePublished: r.date,
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: String(r.rating),
-        bestRating: '5',
-      },
-      reviewBody: r.text,
     })),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -198,7 +220,7 @@ export function serviceSchema(service: Service): Json {
     image: service.image,
     url: `${SITE_URL}/services/${service.slug}`,
     provider: { '@id': BUSINESS_ID, name: company.name },
-    areaServed: { '@type': 'City', name: 'Dubai' },
+    areaServed: [DUBAI, ...areasServed()],
     offers: {
       '@type': 'Offer',
       priceCurrency: 'AED',
@@ -221,17 +243,28 @@ export function serviceSchema(service: Service): Json {
 }
 
 export function areaServiceSchema(area: Area): Json {
+  const shortName = area.name.split(' (')[0];
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: `Home Maintenance Services in ${area.name}, Dubai`,
+    name: `Home Maintenance Services in ${shortName}, Dubai`,
+    serviceType: 'Home maintenance',
     description: area.shortDescription,
     url: `${SITE_URL}/areas/${area.slug}`,
-    provider: { '@id': BUSINESS_ID },
+    provider: { '@id': BUSINESS_ID, name: company.name },
     areaServed: {
       '@type': 'Place',
-      name: `${area.name}, Dubai`,
-      containedInPlace: { '@type': 'City', name: 'Dubai' },
+      name: `${shortName}, Dubai`,
+      url: `${SITE_URL}/areas/${area.slug}`,
+      containedInPlace: DUBAI,
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `Services available in ${shortName}`,
+      itemListElement: services.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: s.name, url: `${SITE_URL}/services/${s.slug}` },
+      })),
     },
   };
 }

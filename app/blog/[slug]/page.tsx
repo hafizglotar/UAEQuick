@@ -7,7 +7,7 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { BlogBody } from '@/components/sections/BlogBody';
 import { Faq } from '@/components/sections/Faq';
 import { CtaBand } from '@/components/sections/CtaBand';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { JsonLd } from '@/components/JsonLd';
 import { articleSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { getPostBySlug, postSlugs, posts } from '@/lib/data/blog';

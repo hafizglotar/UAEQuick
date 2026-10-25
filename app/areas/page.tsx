@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Container, Section, SectionHead } from '@/components/ui/Container';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { CtaBand } from '@/components/sections/CtaBand';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { JsonLd } from '@/components/JsonLd';
 import { itemListSchema, webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { areas } from '@/lib/data/areas';

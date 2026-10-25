@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { JsonLd } from '@/components/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/schema';
 
 export interface Crumb {

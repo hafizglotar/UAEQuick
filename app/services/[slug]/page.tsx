@@ -13,7 +13,7 @@ import { Faq } from '@/components/sections/Faq';
 import { AreasGrid } from '@/components/sections/AreasGrid';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { QuoteForm } from '@/components/forms/QuoteForm';
-import { JsonLd } from '@/components/seo/JsonLd';
+import { JsonLd } from '@/components/JsonLd';
 import { serviceSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { services, getServiceBySlug, serviceSlugs } from '@/lib/data/services';
