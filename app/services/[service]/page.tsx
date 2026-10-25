@@ -72,7 +72,12 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             <h1 className="text-balance text-3xl font-extrabold leading-tight md:text-4xl">
               {serviceH1(service)}
             </h1>
-            <p className="mt-4 max-w-xl text-lg text-white/90">{service.heroSub}</p>
+            {/* AIO direct answer: price, response time, coverage - right under the H1 */}
+            <div className="mt-5 rounded-2xl border-l-4 border-gold bg-white/10 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-gold">In short</p>
+              <p className="mt-2 text-base leading-relaxed text-white/95 md:text-lg">{service.quickAnswer}</p>
+            </div>
+            <p className="mt-5 max-w-xl text-lg text-white/90">{service.heroSub}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href={`tel:${PHONE_E164}`} variant="white" size="lg" external>
                 📞 Call {PHONE_DISPLAY}

@@ -18,7 +18,7 @@ const allServices: Service[] = [
     heroSub:
       'Same-day AC repair across Dubai for split, ducted and window units: cleaning, gas refill, repair and installation. Fixed prices from AED 150, parts quoted before we touch the unit, 90-day repair warranty.',
     quickAnswer:
-      'AC repair in Dubai with UAE Quick starts at AED 200 for diagnosis and labour; a full split-unit cleaning is AED 150 and a gas refill from AED 250. A technician reaches most Dubai areas the same day and gives a fixed price before any work begins.',
+      'Same-day AC repair in Dubai from UAE Quick starts at AED 150 for a split-unit clean, AED 200 for a repair visit and AED 250 for a gas refill. Book before 4 PM and a technician reaches most areas the same day, covering all 14 communities from Dubai Marina to Arabian Ranches, with a fixed price before work begins.',
     whatIsIt:
       'AC repair covers diagnosing and fixing a cooling system that has stopped working properly - whether that is a split unit in an apartment, a ducted system in a villa, or a window unit. Typical work includes recharging refrigerant gas, clearing blocked drain lines, replacing capacitors and thermostats, fixing the compressor or fan motor, and deep-cleaning coils and filters that have clogged in Dubai dust.',
     whyNeeded:
@@ -85,7 +85,7 @@ const allServices: Service[] = [
     heroSub:
       'Same-day handyman & plumber visits across Dubai - from a stuck door to a leaking pipe, we fix it on the spot. Furniture, leaks, locks, taps, gypsum and more, from AED 80.',
     quickAnswer:
-      'A handyman in Dubai with UAE Quick starts at AED 80 for small jobs like furniture fixing, while plumbing leak repair starts at AED 200. One technician with their own tools and transport arrives the same day, and bundling several small jobs into one visit saves the call-out fee.',
+      'Same-day handyman & plumber service in Dubai from UAE Quick starts at AED 80 for small jobs, AED 120 for a handyman hour and AED 200 for leak repair. Book before 4 PM for a same-day visit anywhere in the 14 communities we cover, from JLT to Mirdif, with a fixed written price before any work starts.',
     whatIsIt:
       'A handyman and plumber service handles the everyday repair and installation jobs around a home that do not need a specialist trade - assembling and fixing furniture, changing door locks, repairing taps and sinks, fixing leaks, hanging shelves and pictures, sealing silicone, installing gypsum partitions and servicing water tanks.',
     whyNeeded:
@@ -152,7 +152,7 @@ const allServices: Service[] = [
     heroSub:
       'Same-day electrician for lights, sockets, breakers, ceiling fans, appliance wiring and full rewiring - done safely to DEWA standards. Fixed pricing from AED 100 across Dubai.',
     quickAnswer:
-      'An electrician in Dubai with UAE Quick starts at AED 100 for a light fitting, socket or switch. Breaker and appliance wiring start from AED 150-200, and full apartment rewiring is quoted on site. All work follows DEWA safety standards and most jobs are same-day.',
+      'A same-day electrician in Dubai from UAE Quick costs from AED 100 for a light, socket or switch and AED 200 for breaker or ceiling-fan work. Book before 4 PM and an electrician reaches most of the 14 communities we cover the same day, working to DEWA standards with a fixed price agreed first.',
     whatIsIt:
       'Electrical services cover installing, repairing and making safe the wiring and fittings in a home or office - fitting lights and chandeliers, replacing sockets and switches, installing ceiling fans, diagnosing and replacing tripping breakers (MCBs), wiring in ovens and washers, and full rewiring of older units.',
     whyNeeded:
@@ -218,7 +218,7 @@ const allServices: Service[] = [
     heroSub:
       'Same-day cleaning across Dubai by trained cleaners with their own supplies and equipment. Hourly cleaning, full deep cleans, move-in/move-out and upholstery - from AED 35/hr.',
     quickAnswer:
-      'Cleaning in Dubai with UAE Quick starts at AED 35 per hour (minimum two hours, supplies included). A one-bedroom deep clean is from AED 450, a two-bedroom from AED 650, and a 3-4 bedroom villa deep clean from AED 1,200. Cleaners bring all equipment and products.',
+      'Same-day cleaning in Dubai from UAE Quick starts at AED 35 per hour with supplies included, AED 450 for a one-bedroom deep clean and AED 600 for a move-out clean. Book before 4 PM and a cleaner or team reaches most of the 14 communities we cover, from Dubai Marina to Emirates Hills, the same day.',
     whatIsIt:
       'Cleaning services range from regular hourly maid cleaning to intensive deep cleans that cover every surface - inside cupboards, behind appliances, grout, skirting, windows and balconies. It also includes specialist work like move-in/move-out cleans that return a unit to handover condition, and upholstery shampooing for sofas and mattresses.',
     whyNeeded:
@@ -284,7 +284,7 @@ const allServices: Service[] = [
     heroSub:
       'Same-day movers & packers for apartment, villa and office moves - trained crew, padded trucks, full packing, furniture dismantling and reassembly. Transparent per-size pricing from AED 450, with weekend and evening slots.',
     quickAnswer:
-      'A move in Dubai with UAE Quick starts at AED 450 for a studio and AED 650 for a one-bedroom apartment, including a truck, movers and basic packing. A full villa move starts from AED 2,500. Packing materials, dismantling and reassembly are included in the quote.',
+      'Same-day movers & packers in Dubai from UAE Quick start at AED 450 for a studio, AED 650 for a one-bedroom and AED 2,500 for a villa, including truck, crew, packing, dismantling and reassembly. Book before 4 PM and, subject to service-lift hours, we can move you the same day across all 14 communities we cover.',
     whatIsIt:
       'Movers and packers handle the full house or office shift - supplying boxes and wrapping, packing your belongings, dismantling beds, wardrobes and TV units, loading and transporting in a padded truck, then reassembling and placing everything in the new home. It covers local moves within Dubai and relocations to other emirates.',
     whyNeeded:
@@ -349,7 +349,7 @@ const allServices: Service[] = [
     heroSub:
       'Book same-day painting & partitions work across Dubai - clean, low-odour painting with proper prep, furniture protection and tidy finishing, plus gypsum partitions and false ceilings. From AED 350 per room.',
     quickAnswer:
-      'Painting in Dubai with UAE Quick starts at AED 350 for a single room (walls and ceiling), from AED 1,500 for a one-bedroom apartment and AED 2,500 for a two-bed. Villa painting is quoted on site from AED 5,000. Gypsum partitions are from AED 350/m² and false ceilings from AED 120/m².',
+      'Same-day painting & partitions in Dubai from UAE Quick start at AED 350 for a single room, AED 1,500 for a one-bedroom apartment, AED 350/m² for gypsum partitions and AED 120/m² for false ceilings. Book before 4 PM for a same-day start in most of the 14 communities we cover, with a fixed written quote first.',
     whatIsIt:
       'Painting and partition services cover repainting interiors (and exteriors) with proper surface preparation - filling cracks, sanding, priming and applying two coats - as well as building gypsum partitions to divide rooms and installing false ceilings with lighting recesses. It also includes touch-up and end-of-tenancy repainting.',
     whyNeeded:
@@ -414,7 +414,7 @@ const allServices: Service[] = [
     heroSub:
       'From concept and 3D visuals to joinery, fit-out and authority approvals - managed end to end by one team. Book a same-day interior design consultation anywhere in Dubai; the first visit is free.',
     quickAnswer:
-      'Interior design in Dubai with UAE Quick covers homes, offices and restaurants end to end - concept and 3D visuals, custom joinery, fit-out and authority approvals. The initial consultation is free, and projects are quoted per scope after a site visit and a clear brief.',
+      'Same-day interior design consultations in Dubai from UAE Quick are free: book before 4 PM and a designer can visit the same day in most of the 14 communities we cover. Concept, 3D visuals, custom joinery, fit-out and approvals are then quoted per project with an itemised proposal before any work begins.',
     whatIsIt:
       'Interior design is the full process of planning and delivering a space - understanding how you live or work, producing a layout and look (with 3D visuals), specifying materials, lighting and furniture, building custom joinery, and managing the fit-out trades on site. A turnkey service also handles the approvals Dubai authorities and building management require.',
     whyNeeded:
@@ -479,7 +479,7 @@ const allServices: Service[] = [
     heroSub:
       'Same-day garden maintenance to keep a villa garden green through the Dubai summer - mowing, trimming, weeding, irrigation and palm care on a schedule that suits you. From AED 200.',
     quickAnswer:
-      'Garden maintenance in Dubai with UAE Quick starts at AED 200 for a one-off tidy (mow, trim, weed). Regular plans are from AED 400/month bi-weekly or AED 600/month weekly. Irrigation installation is from AED 500 per zone and full landscape design from AED 3,000.',
+      'Same-day garden maintenance in Dubai from UAE Quick starts at AED 200 for a one-off tidy, AED 400 a month for bi-weekly visits and AED 600 a month weekly. Book before 4 PM and a gardener reaches most villa communities we cover, from Jumeirah to Arabian Ranches, the same day with a fixed price agreed first.',
     whatIsIt:
       'Garden maintenance keeps an outdoor space healthy and tidy - mowing and edging the lawn, trimming hedges and shrubs, weeding, fertilising, pruning and trimming palms, and maintaining or installing the irrigation system that keeps everything alive. It also extends to full landscape design and planting for new or tired gardens.',
     whyNeeded:
@@ -543,7 +543,7 @@ const allServices: Service[] = [
     heroSub:
       'Same-day pool maintenance to keep a villa pool crystal clear and safe to swim - vacuuming, brushing, balanced chemicals, filter and pump care, plus jacuzzi service. From AED 250.',
     quickAnswer:
-      'Pool maintenance in Dubai with UAE Quick starts at AED 250 for a one-off clean. Regular plans are from AED 500/month bi-weekly or AED 800/month weekly with chemicals included. Pump repair starts from AED 500 and a full acid wash from AED 1,500. Jacuzzi service is from AED 300.',
+      'Same-day pool maintenance in Dubai from UAE Quick starts at AED 250 for a one-off clean, AED 500 a month bi-weekly and AED 800 a month weekly with chemicals included. Book before 4 PM and a pool technician reaches most villa communities we cover, from Palm Jumeirah to Emirates Hills, the same day.',
     whatIsIt:
       'Pool maintenance keeps the water clean, balanced and safe - vacuuming and brushing the pool, skimming debris, emptying baskets, testing and dosing chemicals (chlorine, pH, alkalinity), backwashing and cleaning filters, and checking the pump and circulation. It also covers repairs to pumps and filters, jacuzzi servicing and deep acid-wash cleaning of tiles.',
     whyNeeded:

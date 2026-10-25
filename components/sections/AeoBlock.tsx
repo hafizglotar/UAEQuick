@@ -4,16 +4,11 @@ import type { Service } from '@/lib/data/types';
  * Answer-Engine-Optimized content block: explicit What / Why / Problems /
  * Local / Cost structure with clear H2/H3 headings, written so featured
  * snippets and AI overviews can extract clean, self-contained answers.
+ * (The "In short" direct answer sits in the hero, directly under the H1.)
  */
 export function AeoBlock({ service }: { service: Service }) {
   return (
     <div className="mx-auto max-w-3xl space-y-10">
-      {/* Quick answer - the snippet/AI-overview target */}
-      <div className="rounded-2xl border-l-4 border-accent bg-slate-50 p-6">
-        <p className="text-[15px] font-semibold uppercase tracking-wide text-accent">In short</p>
-        <p className="mt-2 text-lg leading-relaxed text-ink">{service.quickAnswer}</p>
-      </div>
-
       <section>
         <h2 className="text-2xl font-bold text-brand">What is {service.name.toLowerCase()} in Dubai?</h2>
         <p className="mt-3 leading-relaxed text-slate-700">{service.whatIsIt}</p>

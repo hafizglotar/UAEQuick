@@ -43,7 +43,10 @@ export interface Service {
   startingPrice: string;
   /** First paragraph under the H1 - must contain "same-day {keyword}" once */
   heroSub: string;
-  /** AEO: concise, extractable answer for snippets / AI overviews */
+  /**
+   * AEO "In short" answer rendered directly under the H1: 40-60 words with
+   * price, response time and area coverage, written for AI Overviews/ChatGPT.
+   */
   quickAnswer: string;
   /** AEO: "What is …?" */
   whatIsIt: string;
