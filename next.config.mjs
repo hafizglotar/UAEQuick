@@ -27,6 +27,14 @@ const nextConfig = {
   // Legacy WordPress pretty-URLs → new App Router paths (preserve SEO equity).
   async redirects() {
     return [
+      // Canonical host: force www.uaequick.com -> https://uaequick.com (single 301)
+      // so backlinks and ranking signals never split across two hostnames.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.uaequick.com' }],
+        destination: 'https://uaequick.com/:path*',
+        permanent: true,
+      },
       { source: '/ac-services-air-conditioning-servicing-in-dubai', destination: '/services/ac-repair', permanent: true },
       { source: '/handyman-plumber', destination: '/services/handyman-plumber', permanent: true },
       { source: '/electrician-services', destination: '/services/electrician', permanent: true },

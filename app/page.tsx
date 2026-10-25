@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container, Section, SectionHead } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
@@ -11,9 +12,16 @@ import { Faq } from '@/components/sections/Faq';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { faqSchema } from '@/lib/seo/schema';
+import { buildMetadata } from '@/lib/seo/metadata';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { posts } from '@/lib/data/blog';
 import type { FAQ } from '@/lib/data/types';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'UAE Quick | Same-Day Home Maintenance Services in Dubai',
+  description: company.description,
+  path: '/',
+});
 
 const homeFaqs: FAQ[] = [
   { q: 'What home services does UAE Quick offer in Dubai?', a: 'AC repair and maintenance, handyman and plumbing, electrical work, cleaning, movers and packers, painting and partitions, interior design, garden maintenance, and pool and jacuzzi service - across every community in Dubai.' },

@@ -27,7 +27,6 @@ export const metadata: Metadata = {
   creator: company.name,
   publisher: company.name,
   formatDetection: { telephone: true, email: true, address: true },
-  alternates: { canonical: `${SITE_URL}/` },
   verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
     ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
     : undefined,
