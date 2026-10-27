@@ -7,6 +7,7 @@ import { StickyCTAs } from '@/components/layout/StickyCTAs';
 import { JsonLd } from '@/components/JsonLd';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { AnalyticsEvents } from '@/components/analytics/AnalyticsEvents';
+import { Analytics } from '@vercel/analytics/next';
 import { organizationSchema, websiteSchema, localBusinessSchema } from '@/lib/seo/schema';
 import { SITE_URL, company } from '@/lib/data/site';
 
@@ -64,6 +65,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StickyCTAs />
         <GoogleAnalytics />
         <AnalyticsEvents />
+        {/* Vercel Web Analytics (enable it for the project in the Vercel dashboard) */}
+        <Analytics />
       </body>
     </html>
   );
