@@ -20,7 +20,7 @@ Requires Node 20.9+ (tested on Node 22).
 
 | Var | Purpose |
 | --- | --- |
-| `CANONICAL_HOST_REDIRECT` | Set to `1` to 308 www.uaequick.com -> uaequick.com in code. Only after uaequick.com is the primary domain in Vercel (otherwise it loops). The canonical origin itself is hardcoded. |
+| (canonical origin) | Hardcoded to `https://www.uaequick.com` in `lib/data/site.ts`; Vercel 308s the bare domain to www. Do not add host redirects in code. |
 | `NEXT_PUBLIC_PHONE` / `NEXT_PUBLIC_WHATSAPP` | Public phone (E.164) and WhatsApp number. |
 | `LEAD_WEBHOOK_URL` | Optional. `/api/lead` POSTs each lead here (Zapier/Make/CRM). |
 | `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` | Optional. Email each lead via Resend. |

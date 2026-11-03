@@ -15,7 +15,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-20',
     author: 'UAE Quick Team',
     readingMinutes: 6,
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/ac-maintenance.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2022/01/ac-maintenance.jpg',
     tldr:
       'In Dubai, expect around AED 150 for a split-unit cleaning, AED 200+ for a repair visit (diagnosis plus labour), AED 250+ for a gas refill with leak check, and AED 450+ for a new split installation. Compressor faults are the costliest; a clogged coil or low gas is the cheapest to fix.',
     body: [
@@ -72,7 +72,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-10',
     author: 'UAE Quick Team',
     readingMinutes: 5,
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/services-imgs.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2022/01/services-imgs.jpg',
     tldr:
       'A handyman in Dubai starts at AED 80 for a small job and AED 120 for a one-hour slot covering several tasks. Lock changes are from AED 120, tap and sink repairs from AED 150, and plumbing leak repairs from AED 200. Bundling small jobs into one visit is the cheapest approach.',
     body: [
@@ -120,7 +120,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-15',
     author: 'UAE Quick Team',
     readingMinutes: 4,
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/ac-maintenance.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2022/01/ac-maintenance.jpg',
     tldr:
       'In Dubai, clean your AC every 3-4 months - roughly quarterly. The dust and humidity clog filters and coils far faster than in cooler climates, so a quarterly clean keeps cooling efficient, lowers your DEWA bill and prevents most summer breakdowns.',
     body: [
@@ -157,7 +157,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-08',
     author: 'UAE Quick Team',
     readingMinutes: 5,
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/services-imgs.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2022/01/services-imgs.jpg',
     tldr:
       'The most common apartment plumbing issues in Dubai are under-sink and water-heater leaks, blocked drains, low water pressure from scale build-up, and running toilets. Most are quick fixes if caught early; a small under-sink leak left alone can damage cabinets or the unit below.',
     body: [
@@ -198,7 +198,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-18',
     author: 'UAE Quick Team',
     readingMinutes: 5,
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/uaequick-villa-cleaning.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2022/01/uaequick-villa-cleaning.jpg',
     tldr:
       'A proper Dubai deep clean goes beyond surfaces - inside cupboards and the oven, behind appliances, grout and sealant, skirting, switches, windows from inside, balconies and AC grilles. For a move-out, it should return the unit to handover condition so the landlord releases the deposit.',
     body: [
@@ -249,7 +249,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-22',
     author: 'UAE Quick Team',
     readingMinutes: 4,
-    image: 'https://uaequick.com/wp-content/uploads/2022/01/ac-maintenance.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2022/01/ac-maintenance.jpg',
     tldr:
       'If your AC runs but does not cool in Dubai summer, the usual causes are low refrigerant gas, a coil so clogged with dust that air cannot pass, or a failing compressor. Check the filter and thermostat first; if cleaning the filter does not help, you likely need a gas check or a coil clean.',
     body: [
@@ -291,7 +291,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-25',
     author: 'UAE Quick Team',
     readingMinutes: 5,
-    image: 'https://uaequick.com/wp-content/uploads/2025/09/Cheap-home-cleaning-services-UAE-1.png',
+    image: 'https://www.uaequick.com/wp-content/uploads/2025/09/Cheap-home-cleaning-services-UAE-1.png',
     tldr:
       'Cheap home cleaning in Dubai starts at AED 35/hour with a two-hour minimum and supplies included. The cheapest way to book is regular hourly cleaning with the same cleaner - it gets a lower effective rate than one-off deep cleans, and bundling rooms avoids paying twice.',
     body: [
@@ -330,7 +330,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-20',
     author: 'UAE Quick Team',
     readingMinutes: 6,
-    image: 'https://uaequick.com/wp-content/uploads/2024/06/house-cleaner.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2024/06/house-cleaner.jpg',
     tldr:
       'Professional house cleaning in Dubai keeps a home healthy in a climate that produces dust daily and mould in humidity. Hourly cleaning is from AED 35/hr; a 1-bed deep clean from AED 450. Pick a cleaner who is vetted, brings supplies, and follows a room-by-room checklist.',
     body: [
@@ -379,7 +379,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-18',
     author: 'UAE Quick Team',
     readingMinutes: 5,
-    image: 'https://uaequick.com/wp-content/uploads/2024/06/Interiors-design.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2024/06/Interiors-design.jpg',
     tldr:
       'Interior design in Dubai is more than choosing colours - it is layout, light, storage, custom joinery and fit-out, plus the authority approvals commercial spaces need. Running it through one team avoids the gaps that happen when you hire designer, joiner and contractor separately.',
     body: [
@@ -424,7 +424,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-15',
     author: 'UAE Quick Team',
     readingMinutes: 5,
-    image: 'https://uaequick.com/wp-content/uploads/2024/05/Car-Towing-Services.png',
+    image: 'https://www.uaequick.com/wp-content/uploads/2024/05/Car-Towing-Services.png',
     tldr:
       'A reliable Dubai towing service runs 24/7, responds fast, quotes transparently and covers both flatbed towing and roadside fixes (battery, tyre, fuel, lockout). Price depends on distance, vehicle type, service and time of day - always get the quote before the truck rolls.',
     body: [
@@ -468,7 +468,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-12',
     author: 'UAE Quick Team',
     readingMinutes: 5,
-    image: 'https://uaequick.com/wp-content/uploads/2024/05/Expert-Tips-for-Swimming-Pool-Cleaning-in-Dubai-1.png',
+    image: 'https://www.uaequick.com/wp-content/uploads/2024/05/Expert-Tips-for-Swimming-Pool-Cleaning-in-Dubai-1.png',
     tldr:
       'A Dubai pool needs regular skimming, brushing and vacuuming, balanced chemicals, and a clean filter and pump - more often in summer when heat and dust accelerate algae and evaporation. Weekly professional maintenance keeps water safe and protects the equipment.',
     body: [
@@ -508,7 +508,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-22',
     author: 'UAE Quick Team',
     readingMinutes: 6,
-    image: 'https://uaequick.com/wp-content/uploads/2024/04/Best-AC-Services-in-Dubai.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2024/04/Best-AC-Services-in-Dubai.jpg',
     tldr:
       'The best AC service in Dubai gives a fixed quote after diagnosis, services all common brands, and responds the same day. Clean your unit every 3-4 months - Dubai dust clogs coils fast - and you will avoid most summer breakdowns and a higher DEWA bill.',
     body: [
@@ -557,7 +557,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-19',
     author: 'UAE Quick Team',
     readingMinutes: 6,
-    image: 'https://uaequick.com/wp-content/uploads/2024/03/Top-Electrician-Services-in-Dubai.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2024/03/Top-Electrician-Services-in-Dubai.jpg',
     tldr:
       'A good Dubai electrician works to DEWA standards, gives a fixed quote and handles lighting, sockets, breakers, appliance wiring and rewiring. Never DIY fixed electrical work - sparking sockets, tripping breakers and warm wiring are safety risks that need a professional.',
     body: [
@@ -607,7 +607,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-16',
     author: 'UAE Quick Team',
     readingMinutes: 5,
-    image: 'https://uaequick.com/wp-content/uploads/2024/03/Best-Cheap-Handyman-Services-in-Dubai.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2024/03/Best-Cheap-Handyman-Services-in-Dubai.jpg',
     tldr:
       'A handyman in Dubai starts at AED 80 for a small job or AED 120 for a one-hour slot covering several tasks. The cheapest, most dependable approach is to bundle small jobs into one visit with a vetted handyman who brings their own tools - and to get a fixed quote first.',
     body: [
@@ -652,7 +652,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-14',
     author: 'UAE Quick Team',
     readingMinutes: 5,
-    image: 'https://uaequick.com/wp-content/uploads/2024/03/Best-Home-Deep-Cleaning-Services-in-Dubai-UAE.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2024/03/Best-Home-Deep-Cleaning-Services-in-Dubai-UAE.jpg',
     tldr:
       'A home deep clean in Dubai reaches inside cupboards and the oven, behind appliances, grout, skirting, switches, interior windows, balconies and AC grilles. Prices start from AED 450 (1-bed), AED 650 (2-bed) and AED 1,200 for a villa. Book one for move-in/out, post-renovation, or a few times a year.',
     body: [
@@ -705,7 +705,7 @@ export const posts: BlogPost[] = [
     dateModified: '2026-05-10',
     author: 'UAE Quick Team',
     readingMinutes: 5,
-    image: 'https://uaequick.com/wp-content/uploads/2024/03/Cleaning-Service-for-Your-Needs.jpg',
+    image: 'https://www.uaequick.com/wp-content/uploads/2024/03/Cleaning-Service-for-Your-Needs.jpg',
     tldr:
       'Choose a Dubai cleaning service by defining your needs first, checking reviews and insurance, asking what is included and what products are used, getting a written estimate, and confirming a satisfaction guarantee. A trustworthy company is transparent on all of these before you book.',
     body: [

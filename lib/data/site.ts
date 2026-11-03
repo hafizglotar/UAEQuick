@@ -4,11 +4,12 @@
  */
 
 /**
- * Canonical origin. Hardcoded on purpose: canonical tags, sitemap, schema and
- * llms.txt must always say https://uaequick.com, whatever host Vercel happens
- * to serve the page on.
+ * Canonical origin = the production host. Vercel serves the site on
+ * www.uaequick.com and 308-redirects the bare domain to it, so canonical tags,
+ * og:url, sitemap, schema and llms.txt all use www. Hardcoded on purpose so it
+ * can never follow a different serving host.
  */
-export const SITE_URL = 'https://uaequick.com';
+export const SITE_URL = 'https://www.uaequick.com';
 
 export const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE || '+971507046234';
 export const PHONE_DISPLAY = '050 704 6234';
