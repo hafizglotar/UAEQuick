@@ -305,7 +305,7 @@ export function articleSchema(post: BlogPost): Json {
     '@type': 'Article',
     headline: post.title,
     description: post.metaDescription,
-    image: post.image,
+    image: post.image.startsWith('/') ? `${SITE_URL}${post.image}` : post.image,
     datePublished: post.datePublished,
     dateModified: post.dateModified,
     author: { '@type': 'Organization', name: post.author, '@id': ORG_ID, url: `${SITE_URL}/` },
