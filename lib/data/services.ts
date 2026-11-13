@@ -13,7 +13,7 @@ const allServices: Service[] = [
     shortDescription:
       'Same-day AC repair, cleaning, gas refill and installation across Dubai. Fixed pricing from AED 150.',
     metaDescription:
-      'AC not cooling? Same-day AC repair across Dubai - split and duct repair, cleaning, gas refill and installation. Fixed prices from AED 150. Call 050 704 6234.',
+      'AC not cooling? Same-day AC repair across Dubai - split and duct repair, cleaning, gas refill and installation. Fixed prices from AED 150. Call 054 758 5760.',
     startingPrice: 'AED 150',
     heroSub:
       'Cleaning, gas refill, repair and installation for split, ducted and window units across Dubai. Parts are quoted before we touch the unit, and every repair carries a 90-day warranty.',
@@ -80,7 +80,7 @@ const allServices: Service[] = [
     shortDescription:
       'Furniture fixing, leak repair, door locks, tap & sink, gypsum work. Same-day, from AED 80.',
     metaDescription:
-      'Same-day handyman and plumber in Dubai. Furniture fixing, leak repair, door locks, tap & sink, gypsum partitions. Fixed pricing from AED 80. Call 050 704 6234.',
+      'Same-day handyman and plumber in Dubai. Furniture fixing, leak repair, door locks, tap & sink, gypsum partitions. Fixed pricing from AED 80. Call 054 758 5760.',
     startingPrice: 'AED 80',
     heroSub:
       'From a stuck door to a leaking pipe, our handymen and plumbers fix it on the spot - furniture, leaks, locks, taps, gypsum and more, from AED 80 across Dubai.',
@@ -147,7 +147,7 @@ const allServices: Service[] = [
     shortDescription:
       'DEWA-aware electricians for wiring, lights, sockets, breakers and rewiring. From AED 100.',
     metaDescription:
-      'Same-day licensed electrician in Dubai for light fitting, sockets, breakers, appliance wiring and rewiring. Fixed pricing from AED 100. Call 050 704 6234.',
+      'Same-day licensed electrician in Dubai for light fitting, sockets, breakers, appliance wiring and rewiring. Fixed pricing from AED 100. Call 054 758 5760.',
     startingPrice: 'AED 100',
     heroSub:
       'Lights, sockets, breakers, ceiling fans, appliance wiring and full rewiring, done safely to DEWA standards. Fixed pricing from AED 100 across Dubai.',
@@ -213,7 +213,7 @@ const allServices: Service[] = [
     shortDescription:
       'Deep cleaning, villa cleaning, move-in/out and upholstery. Supplies included, from AED 35/hr.',
     metaDescription:
-      'Same-day cleaning in Dubai - deep cleaning, villa cleaning, move-in/move-out and sofa shampoo. All supplies included, from AED 35/hr. Call 050 704 6234.',
+      'Same-day cleaning in Dubai - deep cleaning, villa cleaning, move-in/move-out and sofa shampoo. All supplies included, from AED 35/hr. Call 054 758 5760.',
     startingPrice: 'AED 35/hr',
     heroSub:
       'Trained cleaners with their own supplies and equipment for hourly cleaning, full deep cleans, move-in/move-out and upholstery - from AED 35/hr across Dubai.',
@@ -279,7 +279,7 @@ const allServices: Service[] = [
     shortDescription:
       'Apartment, villa and office moves with packing, dismantling and reassembly. From AED 450.',
     metaDescription:
-      'Same-day movers and packers in Dubai. Apartment, villa and office moves with packing, dismantling, reassembly, transit cover. From AED 450. Call 050 704 6234.',
+      'Same-day movers and packers in Dubai. Apartment, villa and office moves with packing, dismantling, reassembly, transit cover. From AED 450. Call 054 758 5760.',
     startingPrice: 'AED 450',
     heroSub:
       'Trained crew, padded trucks, full packing and furniture dismantling and reassembly for apartment, villa and office moves. Transparent per-size pricing with weekend and evening slots.',
@@ -344,7 +344,7 @@ const allServices: Service[] = [
     shortDescription:
       'Villa, apartment and office painting, plus gypsum partitions and false ceilings. From AED 350.',
     metaDescription:
-      'Same-day painting quotes in Dubai - apartment, villa and office painting, gypsum partitions and false ceilings. Clean, fast, from AED 350. Call 050 704 6234.',
+      'Same-day painting quotes in Dubai - apartment, villa and office painting, gypsum partitions and false ceilings. Clean, fast, from AED 350. Call 054 758 5760.',
     startingPrice: 'AED 350',
     heroSub:
       'Clean, low-odour painting with proper prep, furniture protection and tidy finishing, plus gypsum partitions and false ceilings. From AED 350 per room across Dubai.',
@@ -409,7 +409,7 @@ const allServices: Service[] = [
     shortDescription:
       'Home, office and restaurant interior design with fit-out, joinery and approvals handled.',
     metaDescription:
-      'Bespoke interior design in Dubai for homes, offices and restaurants - concept, 3D visuals, joinery, fit-out and approvals. Free consultation. Call 050 704 6234.',
+      'Bespoke interior design in Dubai for homes, offices and restaurants - concept, 3D visuals, joinery, fit-out and approvals. Free consultation. Call 054 758 5760.',
     startingPrice: 'Free consultation',
     heroSub:
       'From concept and 3D visuals to joinery, fit-out and authority approvals - managed end to end by one team, for homes, offices and restaurants across Dubai.',
@@ -474,7 +474,7 @@ const allServices: Service[] = [
     shortDescription:
       'Landscaping, lawn care, irrigation and palm trimming for Dubai villas. From AED 200.',
     metaDescription:
-      'Same-day garden maintenance in Dubai - lawn care, landscaping, irrigation and palm tree trimming for villas. Weekly plans from AED 400/mo. Call 050 704 6234.',
+      'Same-day garden maintenance in Dubai - lawn care, landscaping, irrigation and palm tree trimming for villas. Weekly plans from AED 400/mo. Call 054 758 5760.',
     startingPrice: 'AED 200',
     heroSub:
       'Mowing, trimming, weeding, irrigation and palm care on a schedule that keeps a villa garden green through the Dubai summer. From AED 200.',
@@ -538,7 +538,7 @@ const allServices: Service[] = [
     shortDescription:
       'Pool cleaning, chemical balancing, pump repair and jacuzzi service for Dubai villas. From AED 250.',
     metaDescription:
-      'Same-day pool maintenance in Dubai - cleaning, chemical balancing, pump and filter repair, jacuzzi service and acid wash. From AED 250. Call 050 704 6234.',
+      'Same-day pool maintenance in Dubai - cleaning, chemical balancing, pump and filter repair, jacuzzi service and acid wash. From AED 250. Call 054 758 5760.',
     startingPrice: 'AED 250',
     heroSub:
       'Vacuuming, brushing, balanced chemicals, filter and pump care, plus jacuzzi service, to keep a villa pool crystal clear and safe to swim. From AED 250.',
@@ -604,7 +604,7 @@ const allServices: Service[] = [
     shortDescription:
       '24/7 towing, jump start, flat tyre and fuel delivery across Dubai. From AED 100.',
     metaDescription:
-      '24/7 vehicle recovery in Dubai - towing, jump start, flat tyre help and fuel delivery across the city. Fast roadside response from AED 100. Call 050 704 6234.',
+      '24/7 vehicle recovery in Dubai - towing, jump start, flat tyre help and fuel delivery across the city. Fast roadside response from AED 100. Call 054 758 5760.',
     startingPrice: 'AED 100',
     heroSub:
       'Broken down, flat battery, flat tyre or out of fuel? Our same-day vehicle recovery team reaches you fast, day or night, anywhere in Dubai. Roadside help from AED 100, towing from AED 150.',

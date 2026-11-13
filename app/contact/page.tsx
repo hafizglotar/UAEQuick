@@ -10,9 +10,9 @@ import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { Icon } from '@/components/icons/Icon';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Contact UAE Quick | Home Services Dubai | Call 050 704 6234',
+  title: 'Contact UAE Quick | Home Services Dubai | Call 054 758 5760',
   description:
-    'Contact UAE Quick for same-day home services in Dubai. Call 050 704 6234, WhatsApp us, or send a message. Open 8 AM-10 PM, 7 days. Based in Al Quoz, Dubai.',
+    'Contact UAE Quick for same-day home services in Dubai. Call 054 758 5760, WhatsApp us, or send a message. Open 8 AM-10 PM, 7 days. Based in Al Quoz, Dubai.',
   path: '/contact',
 });
 

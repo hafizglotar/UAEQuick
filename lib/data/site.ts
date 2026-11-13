@@ -11,8 +11,8 @@
  */
 export const SITE_URL = 'https://www.uaequick.com';
 
-export const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE || '+971507046234';
-export const PHONE_DISPLAY = '050 704 6234';
+export const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE || '+971547585760';
+export const PHONE_DISPLAY = '054 758 5760';
 export const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP || '971589331711';
 
 export const company = {
