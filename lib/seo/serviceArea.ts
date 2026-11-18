@@ -1,6 +1,6 @@
 import type { Area, FAQ, Service } from '@/lib/data/types';
 import { areas, areaNotes } from '@/lib/data/areas';
-import { serviceNotes } from '@/lib/data/services';
+import { services, serviceNotes } from '@/lib/data/services';
 import { PHONE_DISPLAY } from '@/lib/data/site';
 import { areaShortName, lowerKeyword, lowerFirst } from '@/lib/seo/titles';
 
@@ -118,6 +118,27 @@ export function serviceAreaIssues(service: Service, area: Area): string[] {
   else picked = list.slice(1, 4);
   const where = cap(an.propertyShort);
   return picked.map((problem) => `${where}: ${lowerFirst(problem)}`);
+}
+
+/** Which service an area-level "common problem" bullet belongs to, by keyword.
+ *  Order matters: pool/garden before AC (villa bullets mention both), AC before
+ *  plumbing ("AC drainage"), cleaning before painting and handyman ("deep cleans and painting at handover"). */
+const PROBLEM_RULES: [RegExp, string][] = [
+  [/\bpool/i, 'pool-maintenance'],
+  [/garden|irrigation|lawn|landscap/i, 'garden-maintenance'],
+  [/\bAC\b|duct|FCU|cooling|chiller/i, 'ac-repair'],
+  [/electric|lighting|smart-home/i, 'electrician'],
+  [/clean/i, 'cleaning'],
+  [/paint/i, 'painting'],
+  [/plumb|leak|drain|tap|mixer|water-heater|silicone/i, 'handyman-plumber'],
+  [/handyman|furniture|mount|snag|fitting|door|blind|partition|maintenance/i, 'handyman-plumber'],
+];
+
+/** Service slug an area "common problem" bullet maps to, or undefined when none matches. */
+export function problemServiceSlug(problem: string): string | undefined {
+  const hit = PROBLEM_RULES.find(([re]) => re.test(problem));
+  const slug = hit?.[1];
+  return slug && services.some((s) => s.slug === slug) ? slug : undefined;
 }
 
 /** Three nearby areas: the area's own `nearby` list topped up with same-type communities. */

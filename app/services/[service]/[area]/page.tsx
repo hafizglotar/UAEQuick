@@ -21,6 +21,7 @@ import {
   serviceAreaFaqs,
   serviceAreaIssues,
   nearbyAreas,
+  problemServiceSlug,
 } from '@/lib/seo/serviceArea';
 import { services, getServiceBySlug, serviceSlugs, formServiceValue } from '@/lib/data/services';
 import { getAreaBySlug, areaSlugs } from '@/lib/data/areas';
@@ -145,9 +146,18 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
             </ul>
             <h3>What else we see in {shortName}</h3>
             <ul>
-              {an.commonProblems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+              {an.commonProblems.map((item) => {
+                const slug = problemServiceSlug(item);
+                return (
+                  <li key={item}>
+                    {slug && slug !== service.slug ? (
+                      <Link href={`/services/${slug}/${area.slug}`}>{item}</Link>
+                    ) : (
+                      item
+                    )}
+                  </li>
+                );
+              })}
             </ul>
             <h3>Typical {kwLower} jobs</h3>
             <ul>
