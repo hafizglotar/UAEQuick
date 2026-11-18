@@ -14,6 +14,9 @@ import { buildMetadata } from '@/lib/seo/metadata';
 import { getPostBySlug, postSlugs, posts } from '@/lib/data/blog';
 import { services } from '@/lib/data/services';
 
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -66,14 +69,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <span className="font-semibold uppercase tracking-wide text-accent">{post.category}</span>
                 <span className="text-slate-500">{post.readingMinutes} min read</span>
                 <span className="text-slate-500">
-                  By {post.author} · Updated{' '}
-                  <time dateTime={post.dateModified}>
-                    {new Date(post.dateModified).toLocaleDateString('en-GB', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric',
-                    })}
-                  </time>
+                  By <span className="font-semibold text-ink">{post.author}</span> · Published{' '}
+                  <time dateTime={post.datePublished}>{formatDate(post.datePublished)}</time>
+                  {post.dateModified !== post.datePublished && (
+                    <>
+                      {' '}
+                      · Updated <time dateTime={post.dateModified}>{formatDate(post.dateModified)}</time>
+                    </>
+                  )}
                 </span>
               </div>
               <h1 className="mt-3 text-balance text-3xl font-extrabold leading-tight text-ink md:text-4xl">
