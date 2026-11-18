@@ -16,6 +16,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 import { Icon } from '@/components/icons/Icon';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { posts } from '@/lib/data/blog';
+import { areas } from '@/lib/data/areas';
 import type { FAQ } from '@/lib/data/types';
 
 export const metadata: Metadata = buildMetadata({
@@ -129,7 +130,7 @@ export default function HomePage() {
           <div className="mx-auto mb-10 max-w-2xl text-center">
             <h2 className="text-3xl font-bold md:text-4xl">Serving Every Area in Dubai</h2>
             <p className="mt-3 text-white/80">
-              Same-day coverage across 35+ Dubai communities. Tap your area for local service details.
+              Same-day coverage across {areas.length} Dubai communities. Tap your area for local service details.
             </p>
           </div>
           <AreasGrid dark />

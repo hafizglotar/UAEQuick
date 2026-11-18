@@ -51,6 +51,9 @@ export const company = {
     },
   ],
   foundingYear: 2018,
+  // Dubai DED trade licence number. Set NEXT_PUBLIC_TRADE_LICENCE in the hosting
+  // env; the footer shows "Trade Licence No. ..." only when it is set.
+  tradeLicence: process.env.NEXT_PUBLIC_TRADE_LICENCE || '',
   priceRange: 'AED 35 - AED 1200',
   rating: { value: 4.8, count: 412 },
   social: {

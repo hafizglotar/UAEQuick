@@ -6,6 +6,8 @@ import { Icon } from '@/components/icons/Icon';
 
 export function Footer() {
   const half = Math.ceil(services.length / 2);
+  const gbp = company.social.googleBusinessProfile;
+  const ratingText = `${company.rating.value}/5 from ${company.rating.count}+ Dubai customers`;
   return (
     <footer className="bg-brand-dark text-slate-300">
       <div className="mx-auto max-w-[1200px] px-5 py-14">
@@ -17,8 +19,17 @@ export function Footer() {
             <p className="mt-4 text-sm leading-relaxed">{company.description}</p>
             <p className="mt-4 flex items-center gap-2 text-sm">
               <Icon name="Star" size={16} className="shrink-0 fill-current text-gold" />
-              {company.rating.value}/5 from {company.rating.count}+ Dubai customers
+              {gbp ? (
+                <a href={gbp} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                  {ratingText}
+                </a>
+              ) : (
+                <span>{ratingText}</span>
+              )}
             </p>
+            {company.tradeLicence && (
+              <p className="mt-2 text-sm">Trade Licence No. {company.tradeLicence}</p>
+            )}
           </div>
 
           <div>
