@@ -9,48 +9,21 @@ import { itemListSchema, webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { posts } from '@/lib/data/blog';
 
-const PER_PAGE = 6;
-
 /** Newest-first so the latest guides lead each page. */
 const sortedPosts = [...posts].sort(
   (a, b) => +new Date(b.datePublished) - +new Date(a.datePublished)
 );
-const totalPages = Math.max(1, Math.ceil(sortedPosts.length / PER_PAGE));
 
-function currentPage(value?: string): number {
-  const n = Number(value);
-  if (!Number.isInteger(n) || n < 1) return 1;
-  return Math.min(n, totalPages);
-}
-
-/** Page 1 keeps the clean /blog URL; later pages use ?page=N. */
-function pageHref(page: number): string {
-  return page <= 1 ? '/blog' : `/blog?page=${page}`;
-}
-
-export async function generateMetadata({
-  searchParams,
-}: {
-  searchParams: Promise<{ page?: string }>;
-}): Promise<Metadata> {
-  const page = currentPage((await searchParams).page);
-  const suffix = page > 1 ? ` (Page ${page})` : '';
-  return buildMetadata({
-    title: `Dubai Home Maintenance Blog | Costs, Tips & Guides${suffix} | UAE Quick`,
+export const metadata: Metadata = buildMetadata({
+    title: 'Dubai Home Maintenance Blog | Costs, Tips & Guides | UAE Quick',
     description:
       'Practical guides for Dubai homes - AC repair costs, handyman prices, plumbing problems, deep cleaning checklists and seasonal maintenance advice from our team.',
-    path: pageHref(page),
-  });
-}
+    path: '/blog',
+});
 
-export default async function BlogPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ page?: string }>;
-}) {
-  const page = currentPage((await searchParams).page);
-  const start = (page - 1) * PER_PAGE;
-  const pagePosts = sortedPosts.slice(start, start + PER_PAGE);
+/** Every guide on one page, newest first. */
+export default function BlogPage() {
+  const pagePosts = sortedPosts;
 
   return (
     <>
@@ -96,59 +69,12 @@ export default async function BlogPage({
               </article>
             ))}
           </div>
-
-          {totalPages > 1 && (
-            <nav aria-label="Blog pagination" className="mt-12 flex items-center justify-center gap-2">
-              {page > 1 ? (
-                <Link
-                  href={pageHref(page - 1)}
-                  rel="prev"
-                  className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-ink hover:border-brand hover:text-brand"
-                >
-                  ← Prev
-                </Link>
-              ) : (
-                <span className="cursor-not-allowed rounded-lg border border-slate-100 px-4 py-2 text-sm font-semibold text-slate-300">
-                  ← Prev
-                </span>
-              )}
-
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
-                <Link
-                  key={n}
-                  href={pageHref(n)}
-                  aria-current={n === page ? 'page' : undefined}
-                  className={
-                    n === page
-                      ? 'rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white'
-                      : 'rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-ink hover:border-brand hover:text-brand'
-                  }
-                >
-                  {n}
-                </Link>
-              ))}
-
-              {page < totalPages ? (
-                <Link
-                  href={pageHref(page + 1)}
-                  rel="next"
-                  className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-ink hover:border-brand hover:text-brand"
-                >
-                  Next →
-                </Link>
-              ) : (
-                <span className="cursor-not-allowed rounded-lg border border-slate-100 px-4 py-2 text-sm font-semibold text-slate-300">
-                  Next →
-                </span>
-              )}
-            </nav>
-          )}
         </Container>
       </Section>
       <JsonLd
         data={[
           webPageSchema({
-            path: pageHref(page),
+            path: '/blog',
             name: 'Dubai Home Maintenance Guides',
             description: 'Practical guides on home maintenance costs, problems and seasonal care in Dubai.',
             type: 'CollectionPage',
