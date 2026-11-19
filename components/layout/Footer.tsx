@@ -20,7 +20,7 @@ export function Footer() {
             <p className="mt-4 flex items-center gap-2 text-sm">
               <Icon name="Star" size={16} className="shrink-0 fill-current text-gold" />
               {gbp ? (
-                <a href={gbp} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                <a href={gbp} target="_blank" rel="nofollow noopener" className="hover:text-accent">
                   {ratingText}
                 </a>
               ) : (

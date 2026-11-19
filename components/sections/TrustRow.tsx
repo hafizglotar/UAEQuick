@@ -22,7 +22,7 @@ export function TrustRow() {
           </div>
           <div className="text-xs text-white/85">
             {it.href ? (
-              <a href={it.href} target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:underline">
+              <a href={it.href} target="_blank" rel="nofollow noopener" className="underline-offset-2 hover:underline">
                 {it.label}
               </a>
             ) : (
