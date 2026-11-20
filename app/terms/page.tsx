@@ -3,6 +3,8 @@ import { Container, Section } from '@/components/ui/Container';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { company } from '@/lib/data/site';
+import { JsonLd } from '@/components/JsonLd';
+import { webPageSchema } from '@/lib/seo/schema';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Terms of Service | UAE Quick',
@@ -49,6 +51,13 @@ export default function TermsPage() {
           </div>
         </Container>
       </Section>
+      <JsonLd
+        data={webPageSchema({
+          path: '/terms',
+          name: 'Terms of Service',
+          description: 'The terms that apply when you book a service with UAE Quick in Dubai.',
+        })}
+      />
     </>
   );
 }

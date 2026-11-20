@@ -7,6 +7,8 @@ import { buildMetadata } from '@/lib/seo/metadata';
 import { PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { areas } from '@/lib/data/areas';
 import { Icon, type IconName } from '@/components/icons/Icon';
+import { JsonLd } from '@/components/JsonLd';
+import { webPageSchema } from '@/lib/seo/schema';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Get a Free Quote | Same-Day Home Services Dubai | UAE Quick',
@@ -67,6 +69,13 @@ export default function QuotePage() {
         </Container>
       </Section>
       <CtaBand title="Need Help Right Now?" subtitle="Call us directly for same-day service anywhere in Dubai." />
+      <JsonLd
+        data={webPageSchema({
+          path: '/quote',
+          name: 'Get a Free Quote',
+          description: 'Request a free, fixed-price quote for same-day home services in Dubai.',
+        })}
+      />
     </>
   );
 }

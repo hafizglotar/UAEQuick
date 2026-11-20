@@ -3,6 +3,8 @@ import { Container, Section } from '@/components/ui/Container';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { company } from '@/lib/data/site';
+import { JsonLd } from '@/components/JsonLd';
+import { webPageSchema } from '@/lib/seo/schema';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Privacy Policy | UAE Quick',
@@ -48,6 +50,13 @@ export default function PrivacyPage() {
           </div>
         </Container>
       </Section>
+      <JsonLd
+        data={webPageSchema({
+          path: '/privacy',
+          name: 'Privacy Policy',
+          description: 'How UAE Quick collects, uses and protects personal information.',
+        })}
+      />
     </>
   );
 }

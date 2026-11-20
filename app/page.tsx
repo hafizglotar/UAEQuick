@@ -11,7 +11,8 @@ import { CtaBand } from '@/components/sections/CtaBand';
 import { Faq } from '@/components/sections/Faq';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { JsonLd } from '@/components/JsonLd';
-import { faqSchema } from '@/lib/seo/schema';
+import { faqSchema, webPageSchema } from '@/lib/seo/schema';
+import { CONTENT_UPDATED } from '@/lib/data/updated';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { Icon } from '@/components/icons/Icon';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
@@ -171,7 +172,17 @@ export default function HomePage() {
       </Section>
 
       <Faq faqs={homeFaqs} title="Home Services in Dubai - FAQs" />
-      <JsonLd data={faqSchema(homeFaqs)} />
+      <JsonLd
+        data={[
+          webPageSchema({
+            path: '/',
+            name: 'UAE Quick - Same-Day Home Maintenance Services in Dubai',
+            description: company.description,
+            dateModified: CONTENT_UPDATED.home,
+          }),
+          faqSchema(homeFaqs),
+        ]}
+      />
 
       <CtaBand title="Book a Service in Dubai Today" />
     </>
