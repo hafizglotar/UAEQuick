@@ -59,9 +59,11 @@ export const company = {
   social: {
     facebook: 'https://www.facebook.com/uaequick',
     instagram: 'https://www.instagram.com/uaequick',
-    // Google Business Profile share link (https://g.page/... or maps.app.goo.gl/...).
-    // Set NEXT_PUBLIC_GBP_URL in the hosting env; included in schema sameAs when set.
-    googleBusinessProfile: process.env.NEXT_PUBLIC_GBP_URL || '',
+    // Google Business Profile, as a stable place-ID link (no map viewport or
+    // tracking params). Linked from the footer and hero review tiles and listed
+    // in schema sameAs. NEXT_PUBLIC_GBP_URL overrides it.
+    googleBusinessProfile:
+      process.env.NEXT_PUBLIC_GBP_URL || 'https://www.google.com/maps?cid=2858655413164743471',
   },
   logo: `${SITE_URL}/logo.svg`,
   // Default social image is generated dynamically by app/opengraph-image.tsx.
