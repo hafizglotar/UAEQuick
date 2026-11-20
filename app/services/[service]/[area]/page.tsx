@@ -27,12 +27,19 @@ import {
 import { services, getServiceBySlug, serviceSlugs, formServiceValue } from '@/lib/data/services';
 import { getAreaBySlug, areaSlugs } from '@/lib/data/areas';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
+import { subServices, getSubService } from '@/lib/data/subServices';
+import { SubServicePage } from '@/components/sections/SubServicePage';
 
 export const dynamicParams = false;
 
 /** 9 public services x 14 areas = 126 static pages. */
 export function generateStaticParams() {
-  return serviceSlugs.flatMap((service) => areaSlugs.map((area) => ({ service, area })));
+  return [
+    ...serviceSlugs.flatMap((service) => areaSlugs.map((area) => ({ service, area }))),
+    // Sub-service pages share this URL depth: /services/{service}/{sub-service}.
+    // The second segment is then a sub-service slug, not an area.
+    ...subServices.map((s) => ({ service: s.parent, area: s.slug })),
+  ];
 }
 
 type Params = Promise<{ service: string; area: string }>;
@@ -40,6 +47,15 @@ type Params = Promise<{ service: string; area: string }>;
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { service: serviceSlug, area: areaSlug } = await params;
   const service = getServiceBySlug(serviceSlug);
+  const sub = getSubService(serviceSlug, areaSlug);
+  if (service && sub) {
+    return buildMetadata({
+      title: sub.title,
+      description: sub.metaDescription,
+      path: `/services/${service.slug}/${sub.slug}`,
+      image: service.image,
+    });
+  }
   const area = getAreaBySlug(areaSlug);
   if (!service || !area) return {};
   return buildMetadata({
@@ -53,6 +69,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function ServiceAreaPage({ params }: { params: Params }) {
   const { service: serviceSlug, area: areaSlug } = await params;
   const service = getServiceBySlug(serviceSlug);
+  const sub = getSubService(serviceSlug, areaSlug);
+  if (service && sub) return <SubServicePage service={service} sub={sub} />;
   const area = getAreaBySlug(areaSlug);
   if (!service || !area) notFound();
 

@@ -21,6 +21,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 import { serviceTitle, serviceH1 } from '@/lib/seo/titles';
 import { services, getServiceBySlug, serviceSlugs, formServiceValue } from '@/lib/data/services';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
+import { subServicesFor } from '@/lib/data/subServices';
 
 export const dynamicParams = false;
 
@@ -155,6 +156,27 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
 
       {/* FAQ */}
       <Faq faqs={service.faqs} title={`${service.name} in Dubai - FAQs`} />
+
+      {/* Sub-service pages for this service (internal linking) */}
+      {subServicesFor(service.slug).length > 0 && (
+        <Section>
+          <Container>
+            <SectionHead title={`Popular ${service.name} Jobs`} />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {subServicesFor(service.slug).map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/services/${service.slug}/${s.slug}`}
+                  className="rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition-all hover:-translate-y-1 hover:shadow-cardHover"
+                >
+                  <h3 className="font-bold text-brand">{s.name}</h3>
+                  <p className="mt-1 text-sm text-slate-600">What is included, when you need it and what it costs →</p>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
 
       {/* Related services (internal linking) */}
       {related.length > 0 && (

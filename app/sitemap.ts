@@ -4,6 +4,7 @@ import { services } from '@/lib/data/services';
 import { areas } from '@/lib/data/areas';
 import { posts } from '@/lib/data/blog';
 import { CONTENT_UPDATED as U } from '@/lib/data/updated';
+import { subServices } from '@/lib/data/subServices';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Real content dates, not build time (see lib/data/updated.ts).
@@ -52,5 +53,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...servicePages, ...areaPages, ...serviceAreaPages, ...blogPages];
+  const subServicePages: MetadataRoute.Sitemap = subServices.map((s) => ({
+    url: `${SITE_URL}/services/${s.parent}/${s.slug}`,
+    lastModified: d(U.subServices),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  // New entries are appended; the order of existing entries is unchanged.
+  return [...staticPages, ...servicePages, ...areaPages, ...serviceAreaPages, ...blogPages, ...subServicePages];
 }

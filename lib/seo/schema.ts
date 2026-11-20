@@ -270,6 +270,41 @@ export function areaServiceSchema(area: Area): Json {
   };
 }
 
+/** Service node for a /services/[service]/[sub-service] page. Offers come from
+ *  the parent's pricing rows, so schema prices always match the visible table. */
+export function subServiceSchema(
+  service: Service,
+  sub: { slug: string; name: string; metaDescription: string },
+  rows: { item: string; includes: string; price: string }[]
+): Json {
+  const url = `${SITE_URL}/services/${service.slug}/${sub.slug}`;
+  const num = (p: string) => p.replace(/[^0-9.]/g, '') || undefined;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `${sub.name} in Dubai`,
+    serviceType: sub.name,
+    category: service.category,
+    description: sub.metaDescription,
+    image: service.image,
+    url,
+    provider: { '@id': BUSINESS_ID, name: company.name },
+    areaServed: [DUBAI, ...areasServed()],
+    isRelatedTo: { '@type': 'Service', name: service.title, url: `${SITE_URL}/services/${service.slug}` },
+    ...(rows[0]
+      ? {
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'AED',
+            price: num(rows[0].price),
+            availability: 'https://schema.org/InStock',
+            url,
+          },
+        }
+      : {}),
+  };
+}
+
 /** Service node for a /services/[service]/[area] page. */
 export function serviceAreaSchema(service: Service, area: Area, description: string): Json {
   const shortName = area.name.split(' (')[0];
