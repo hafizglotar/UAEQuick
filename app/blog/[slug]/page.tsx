@@ -13,6 +13,7 @@ import { articleSchema, faqSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { getPostBySlug, postSlugs, posts } from '@/lib/data/blog';
 import { services } from '@/lib/data/services';
+import { subServicesFor } from '@/lib/data/subServices';
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -51,6 +52,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .map((s) => services.find((x) => x.slug === s))
     .filter(Boolean) as typeof services;
   const more = posts.filter((p) => p.slug !== post.slug).slice(0, 2);
+  // Sub-service pages under this post's related services (max 4).
+  const relatedJobs = post.relatedServices.flatMap((slug) => subServicesFor(slug)).slice(0, 4);
 
   return (
     <>
@@ -103,6 +106,26 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
 
             <BlogBody blocks={post.body} />
+
+            {relatedJobs.length > 0 && (
+              <div className="mt-10 rounded-2xl border border-slate-100 bg-white p-6 shadow-card">
+                <p className="font-bold text-brand">Book the job this guide covers</p>
+                <ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
+                  {relatedJobs.map((j) => (
+                    <li key={`${j.parent}/${j.slug}`}>
+                      <Link href={`/services/${j.parent}/${j.slug}`} className="font-semibold text-ink hover:text-accent">
+                        {j.name} in Dubai →
+                      </Link>
+                    </li>
+                  ))}
+                  <li>
+                    <Link href="/same-day" className="font-semibold text-ink hover:text-accent">
+                      How same-day booking works →
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
 
             {related.length > 0 && (
               <div className="mt-10 rounded-2xl border border-slate-100 bg-slate-50 p-6">

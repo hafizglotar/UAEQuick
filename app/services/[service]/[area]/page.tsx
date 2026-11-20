@@ -27,7 +27,7 @@ import {
 import { services, getServiceBySlug, serviceSlugs, formServiceValue } from '@/lib/data/services';
 import { getAreaBySlug, areaSlugs } from '@/lib/data/areas';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
-import { subServices, getSubService } from '@/lib/data/subServices';
+import { subServices, getSubService, subServicesFor } from '@/lib/data/subServices';
 import { SubServicePage } from '@/components/sections/SubServicePage';
 
 export const dynamicParams = false;
@@ -79,6 +79,7 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
   const kw = service.keyword;
   const kwLower = lowerKeyword(service.keyword);
   const faqs = serviceAreaFaqs(service, area);
+  const jobs = subServicesFor(service.slug);
   const description = serviceAreaDescription(service, area);
   const nearby = nearbyAreas(area, 3);
   const related = service.relatedServices
@@ -251,6 +252,29 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
           </div>
         </Container>
       </Section>
+
+      {/* Added: specific jobs under this service, and the same-day hub */}
+      {jobs.length > 0 && (
+      <Section>
+        <Container>
+          <h2 className="text-xl font-bold text-brand">{kw} jobs we handle in {shortName}</h2>
+          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+            {jobs.map((j) => (
+              <li key={j.slug}>
+                <Link href={`/services/${service.slug}/${j.slug}`} className="font-semibold text-ink hover:text-accent">
+                  {j.name} →
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/same-day" className="font-semibold text-ink hover:text-accent">
+                How same-day booking works →
+              </Link>
+            </li>
+          </ul>
+        </Container>
+      </Section>
+      )}
 
       <CtaBand title={`Need ${service.name} in ${shortName} Today?`} />
 

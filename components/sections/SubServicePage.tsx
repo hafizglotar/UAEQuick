@@ -16,6 +16,7 @@ import { subServicesFor, type SubService } from '@/lib/data/subServices';
 import { areas } from '@/lib/data/areas';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { CONTENT_UPDATED, formatUpdated } from '@/lib/data/updated';
+import { posts } from '@/lib/data/blog';
 import type { Service } from '@/lib/data/types';
 
 /** A /services/{parent}/{sub-service} page: one specific job, linked up to its parent. */
@@ -30,6 +31,13 @@ export function SubServicePage({ service, sub }: { service: Service; sub: SubSer
     .map((slug) => areas.find((a) => a.slug === slug))
     .filter((a): a is NonNullable<typeof a> => Boolean(a));
   const kwLower = lowerKeyword(service.keyword);
+  // Blog guides tagged with this service, newest first (max 3).
+  const guides = posts
+    .filter((p) => p.relatedServices.includes(service.slug))
+    .sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1))
+    .slice(0, 3);
+
+
 
   return (
     <>
@@ -160,6 +168,27 @@ export function SubServicePage({ service, sub }: { service: Service; sub: SubSer
           </div>
         </Container>
       </Section>
+
+      {/* Guides about the parent service */}
+      {guides.length > 0 && (
+        <Section>
+          <Container>
+            <SectionHead title={`${service.name} Guides`} />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {guides.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/blog/${p.slug}`}
+                  className="rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition-all hover:-translate-y-1 hover:shadow-cardHover"
+                >
+                  <span className="text-xs font-semibold uppercase tracking-wide text-accent">{p.category}</span>
+                  <h3 className="mt-2 font-bold text-brand">{p.title}</h3>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
 
       <CtaBand title={`Need ${sub.name} in Dubai?`} />
 

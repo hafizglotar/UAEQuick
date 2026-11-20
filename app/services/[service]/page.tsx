@@ -22,6 +22,7 @@ import { serviceTitle, serviceH1 } from '@/lib/seo/titles';
 import { services, getServiceBySlug, serviceSlugs, formServiceValue } from '@/lib/data/services';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { subServicesFor } from '@/lib/data/subServices';
+import { posts } from '@/lib/data/blog';
 
 export const dynamicParams = false;
 
@@ -53,6 +54,13 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
   const related = service.relatedServices
     .map((s) => services.find((x) => x.slug === s))
     .filter(Boolean) as typeof services;
+
+  // Blog guides tagged with this service, newest first. Together with the
+  // sub-service links this adds at most 5 new links to the page.
+  const guides = posts
+    .filter((p) => p.relatedServices.includes(service.slug))
+    .sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1))
+    .slice(0, Math.max(1, 5 - subServicesFor(service.slug).length));
 
   return (
     <>
@@ -156,6 +164,27 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
 
       {/* FAQ */}
       <Faq faqs={service.faqs} title={`${service.name} in Dubai - FAQs`} />
+
+      {/* Guides about this service (internal linking to the blog) */}
+      {guides.length > 0 && (
+        <Section muted>
+          <Container>
+            <SectionHead title={`${service.name} Guides`} />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {guides.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/blog/${p.slug}`}
+                  className="rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition-all hover:-translate-y-1 hover:shadow-cardHover"
+                >
+                  <span className="text-xs font-semibold uppercase tracking-wide text-accent">{p.category}</span>
+                  <h3 className="mt-2 font-bold text-brand">{p.title}</h3>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
 
       {/* Sub-service pages for this service (internal linking) */}
       {subServicesFor(service.slug).length > 0 && (
