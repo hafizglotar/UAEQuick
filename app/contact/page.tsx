@@ -12,7 +12,7 @@ import { Icon } from '@/components/icons/Icon';
 export const metadata: Metadata = buildMetadata({
   title: `Contact UAE Quick | Home Services Dubai | Call ${PHONE_DISPLAY}`,
   description:
-    `Contact UAE Quick for same-day home services in Dubai. Call ${PHONE_DISPLAY}, WhatsApp us, or send a message. Open 8 AM-10 PM, 7 days. Based in Al Quoz, Dubai.`,
+    `Contact UAE Quick for same-day home services in Dubai. Call ${PHONE_DISPLAY}, WhatsApp us, or send a message. Open 8 AM-10 PM, 7 days. Based in ${company.address.locality}, Dubai.`,
   path: '/contact',
 });
 

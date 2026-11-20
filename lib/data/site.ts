@@ -27,13 +27,15 @@ export const company = {
   whatsappUrl: `https://wa.me/${WHATSAPP}`,
   email: 'info@uaequick.com',
   address: {
-    street: 'Al Quoz Industrial Area 3',
-    locality: 'Al Quoz',
+    // Matches the Google Business Profile pin (Al Nahda 1). Keep this, the
+    // geo below and the profile in sync - mismatched NAP hurts local ranking.
+    street: 'Al Nahda 1',
+    locality: 'Al Nahda',
     region: 'Dubai',
     country: 'AE',
     postalCode: '00000',
   },
-  geo: { latitude: 25.1339, longitude: 55.2256 },
+  geo: { latitude: 25.2878788, longitude: 55.3653017 },
   hours: '8:00 AM-10:00 PM, 7 days a week',
   openingHoursSpec: [
     {

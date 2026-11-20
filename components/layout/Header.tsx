@@ -54,7 +54,7 @@ export function Header() {
               <Icon name="Phone" size={14} /> {PHONE_DISPLAY}
             </a>
             <span className="hidden items-center gap-1.5 sm:inline-flex">
-              <Icon name="MapPin" size={14} /> Al Quoz, Dubai
+              <Icon name="MapPin" size={14} /> {company.address.locality}, Dubai
             </span>
             <a href={`mailto:${company.email}`} className="hidden items-center gap-1.5 hover:text-gold md:inline-flex">
               <Icon name="Mail" size={14} /> {company.email}

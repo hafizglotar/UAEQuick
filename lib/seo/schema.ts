@@ -159,6 +159,7 @@ export function localBusinessSchema(): Json {
       latitude: company.geo.latitude,
       longitude: company.geo.longitude,
     },
+    ...(company.social.googleBusinessProfile ? { hasMap: company.social.googleBusinessProfile } : {}),
     areaServed: [DUBAI, ...areasServed()],
     openingHours: openingHours(),
     openingHoursSpecification: company.openingHoursSpec.map((o) => ({
