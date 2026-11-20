@@ -10,7 +10,8 @@ import { CtaBand } from '@/components/sections/CtaBand';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { JsonLd } from '@/components/JsonLd';
 import { Icon } from '@/components/icons/Icon';
-import { serviceAreaSchema, faqSchema } from '@/lib/seo/schema';
+import { serviceAreaSchema, faqSchema, webPageSchema } from '@/lib/seo/schema';
+import { CONTENT_UPDATED, formatUpdated } from '@/lib/data/updated';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { serviceAreaTitle, serviceAreaH1, areaShortName, lowerKeyword } from '@/lib/seo/titles';
 import {
@@ -104,6 +105,9 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
             <p className="mt-5 text-sm text-white/80">
               Starting from <span className="font-bold text-gold">{service.startingPrice}</span> · Fixed
               pricing · 30-day guarantee
+            </p>
+            <p className="mt-2 text-xs text-white/70">
+              Last updated <time dateTime={CONTENT_UPDATED.serviceAreas}>{formatUpdated(CONTENT_UPDATED.serviceAreas)}</time>
             </p>
           </div>
           <div>
@@ -232,7 +236,18 @@ export default async function ServiceAreaPage({ params }: { params: Params }) {
 
       <CtaBand title={`Need ${service.name} in ${shortName} Today?`} />
 
-      <JsonLd data={[serviceAreaSchema(service, area, description), faqSchema(faqs)]} />
+      <JsonLd
+        data={[
+          serviceAreaSchema(service, area, description),
+          webPageSchema({
+            path: `/services/${service.slug}/${area.slug}`,
+            name: serviceAreaTitle(service, area),
+            description,
+            dateModified: CONTENT_UPDATED.serviceAreas,
+          }),
+          faqSchema(faqs),
+        ]}
+      />
     </>
   );
 }

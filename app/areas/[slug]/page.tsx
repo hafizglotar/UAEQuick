@@ -8,7 +8,8 @@ import { Faq } from '@/components/sections/Faq';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { JsonLd } from '@/components/JsonLd';
 import { Icon } from '@/components/icons/Icon';
-import { areaServiceSchema, faqSchema } from '@/lib/seo/schema';
+import { areaServiceSchema, faqSchema, webPageSchema } from '@/lib/seo/schema';
+import { CONTENT_UPDATED, formatUpdated } from '@/lib/data/updated';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { getAreaBySlug, areaSlugs, areas } from '@/lib/data/areas';
 import { services } from '@/lib/data/services';
@@ -66,6 +67,9 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             Home Services in {area.name}, Dubai
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/90">{area.intro}</p>
+          <p className="mt-2 text-xs text-white/70">
+            Last updated <time dateTime={CONTENT_UPDATED.areas}>{formatUpdated(CONTENT_UPDATED.areas)}</time>
+          </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href={`tel:${PHONE_E164}`} variant="white" external>
               <Icon name="Phone" size={18} /> Call {PHONE_DISPLAY}
@@ -154,7 +158,18 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
 
       <CtaBand title={`Book a Service in ${shortName} Today`} />
 
-      <JsonLd data={[areaServiceSchema(area), faqSchema(area.faqs)]} />
+      <JsonLd
+        data={[
+          areaServiceSchema(area),
+          webPageSchema({
+            path: `/areas/${area.slug}`,
+            name: `Home Services in ${area.name}, Dubai`,
+            description: area.metaDescription,
+            dateModified: CONTENT_UPDATED.areas,
+          }),
+          faqSchema(area.faqs),
+        ]}
+      />
     </>
   );
 }

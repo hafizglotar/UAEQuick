@@ -328,6 +328,8 @@ export function webPageSchema(opts: {
   name: string;
   description: string;
   type?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage';
+  /** ISO date of the last real content change. */
+  dateModified?: string;
 }): Json {
   const url = `${SITE_URL}${opts.path === '/' ? '' : opts.path}`;
   return {
@@ -341,6 +343,7 @@ export function webPageSchema(opts: {
     about: { '@id': ORG_ID },
     inLanguage: 'en-AE',
     publisher: { '@id': ORG_ID },
+    ...(opts.dateModified ? { dateModified: opts.dateModified } : {}),
   };
 }
 

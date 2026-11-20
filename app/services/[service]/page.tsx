@@ -15,7 +15,8 @@ import { CtaBand } from '@/components/sections/CtaBand';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { JsonLd } from '@/components/JsonLd';
 import { Icon } from '@/components/icons/Icon';
-import { serviceSchema, faqSchema } from '@/lib/seo/schema';
+import { serviceSchema, faqSchema, webPageSchema } from '@/lib/seo/schema';
+import { CONTENT_UPDATED, formatUpdated } from '@/lib/data/updated';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { serviceTitle, serviceH1 } from '@/lib/seo/titles';
 import { services, getServiceBySlug, serviceSlugs, formServiceValue } from '@/lib/data/services';
@@ -90,6 +91,9 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             <p className="mt-5 text-sm text-white/80">
               Starting from <span className="font-bold text-gold">{service.startingPrice}</span> · Fixed
               pricing · 30-day guarantee
+            </p>
+            <p className="mt-2 text-xs text-white/70">
+              Last updated <time dateTime={CONTENT_UPDATED.services}>{formatUpdated(CONTENT_UPDATED.services)}</time>
             </p>
           </div>
           <div>
@@ -190,7 +194,18 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <CtaBand title={`Need ${service.name} in Dubai Today?`} />
 
       {/* Schema: Service + FAQ */}
-      <JsonLd data={[serviceSchema(service), faqSchema(service.faqs)]} />
+      <JsonLd
+        data={[
+          serviceSchema(service),
+          webPageSchema({
+            path: `/services/${service.slug}`,
+            name: service.title,
+            description: service.metaDescription,
+            dateModified: CONTENT_UPDATED.services,
+          }),
+          faqSchema(service.faqs),
+        ]}
+      />
     </>
   );
 }
