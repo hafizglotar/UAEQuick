@@ -14,6 +14,9 @@ export const SITE_URL = 'https://www.uaequick.com';
 export const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE || '+971547585760';
 export const PHONE_DISPLAY = '054 758 5760';
 export const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP || '971589331711';
+/** WhatsApp number as shown to visitors, derived from WHATSAPP so the label can
+ *  never drift from the link: 971589331711 -> "058 933 1711". */
+export const WHATSAPP_DISPLAY = WHATSAPP.replace(/^971(\d{2})(\d{3})(\d{4})$/, '0$1 $2 $3');
 
 export const company = {
   name: 'UAE Quick',

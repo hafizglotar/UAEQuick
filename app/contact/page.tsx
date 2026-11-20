@@ -6,7 +6,7 @@ import { CallbackForm } from '@/components/forms/CallbackForm';
 import { JsonLd } from '@/components/JsonLd';
 import { webPageSchema } from '@/lib/seo/schema';
 import { buildMetadata } from '@/lib/seo/metadata';
-import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
+import { company, PHONE_E164, PHONE_DISPLAY, WHATSAPP_DISPLAY } from '@/lib/data/site';
 import { Icon } from '@/components/icons/Icon';
 
 export const metadata: Metadata = buildMetadata({
@@ -48,7 +48,7 @@ export default function ContactPage() {
                   <dt className="flex items-center gap-2 font-semibold text-brand"><Icon name="MessageCircle" size={16} /> WhatsApp</dt>
                   <dd>
                     <a href={company.whatsappUrl} target="_blank" rel="noopener" className="hover:text-accent">
-                      {PHONE_DISPLAY}
+                      {WHATSAPP_DISPLAY}
                     </a>
                   </dd>
                 </div>
