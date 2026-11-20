@@ -45,6 +45,23 @@ const nextConfig = {
       { source: '/garden-maintenance', destination: '/services/garden-maintenance', permanent: true },
       { source: '/swimming-pool-jacuzzi', destination: '/services/pool-maintenance', permanent: true },
       { source: '/quick-quote', destination: '/quote', permanent: true },
+      // Old WordPress posts lived at the site root; they now live under /blog.
+      {
+        source:
+          '/:slug(ac-repair-cost-dubai|handyman-cost-dubai|how-often-service-ac-dubai|common-plumbing-problems-dubai-apartments|deep-cleaning-checklist-dubai|ac-not-cooling-dubai-summer|cheap-home-cleaning-services-dubai|house-cleaning-services-dubai|interior-design-service-dubai|car-towing-services-dubai|swimming-pool-cleaning-dubai|best-ac-services-dubai|electrician-services-dubai|cheap-handyman-services-dubai|home-deep-cleaning-dubai|how-to-choose-cleaning-service-dubai)',
+        destination: '/blog/:slug',
+        permanent: true,
+      },
+      // WordPress page, archive and feed URLs.
+      { source: '/about-us', destination: '/about', permanent: true },
+      { source: '/contact-us', destination: '/contact', permanent: true },
+      { source: '/our-services', destination: '/services', permanent: true },
+      { source: '/category/:path*', destination: '/blog', permanent: true },
+      { source: '/tag/:path*', destination: '/blog', permanent: true },
+      { source: '/author/:path*', destination: '/blog', permanent: true },
+      { source: '/blog/page/:n', destination: '/blog', permanent: true },
+      { source: '/page/:n', destination: '/blog', permanent: true },
+      { source: '/feed', destination: '/blog', permanent: true },
     ];
   },
 };
