@@ -17,7 +17,11 @@ import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { CONTENT_UPDATED, formatUpdated } from '@/lib/data/updated';
 import type { BlogBlock, FAQ } from '@/lib/data/types';
 
-const TITLE = 'How Same-Day Home Service Works in Dubai | 4 PM Cut-Off | UAE Quick';
+// This page explains the booking process. It must NOT target "same day
+// {service} Dubai" or "same day home services Dubai": the service pages and
+// the home page already rank for those. Keep the title and anchors pointing
+// here about "how booking works", never a bare "Same-Day Service".
+const TITLE = 'Booking Cut-Off and How a Visit Works | UAE Quick';
 const DESCRIPTION =
   'How same-day booking works at UAE Quick: the 4 PM cut-off, what happens after you call, fixed quotes, no call-out fee, and which Dubai areas we reach today.';
 
@@ -97,7 +101,7 @@ export default function SameDayPage() {
 
   return (
     <>
-      <Breadcrumbs items={[{ name: 'Same-Day Service', path: '/same-day' }]} />
+      <Breadcrumbs items={[{ name: 'How Booking Works', path: '/same-day' }]} />
 
       <section className="bg-gradient-to-br from-brand to-brand-dark py-12 text-white md:py-16">
         <Container>
@@ -135,6 +139,13 @@ export default function SameDayPage() {
       <Section>
         <Container>
           <div className="mx-auto max-w-3xl">
+            <p className="mb-6 text-slate-700">
+              This page explains the booking process. To book a visit, go to{' '}
+              <Link href="/" className="font-semibold text-brand underline decoration-accent/40 underline-offset-2 hover:text-accent">
+                same-day home maintenance services in Dubai
+              </Link>{' '}
+              or pick a trade from the table below.
+            </p>
             <BlogBody blocks={intro} />
           </div>
         </Container>
@@ -223,14 +234,14 @@ export default function SameDayPage() {
         </Container>
       </Section>
 
-      <Faq faqs={faqs} title="Same-Day Service - FAQs" />
+      <Faq faqs={faqs} title="Booking and Cut-Off Times - FAQs" />
 
       <CtaBand title="Need Someone at Your Door Today?" />
 
       <JsonLd
         data={[
           webPageSchema({ path: '/same-day', name: 'How Same-Day Booking Works at UAE Quick', description: DESCRIPTION, dateModified: CONTENT_UPDATED.sameDay }),
-          itemListSchema('Services available same-day in Dubai', services.map((s) => ({ name: s.name, path: `/services/${s.slug}` }))),
+          itemListSchema('UAE Quick services', services.map((s) => ({ name: s.name, path: `/services/${s.slug}` }))),
           faqSchema(faqs),
         ]}
       />

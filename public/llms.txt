@@ -186,8 +186,8 @@ Every service is available in every area. URL pattern: https://www.uaequick.com/
 - Same-day Pool Maintenance in Dubai Sports City: https://www.uaequick.com/services/pool-maintenance/sports-city
 - Same-day Pool Maintenance in Emirates Hills: https://www.uaequick.com/services/pool-maintenance/emirates-hills
 
-## How same-day booking works
-- Same-day service: 4 PM cut-off, steps, areas and FAQs: https://www.uaequick.com/same-day
+## How booking works
+- How booking works (4 PM cut-off, steps, areas, FAQs): https://www.uaequick.com/same-day
 
 ## Specific jobs (sub-services)
 - AC Gas Refill in Dubai: https://www.uaequick.com/services/ac-repair/gas-refill

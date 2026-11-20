@@ -62,7 +62,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/same-day" className="hover:text-accent">
-                  Same-Day Service
+                  How Booking Works
                 </Link>
               </li>
               <li>
