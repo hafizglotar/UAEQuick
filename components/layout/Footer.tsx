@@ -61,8 +61,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/same-day" className="hover:text-accent">
+                  Same-Day Service
+                </Link>
+              </li>
+              <li>
                 <Link href="/blog" className="hover:text-accent">
                   Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-accent">
+                  About Us
                 </Link>
               </li>
             </ul>

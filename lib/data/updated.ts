@@ -19,6 +19,10 @@ export const CONTENT_UPDATED = {
   areas: '2026-10-26',
   /** /services/[service]/[area] - cross-service links added. */
   serviceAreas: '2026-11-18',
+  /** /same-day */
+  sameDay: '2026-11-21',
+  /** /services/[service]/[sub-service] */
+  subServices: '2026-11-21',
 } as const;
 
 /** "26 October 2026" */

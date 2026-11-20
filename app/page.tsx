@@ -133,6 +133,11 @@ export default function HomePage() {
             <p className="mt-3 text-white/80">
               Same-day coverage across {areas.length} Dubai communities. Tap your area for local service details.
             </p>
+            <p className="mt-3">
+              <Link href="/same-day" className="font-semibold text-accent-light underline underline-offset-2 hover:text-white">
+                How same-day booking works →
+              </Link>
+            </p>
           </div>
           <AreasGrid dark />
         </Container>

@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/quote`, lastModified: d(U.quote), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${SITE_URL}/contact`, lastModified: d(U.contact), changeFrequency: 'yearly', priority: 0.6 },
     { url: `${SITE_URL}/about`, lastModified: d(U.about), changeFrequency: 'yearly', priority: 0.5 },
+    { url: `${SITE_URL}/same-day`, lastModified: d(U.sameDay), changeFrequency: 'monthly', priority: 0.8 },
   ];
 
   const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
