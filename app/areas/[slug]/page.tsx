@@ -11,7 +11,8 @@ import { Icon } from '@/components/icons/Icon';
 import { areaServiceSchema, faqSchema, webPageSchema } from '@/lib/seo/schema';
 import { CONTENT_UPDATED, formatUpdated } from '@/lib/data/updated';
 import { buildMetadata } from '@/lib/seo/metadata';
-import { getAreaBySlug, areaSlugs, areas } from '@/lib/data/areas';
+import { getAreaBySlug, areaSlugs, areas, areaNotes } from '@/lib/data/areas';
+import { problemServiceSlug } from '@/lib/seo/serviceArea';
 import { services } from '@/lib/data/services';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 
@@ -48,6 +49,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
     .map((s) => areas.find((x) => x.slug === s))
     .filter(Boolean) as typeof areas;
   const shortName = area.name.split(' (')[0];
+  const notes = areaNotes[area.slug];
 
   return (
     <>
@@ -95,6 +97,28 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
               <p>
                 <strong>Nearby:</strong> {area.landmarks.join(' · ')}
               </p>
+            )}
+            {notes && (
+              <>
+                <h3>Getting a technician into {shortName}</h3>
+                <p>{notes.accessRules}</p>
+                <h3>What we are called out for most in {shortName}</h3>
+                <ul>
+                  {notes.commonProblems.map((item) => {
+                    const slug = problemServiceSlug(item);
+                    return (
+                      <li key={item}>
+                        {slug ? <Link href={`/services/${slug}/${area.slug}`}>{item}</Link> : item}
+                      </li>
+                    );
+                  })}
+                </ul>
+                <h3>Prices and arrival times in {shortName}</h3>
+                <p>
+                  Prices are the same fixed rates we charge across Dubai. {notes.pricingNote} Typical response here:{' '}
+                  {area.responseTime.charAt(0).toLowerCase() + area.responseTime.slice(1)}.
+                </p>
+              </>
             )}
           </div>
         </Container>
