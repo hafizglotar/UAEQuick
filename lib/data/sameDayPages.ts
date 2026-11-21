@@ -14,8 +14,8 @@ import type { BlogBlock, FAQ } from './types';
  *
  * FACTS: only what the site already states (prices from the parent's pricing
  * rows, 4 PM cut-off, 8 AM-10 PM 7 days, no call-out fee, fixed written quote,
- * 30-day guarantee / 90 days on AC repairs, 14 areas). Anything else is written
- * as [ASK OWNER: ...] and must be resolved before the page goes live.
+ * 30-day guarantee / 90 days on AC repairs, 14 areas). Facts the site does not
+ * state are left out of the copy and listed in docs/ASK_OWNER.md.
  */
 export interface SameDayPage {
   slug: string;
@@ -88,7 +88,6 @@ export const sameDayPages: SameDayPage[] = [
       { type: 'h2', text: 'What it costs' },
       { type: 'p', text: 'Booking for today costs the same as booking ahead. The technician diagnoses the fault, then gives you a fixed written price covering labour and any parts before starting. You pay once the AC is cooling. AC repairs carry a 90-day warranty: if the same fault returns, we come back free. After-hours emergencies outside 8 AM to 10 PM in peak summer are quoted separately.' },
       { type: 'p', text: 'For full pricing, the brands we cover and annual maintenance plans, see [same-day AC repair in Dubai](/services/ac-repair).' },
-      { type: 'p', text: '[ASK OWNER: what is the typical arrival time after a same-day AC booking, for example "within 2 to 4 hours"? The site only says "within hours".]' },
     ],
     faqs: [
       { q: 'How late can I book AC repair for today?', a: 'Book before 4 PM and a technician reaches most Dubai areas the same day. We work 8 AM to 10 PM, seven days a week, including weekends and public holidays. Bookings after 4 PM get the first slot the next morning.' },
@@ -143,8 +142,6 @@ export const sameDayPages: SameDayPage[] = [
       { type: 'h2', text: 'What it costs' },
       { type: 'p', text: 'A same-day plumbing visit costs the same as one booked ahead. Leak diagnosis and repair starts from AED 200 with parts extra, and a tap or sink repair from AED 150. The quote is written and fixed before work begins, there is no call-out fee, and you pay after the job is done. Workmanship is guaranteed for 30 days: if the repair fails again, we return free. After-hours emergencies outside 8 AM to 10 PM are quoted separately.' },
       { type: 'p', text: 'If you have several small tasks, a one-hour slot at AED 120 covers them in one visit. Full details are on our [same-day handyman and plumber service in Dubai](/services/handyman-plumber) page.' },
-      { type: 'p', text: '[ASK OWNER: do you repair or replace water heaters on a same-day visit, and what is the starting price? The site lists water-heater leaks as a common problem but gives no price.]' },
-      { type: 'p', text: '[ASK OWNER: do you clear blocked drains beyond the sink trap, for example floor drains and main lines, and at what price?]' },
     ],
     faqs: [
       { q: 'Can I get a plumber in Dubai today?', a: 'Yes. Book before 4 PM and a plumber reaches most Dubai areas the same day with tools and common parts. We work 8 AM to 10 PM, seven days a week, including weekends and public holidays.' },
@@ -188,7 +185,6 @@ export const sameDayPages: SameDayPage[] = [
       { type: 'p', text: 'Tell us the property size and which of these you need and we quote on the spot.' },
       { type: 'h2', text: 'What can need more than today' },
       { type: 'p', text: 'Larger jobs depend on how much of the day is left. Villa deep cleans usually need a bigger team, and a late booking for a large property may be split, with the urgent rooms done today and the rest the next morning. We tell you which when you book, before you commit.' },
-      { type: 'p', text: '[ASK OWNER: what is the latest time you will start a full deep clean or a villa clean on the same day, and how many cleaners are in a standard team?]' },
       { type: 'h2', text: 'How to get the most from a short-notice clean' },
       { type: 'ol', items: [
         'Clear floors and surfaces of personal items so the time goes on cleaning, not tidying.',
@@ -255,7 +251,6 @@ export const sameDayPages: SameDayPage[] = [
       { type: 'h2', text: 'What it costs' },
       { type: 'p', text: 'A visit today costs the same as one booked ahead, with no call-out fee. A single light fitting, socket or switch replacement is AED 100. Breaker diagnosis and replacement starts from AED 200, a ceiling fan supplied and installed from AED 200, and appliance wiring from AED 150. The price is fixed before work begins, and workmanship is guaranteed for 30 days.' },
       { type: 'p', text: 'For the full list of electrical work and prices, see our [same-day electrician in Dubai](/services/electrician) page.' },
-      { type: 'p', text: '[ASK OWNER: are your electricians, or the company, registered with DEWA as an approved contractor? The site says they "work to DEWA safety standards" and I have not claimed more than that.]' },
     ],
     faqs: [
       { q: 'Can I get an electrician in Dubai today?', a: 'Yes. Book before 4 PM and an electrician reaches most Dubai areas the same day, seven days a week, between 8 AM and 10 PM. The fault is diagnosed and quoted at a fixed price before any work starts.' },
@@ -304,7 +299,6 @@ export const sameDayPages: SameDayPage[] = [
       { type: 'h2', text: 'What it costs' },
       { type: 'p', text: 'A handyman booked for today costs the same as one booked ahead. Small jobs start at AED 80, a door lock change from AED 120 with the lock supplied and installed, and a one-hour slot is AED 120. Gypsum partitions are from AED 350 per square metre. The quote is written and fixed before work begins, there is no call-out fee, and you pay after the job is done. Every job has a 30-day guarantee.' },
       { type: 'p', text: 'For a leak or a dripping tap, see [getting a plumber today](/same-day/plumber). The full service and price list is on our [same-day handyman and plumber in Dubai](/services/handyman-plumber) page.' },
-      { type: 'p', text: '[ASK OWNER: what do you charge for TV wall mounting and for curtain rail installation? The site lists both jobs but only prices "small jobs from AED 80".]' },
     ],
     faqs: [
       { q: 'Can I get a handyman in Dubai today?', a: 'Yes. Book before 4 PM and a handyman reaches most Dubai areas the same day with tools and transport. We work 8 AM to 10 PM, seven days a week.' },

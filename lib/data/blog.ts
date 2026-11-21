@@ -966,7 +966,6 @@ export const posts: BlogPost[] = [
       },
       { type: 'h2', text: 'Step 6: The work is done, then you pay' },
       { type: 'p', text: 'For most repair and cleaning jobs the work is completed in that visit. You pay once the job is finished: once the AC is cooling, the leak has stopped, or you have walked the property with the cleaning team.' },
-      { type: 'p', text: '[ASK OWNER: which payment methods do you accept on site: cash, card, bank transfer, payment link? The site does not say.]' },
       { type: 'h2', text: 'Step 7: The guarantee starts' },
       { type: 'p', text: 'Every job carries a 30-day workmanship guarantee, and AC repairs carry 90 days. If the same fault returns in that period, we come back and put it right at no charge.' },
       { type: 'h2', text: 'What "same-day" does not mean' },
