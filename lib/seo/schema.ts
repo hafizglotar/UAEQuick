@@ -305,6 +305,33 @@ export function subServiceSchema(
   };
 }
 
+/** Service node for a /same-day/[service] page. Points at the parent service
+ *  page as the main entity so the two are read as related, not duplicates. */
+export function sameDayServiceSchema(
+  service: Service,
+  page: { slug: string; name: string; h1: string; metaDescription: string },
+  rows: { item: string; includes: string; price: string }[]
+): Json {
+  const url = `${SITE_URL}/same-day/${page.slug}`;
+  const num = (p: string) => p.replace(/[^0-9.]/g, '') || undefined;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: page.h1,
+    serviceType: service.name,
+    category: service.category,
+    description: page.metaDescription,
+    url,
+    provider: { '@id': BUSINESS_ID, name: company.name },
+    areaServed: [DUBAI, ...areasServed()],
+    hoursAvailable: { '@type': 'OpeningHoursSpecification', opens: '08:00', closes: '22:00' },
+    isRelatedTo: { '@type': 'Service', name: service.title, url: `${SITE_URL}/services/${service.slug}` },
+    ...(rows[0]
+      ? { offers: { '@type': 'Offer', priceCurrency: 'AED', price: num(rows[0].price), availability: 'https://schema.org/InStock', url } }
+      : {}),
+  };
+}
+
 /** Service node for a /services/[service]/[area] page. */
 export function serviceAreaSchema(service: Service, area: Area, description: string): Json {
   const shortName = area.name.split(' (')[0];

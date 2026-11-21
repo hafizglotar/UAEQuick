@@ -21,6 +21,8 @@ export const CONTENT_UPDATED = {
   serviceAreas: '2026-11-18',
   /** /same-day */
   sameDay: '2026-11-22',
+  /** /same-day/[service] */
+  sameDayServices: '2026-11-22',
   /** /services/[service]/[sub-service] */
   subServices: '2026-11-21',
 } as const;

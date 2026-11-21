@@ -13,6 +13,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 import { lowerKeyword, areaShortName } from '@/lib/seo/titles';
 import { services } from '@/lib/data/services';
 import { areas } from '@/lib/data/areas';
+import { sameDayPages } from '@/lib/data/sameDayPages';
 import { company, PHONE_E164, PHONE_DISPLAY } from '@/lib/data/site';
 import { CONTENT_UPDATED, formatUpdated } from '@/lib/data/updated';
 import type { BlogBlock, FAQ } from '@/lib/data/types';
@@ -151,8 +152,27 @@ export default function SameDayPage() {
         </Container>
       </Section>
 
-      {/* Services available same-day, with live starting prices */}
+      {/* Trade-specific "today" pages */}
       <Section muted>
+        <Container>
+          <SectionHead title="Need a Specific Trade Today?" intro="What each trade can fix in one visit, what to do while you wait, and what it costs." />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {sameDayPages.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/same-day/${p.slug}`}
+                className="rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition-all hover:-translate-y-1 hover:shadow-cardHover"
+              >
+                <h3 className="font-bold text-brand">{p.name} today</h3>
+                <p className="mt-1 text-sm text-slate-600">Book before 4 PM →</p>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Services available same-day, with live starting prices */}
+      <Section>
         <Container>
           <SectionHead
             title="Services You Can Book for Today"
@@ -189,7 +209,7 @@ export default function SameDayPage() {
       </Section>
 
       {/* Areas */}
-      <Section>
+      <Section muted>
         <Container>
           <SectionHead
             title="Areas We Reach the Same Day"

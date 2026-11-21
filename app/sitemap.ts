@@ -5,6 +5,7 @@ import { areas } from '@/lib/data/areas';
 import { posts } from '@/lib/data/blog';
 import { CONTENT_UPDATED as U } from '@/lib/data/updated';
 import { subServices } from '@/lib/data/subServices';
+import { sameDayPages } from '@/lib/data/sameDayPages';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Real content dates, not build time (see lib/data/updated.ts).
@@ -60,6 +61,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const sameDayServicePages: MetadataRoute.Sitemap = sameDayPages.map((p) => ({
+    url: `${SITE_URL}/same-day/${p.slug}`,
+    lastModified: d(U.sameDayServices),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
   // New entries are appended; the order of existing entries is unchanged.
-  return [...staticPages, ...servicePages, ...areaPages, ...serviceAreaPages, ...blogPages, ...subServicePages];
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...areaPages,
+    ...serviceAreaPages,
+    ...blogPages,
+    ...subServicePages,
+    ...sameDayServicePages,
+  ];
 }

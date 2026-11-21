@@ -189,6 +189,14 @@ Every service is available in every area. URL pattern: https://www.uaequick.com/
 ## How booking works
 - How booking works (4 PM cut-off, steps, areas, FAQs): https://www.uaequick.com/same-day
 
+## Getting a trade today
+- AC repair today: https://www.uaequick.com/same-day/ac-repair
+- Plumber today: https://www.uaequick.com/same-day/plumber
+- Cleaners today: https://www.uaequick.com/same-day/cleaning
+- Electrician today: https://www.uaequick.com/same-day/electrician
+- Handyman today: https://www.uaequick.com/same-day/handyman
+- Guide - how same-day home service works, step by step: https://www.uaequick.com/blog/how-same-day-home-service-works-dubai
+
 ## Specific jobs (sub-services)
 - AC Gas Refill in Dubai: https://www.uaequick.com/services/ac-repair/gas-refill
 - AC Duct Cleaning in Dubai: https://www.uaequick.com/services/ac-repair/duct-cleaning
